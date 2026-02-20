@@ -42,9 +42,19 @@ Screen readers solved "what matters on a page" 25 years ago using ARIA landmarks
 | Existing approach | Problem | mcprune's answer |
 |---|---|---|
 | Playwright MCP raw | 100K-400K tokens per page | 75-95% reduction |
-| Vercel agent-browser `-i` | Flat interactive list, no context | Structured tree with prices, headings, groups |
+| fast-playwright-mcp (fork) | Agent must know CSS selectors, fork maintenance | Transparent proxy, zero agent changes |
 | Vision/screenshot agents | Expensive, slow, coordinate-based | Text-based, fast, ref-based clicking |
+| WebMCP / DOM agents | Fragile selectors, class-name dependent | Semantic ARIA tree, stable across redesigns |
 
-## Success metric
+## The real goal
 
-An LLM agent can navigate, search, compare products, and complete purchases on e-commerce sites using pruned snapshots that fit within tool result token limits.
+Make accessibility-tree-based browsing so reliable that agents don't need screenshots, pixel coordinates, or DOM interaction. An agent with mcprune should be fully autonomous — reading docs, shopping, filling forms, researching — from structured text with refs to click. UI vision and DOM scraping become fallbacks, not defaults.
+
+## Success metrics
+
+1. An LLM agent completes e-commerce tasks (search, compare, buy) using pruned act-mode snapshots
+2. An LLM agent completes research tasks (read docs, follow links, extract info) using pruned browse-mode snapshots
+3. Token usage is 75-95% lower than raw Playwright MCP
+4. Task completion rate matches or exceeds raw Playwright MCP (pruning doesn't lose critical info)
+
+See also: `docs/00-context/competitive-landscape.md` for detailed competitive analysis.

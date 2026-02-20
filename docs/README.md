@@ -6,6 +6,7 @@
 - [vision.md](00-context/vision.md) — Product purpose, boundaries, and positioning
 - [assumptions.md](00-context/assumptions.md) — Constraints, risks, and unknowns
 - [system-state.md](00-context/system-state.md) — Current architecture and what's built
+- [competitive-landscape.md](00-context/competitive-landscape.md) — Competitive analysis, fork vs proxy, auto-detection strategy, next moves
 
 ### [01-product/](01-product/) — What the Product Must Do
 - [prd.md](01-product/prd.md) — Product requirements and success criteria

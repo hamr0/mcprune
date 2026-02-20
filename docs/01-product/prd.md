@@ -73,6 +73,40 @@ LLM agents using Playwright MCP receive raw accessibility snapshots of 100K-400K
 | Drop orphaned headings (not followed by interactive content) | Done |
 | Trim combobox/listbox to selected value only | Done |
 
+### Auto mode detection (P2 — next)
+
+| Requirement | Status |
+|---|---|
+| Per-snapshot content analysis (paragraph/interactive ratio) | Not started |
+| URL pattern matching for known site types | Not started |
+| Price pattern detection for act mode | Not started |
+| Include detected mode in stats header | Not started |
+| Fallback to act mode when uncertain | Not started |
+
+### Agent validation (P2 — next)
+
+| Requirement | Status |
+|---|---|
+| 5 e-commerce task completions with act mode (Claude Code) | Not started |
+| 5 research task completions with browse mode (Claude Code) | Not started |
+| Baseline comparison with raw Playwright MCP | Not started |
+| Token usage measurement per task | Not started |
+| Error log when pruning loses critical info | Not started |
+
+### Section-level extraction (P3)
+
+| Requirement | Status |
+|---|---|
+| Heading-based section extraction for large docs | Not started |
+| Agent can request specific section by topic/heading | Not started |
+
+### Site-agnostic noise patterns (P3)
+
+| Requirement | Status |
+|---|---|
+| Replace Dutch-specific patterns with generic | Not started |
+| Configurable noise pattern lists | Not started |
+
 ## Non-requirements
 
 - Bot detection bypass (out of scope)
@@ -80,3 +114,4 @@ LLM agents using Playwright MCP receive raw accessibility snapshots of 100K-400K
 - ML/embedding-based pruning
 - Multi-page flow tracking
 - Auth/session management
+- Forking Playwright MCP (proxy approach preferred for now)
