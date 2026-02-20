@@ -23,10 +23,12 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const args = process.argv.slice(2);
 const headless = args.includes('--headless');
 const modeIdx = args.indexOf('--mode');
-const pruneMode = modeIdx !== -1 ? args[modeIdx + 1] : 'act';
+const pruneMode = modeIdx !== -1 ? args[modeIdx + 1] : 'auto';
 
 // Track the latest search/navigation context for relevance pruning
 let lastContext = '';
+// Track the latest URL for auto mode detection
+let lastUrl = '';
 
 // --- Lazy-load prune (ESM) ---
 let prune, summarize;
@@ -86,6 +88,11 @@ process.stdin.on('data', (chunk) => {
           lastContext = ctx;
           process.stderr.write(`[mcprune] Context updated: "${lastContext}"\n`);
         }
+
+        // Track URL for auto mode detection
+        if (params.name === 'browser_navigate' && params.arguments?.url) {
+          lastUrl = params.arguments.url;
+        }
       }
       // Forward to child as-is
       child.stdin.write(line + '\n');
@@ -119,7 +126,7 @@ child.stdout.on('data', (chunk) => {
             if (item.type === 'text' && item.text && looksLikeSnapshot(item.text)) {
               await loadPrune();
               const raw = item.text;
-              item.text = processSnapshot(raw, { prune, summarize, mode: pruneMode, context: lastContext });
+              item.text = processSnapshot(raw, { prune, summarize, mode: pruneMode, context: lastContext, url: lastUrl });
 
               process.stderr.write(`[mcprune] Snapshot pruned\n`);
             }

@@ -1,6 +1,12 @@
 import { describe, it } from 'node:test';
 import assert from 'node:assert/strict';
-import { looksLikeSnapshot, extractContext, processSnapshot } from '../src/proxy-utils.js';
+import { readFileSync } from 'node:fs';
+import { resolve, dirname } from 'node:path';
+import { fileURLToPath } from 'node:url';
+import { looksLikeSnapshot, extractContext, processSnapshot, detectMode } from '../src/proxy-utils.js';
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
+const fixture = (name) => readFileSync(resolve(__dirname, 'fixtures', name), 'utf8');
 
 describe('looksLikeSnapshot', () => {
   it('returns true for snapshot starting with "- main"', () => {
@@ -133,6 +139,185 @@ describe('extractContext', () => {
   });
 });
 
+describe('detectMode', () => {
+  // URL-based detection
+  it('detects browse for MDN docs URL', () => {
+    const r = detectMode('', 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Array');
+    assert.equal(r.mode, 'browse');
+    assert.equal(r.reason, 'url');
+  });
+
+  it('detects browse for Stack Overflow question', () => {
+    const r = detectMode('', 'https://stackoverflow.com/questions/12345/how-to-merge-dicts');
+    assert.equal(r.mode, 'browse');
+    assert.equal(r.reason, 'url');
+  });
+
+  it('detects browse for GitHub issue', () => {
+    const r = detectMode('', 'https://github.com/microsoft/playwright/issues/123');
+    assert.equal(r.mode, 'browse');
+    assert.equal(r.reason, 'url');
+  });
+
+  it('detects browse for GitHub PR', () => {
+    const r = detectMode('', 'https://github.com/microsoft/playwright/pull/35498');
+    assert.equal(r.mode, 'browse');
+    assert.equal(r.reason, 'url');
+  });
+
+  it('detects browse for Python docs', () => {
+    const r = detectMode('', 'https://docs.python.org/3/library/json.html');
+    assert.equal(r.mode, 'browse');
+    assert.equal(r.reason, 'url');
+  });
+
+  it('detects browse for npm package', () => {
+    const r = detectMode('', 'https://www.npmjs.com/package/express');
+    assert.equal(r.mode, 'browse');
+    assert.equal(r.reason, 'url');
+  });
+
+  it('detects browse for Wikipedia', () => {
+    const r = detectMode('', 'https://en.wikipedia.org/wiki/JavaScript');
+    assert.equal(r.mode, 'browse');
+    assert.equal(r.reason, 'url');
+  });
+
+  it('detects act for Amazon', () => {
+    const r = detectMode('', 'https://www.amazon.nl/s?k=iphone+15');
+    assert.equal(r.mode, 'act');
+    assert.equal(r.reason, 'url');
+  });
+
+  it('detects act for eBay', () => {
+    const r = detectMode('', 'https://www.ebay.com/sch/i.html?_nkw=laptop');
+    assert.equal(r.mode, 'act');
+    assert.equal(r.reason, 'url');
+  });
+
+  it('detects act for Booking.com', () => {
+    const r = detectMode('', 'https://www.booking.com/searchresults.html');
+    assert.equal(r.mode, 'act');
+    assert.equal(r.reason, 'url');
+  });
+
+  // Content-based detection
+  it('detects act when prices present and few paragraphs', () => {
+    const snapshot = [
+      '- main:',
+      '  - heading "iPhone 15" [level=1]',
+      '  - text: €609.00',
+      '  - button "Add to Cart"',
+      '  - link "Compare"',
+      '  - link "Details"',
+    ].join('\n');
+    const r = detectMode(snapshot);
+    assert.equal(r.mode, 'act');
+    assert.equal(r.reason, 'prices');
+  });
+
+  it('detects browse when many paragraphs and code blocks', () => {
+    const snapshot = [
+      '- main:',
+      '  - heading "Array.reduce()" [level=1]',
+      '  - paragraph: The reduce method executes a reducer function.',
+      '  - code: arr.reduce(callback, initialValue)',
+      '  - paragraph: The callback takes four arguments.',
+      '  - paragraph: The accumulator holds the return value.',
+      '  - code: const sum = [1,2,3].reduce((a,b) => a+b, 0)',
+      '  - paragraph: Returns the final accumulated value.',
+      '  - paragraph: If no initial value, uses first element.',
+      '  - link "See also"',
+    ].join('\n');
+    const r = detectMode(snapshot);
+    assert.equal(r.mode, 'browse');
+  });
+
+  it('detects browse with high content-to-interactive ratio', () => {
+    const snapshot = [
+      '- main:',
+      '  - paragraph: First paragraph of documentation.',
+      '  - paragraph: Second paragraph with more detail.',
+      '  - paragraph: Third paragraph explaining usage.',
+      '  - code: example()',
+      '  - code: another_example()',
+      '  - link "Next page"',
+    ].join('\n');
+    const r = detectMode(snapshot);
+    assert.equal(r.mode, 'browse');
+  });
+
+  it('defaults to act when no strong signals', () => {
+    const snapshot = [
+      '- main:',
+      '  - heading "Welcome" [level=1]',
+      '  - button "Sign in"',
+      '  - link "Register"',
+    ].join('\n');
+    const r = detectMode(snapshot);
+    assert.equal(r.mode, 'act');
+    assert.equal(r.reason, 'default');
+  });
+
+  it('defaults to act with empty/null inputs', () => {
+    assert.equal(detectMode('').mode, 'act');
+    assert.equal(detectMode(null).mode, 'act');
+    assert.equal(detectMode('', '').mode, 'act');
+  });
+
+  // URL takes priority over content
+  it('URL overrides content signals', () => {
+    // Docs URL but content looks like act (has prices)
+    const snapshot = '- main:\n  - text: $99.99\n  - button "Buy"';
+    const r = detectMode(snapshot, 'https://docs.python.org/3/tutorial/');
+    assert.equal(r.mode, 'browse');
+    assert.equal(r.reason, 'url');
+  });
+});
+
+describe('detectMode with real fixtures', () => {
+
+  it('detects browse for MDN fixture (content analysis)', () => {
+    const r = detectMode(fixture('live-mdn-docs.yaml'));
+    assert.equal(r.mode, 'browse');
+  });
+
+  it('detects browse for Python docs fixture (content analysis)', () => {
+    const r = detectMode(fixture('live-python-docs.yaml'));
+    assert.equal(r.mode, 'browse');
+  });
+
+  it('detects browse for Stack Overflow fixture (content analysis)', () => {
+    const r = detectMode(fixture('live-stackoverflow.yaml'));
+    assert.equal(r.mode, 'browse');
+  });
+
+  it('detects browse for Wikipedia fixture (needs URL — too many links for content-only)', () => {
+    // Wikipedia has 646 links vs 73 paragraphs — content-only detection sees it as interactive.
+    // In production, the URL triggers browse mode before content analysis runs.
+    const contentOnly = detectMode(fixture('live-wikipedia.yaml'));
+    assert.equal(contentOnly.mode, 'act'); // content heuristic alone → act (correct: too many links)
+
+    const withUrl = detectMode(fixture('live-wikipedia.yaml'), 'https://en.wikipedia.org/wiki/JavaScript');
+    assert.equal(withUrl.mode, 'browse'); // URL fixes it
+  });
+
+  it('detects act for Amazon product fixture (content analysis)', () => {
+    const r = detectMode(fixture('amazon-product.yaml'));
+    assert.equal(r.mode, 'act');
+  });
+
+  it('detects act for gov.uk form fixture (content analysis)', () => {
+    const r = detectMode(fixture('live-gov-uk-form.yaml'));
+    assert.equal(r.mode, 'act');
+  });
+
+  it('detects act for Hacker News fixture (default — no strong signals)', () => {
+    const r = detectMode(fixture('live-hackernews.yaml'));
+    assert.equal(r.mode, 'act');
+  });
+});
+
 describe('processSnapshot', () => {
   it('returns header + pruned text in correct format', () => {
     const fakePrune = (text) => text.slice(0, 10); // keeps 10 chars
@@ -183,5 +368,75 @@ describe('processSnapshot', () => {
     assert.ok(result.includes('~100 →'));
     assert.ok(result.includes('~25 tokens'));
     assert.ok(result.includes('75.0% reduction'));
+  });
+
+  it('includes mode label in header', () => {
+    const fakePrune = (t) => t;
+    const fakeSummarize = () => 'page';
+
+    const result = processSnapshot('test', {
+      prune: fakePrune,
+      summarize: fakeSummarize,
+      mode: 'act',
+    });
+
+    assert.ok(result.includes('mode=act'));
+  });
+
+  it('auto mode detects and labels correctly', () => {
+    let receivedMode;
+    const capturePrune = (text, opts) => { receivedMode = opts.mode; return text; };
+    const fakeSummarize = () => 'docs';
+
+    const docsSnapshot = [
+      '- main:',
+      '  - paragraph: Detailed documentation text here.',
+      '  - paragraph: More documentation content follows.',
+      '  - paragraph: Additional paragraph with examples.',
+      '  - paragraph: Another section of documentation.',
+      '  - paragraph: Final paragraph with summary.',
+      '  - code: example()',
+      '  - link "Next"',
+    ].join('\n');
+
+    const result = processSnapshot(docsSnapshot, {
+      prune: capturePrune,
+      summarize: fakeSummarize,
+      mode: 'auto',
+    });
+
+    assert.equal(receivedMode, 'browse');
+    assert.ok(result.includes('mode=browse (auto:'));
+  });
+
+  it('auto mode with URL passes detected mode to prune', () => {
+    let receivedMode;
+    const capturePrune = (text, opts) => { receivedMode = opts.mode; return text; };
+    const fakeSummarize = () => 'page';
+
+    processSnapshot('- main:\n  - button "Buy"', {
+      prune: capturePrune,
+      summarize: fakeSummarize,
+      mode: 'auto',
+      url: 'https://docs.python.org/3/tutorial/',
+    });
+
+    assert.equal(receivedMode, 'browse');
+  });
+
+  it('explicit mode overrides auto-detection', () => {
+    let receivedMode;
+    const capturePrune = (text, opts) => { receivedMode = opts.mode; return text; };
+    const fakeSummarize = () => 'page';
+
+    // Docs-like content but explicit act mode
+    const docsSnapshot = '- main:\n  - paragraph: Long text.\n  - paragraph: More text.\n  - code: x()';
+    processSnapshot(docsSnapshot, {
+      prune: capturePrune,
+      summarize: fakeSummarize,
+      mode: 'act',
+    });
+
+    assert.equal(receivedMode, 'act');
   });
 });
