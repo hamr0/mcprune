@@ -9,7 +9,8 @@
 - [competitive-landscape.md](00-context/competitive-landscape.md) — Competitive analysis, fork vs proxy, auto-detection strategy, next moves
 
 ### [01-product/](01-product/) — What the Product Must Do
-- [prd.md](01-product/prd.md) — Product requirements and success criteria
+- [prd.md](01-product/prd.md) — Product requirements and status
+- [poc-graduation.md](01-product/poc-graduation.md) — POC exit criteria, 10 validation tasks, auto-detection path, phase roadmap
 
 ### [02-features/](02-features/) — How Features Work
 - [pruning-pipeline.md](02-features/pruning-pipeline.md) — The 9-step pruning engine
