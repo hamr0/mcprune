@@ -46,3 +46,21 @@
 **Decision**: `row`, `cell`, `rowgroup` collapse even when named.
 
 **Rationale**: Their names are just concatenated child text (e.g., `row "Hacker Newsnew | past | comments..."`), not meaningful labels like `radiogroup "Color"`.
+
+## Browse mode: skip steps 5-8
+
+**Decision**: In browse mode, skip dedupLinks, dropNoiseButtons, truncateAfterFooter, and dropFilterGroups entirely.
+
+**Rationale**: These steps target e-commerce noise (duplicate product links, energy labels, sidebar filters, corporate footers). Documentation and article pages don't have this noise. Running them would risk removing legitimate content (e.g., a "Back to top" link in docs that happens to match the footer pattern).
+
+## Browse mode: preserve paragraphs and article content
+
+**Decision**: In browse mode, keep paragraphs, code blocks, term/definition pairs, strong/emphasis, inline links, complementary sidebars, figure captions, and all headings.
+
+**Rationale**: ~70% of agentic browsing is research/reading (docs, articles, Q&A). Act mode was optimized for e-commerce where paragraphs are noise (product descriptions, SEO text). For developer sites (MDN, Python docs, Stack Overflow), paragraph content IS what the agent needs.
+
+## Mode is a static flag, not auto-detected
+
+**Decision**: Mode is set at proxy startup via `--mode act|browse`. No auto-detection from page content.
+
+**Rationale**: Auto-detection would need heuristics (paragraph density? presence of code blocks?) that could misclassify pages. A static flag is predictable and debuggable. Users know whether they're shopping or reading docs.

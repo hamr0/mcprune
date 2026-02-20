@@ -95,12 +95,16 @@ Agent types "iPhone 15" in search box
 
 ## Pruning modes
 
-| Mode | Regions kept | Use case |
-|------|-------------|----------|
-| `act` | `main` only | Shopping, forms, taking actions |
-| `browse` | `main` only | Reading content |
-| `navigate` | `main` + `banner` + `nav` + `search` | Site exploration |
-| `full` | All landmarks | Debugging, full page view |
+The mode controls **only how mcprune prunes** the snapshot. Playwright MCP executes all browser actions identically regardless of mode.
+
+| Mode | Regions kept | Pipeline | Use case |
+|------|-------------|----------|----------|
+| `act` | `main` only | All 9 steps | Shopping, forms, taking actions |
+| `browse` | `main` only | Steps 1-4 + 9 (skip e-commerce noise removal) | Docs, articles, reading content |
+| `navigate` | `main` + `banner` + `nav` + `search` | All 9 steps | Site exploration |
+| `full` | All landmarks | All 9 steps | Debugging, full page view |
+
+**Browse mode** preserves paragraphs, code blocks, term/definition pairs, inline links, all headings, and figure captions — content that `act` mode drops because agents taking actions don't need article text.
 
 ## Performance
 
@@ -110,7 +114,9 @@ Tested live via MCP proxy:
 |------|-----|--------|-----------|
 | Amazon NL search (30 products) | ~100K tokens | ~14K tokens | 85.8% |
 | Amazon NL product page | ~28K tokens | ~3.3K tokens | 88.0% |
-| Wikipedia article | ~54K tokens | ~8.6K tokens | 84.0% |
+| Wikipedia article (browse) | ~54K tokens | ~8.6K tokens | 84.0% |
+| MDN docs (browse) | ~10K tokens | ~5.5K tokens | ~43% |
+| Python docs (browse) | ~22K tokens | ~17K tokens | ~23% |
 | Amazon product (fixture) | ~1.2K tokens | ~289 tokens | 76.5% |
 
 All refs (`[ref=eN]`) are preserved. The agent can click, type, and interact with every element in the pruned output.
@@ -127,7 +133,7 @@ npx playwright install chromium
 ## Test
 
 ```bash
-npm test  # 20 tests, ~230ms
+npm test  # 121 tests
 ```
 
 ## Project structure
@@ -136,16 +142,20 @@ npm test  # 20 tests, ~230ms
 mcprune/
   mcp-server.js       MCP proxy — entry point, spawns Playwright MCP
   src/
-    prune.js           9-step pruning pipeline + summarize()
+    prune.js           9-step pruning pipeline + summarize(), mode-aware filtering
     parse.js           Playwright ariaSnapshot YAML → tree
     serialize.js       Tree → YAML, URL cleaning
     roles.js           ARIA role taxonomy (LANDMARKS, INTERACTIVE, STRUCTURAL, ...)
+    proxy-utils.js     Extracted proxy logic (snapshot detection, context, stats)
   test/
     parse.test.js      8 parser tests
     prune.test.js      12 prune + summarize tests
-    fixtures/          4 real-world page snapshots
+    proxy.test.js      24 proxy utility tests
+    edge-cases.test.js 77 edge case + browse mode + regression tests
+    fixtures/          9 real-world page snapshots (e-commerce, docs, forums, gov)
   scripts/             Dev tools for capturing live snapshots
   blueprint.md         Detailed technical documentation
+  docs/                Structured project documentation
 ```
 
 ## How the MCP proxy works

@@ -1,6 +1,6 @@
 # MCP Proxy
 
-The proxy server (`mcp-server.js`) wraps Playwright MCP as a subprocess and intercepts snapshot responses.
+The proxy server (`mcp-server.js`) wraps Playwright MCP as a subprocess and intercepts snapshot responses. The mode (`act` or `browse`) controls **only how mcprune prunes** — Playwright MCP executes all browser actions identically regardless of mode.
 
 ## Architecture
 
@@ -21,6 +21,20 @@ stdin (from LLM client)          stdout (to LLM client)
         v                                |
    Playwright MCP subprocess ----> child.stdout
 ```
+
+## How mode works
+
+The mode is set at proxy startup via `--mode act|browse|navigate|full`. It is a static flag — the proxy does not auto-detect mode from page content.
+
+```
+Agent sends:    browser_navigate("https://docs.python.org/3/tutorial/")
+Proxy:          forwards unchanged to Playwright MCP
+Playwright:     navigates browser, returns raw ariaSnapshot
+Proxy:          prune(snapshot, { mode: 'browse' })  ← mode controls pruning only
+Agent receives: pruned snapshot with stats header
+```
+
+Both `act` and `browse` modes forward the exact same tool calls to Playwright MCP. The difference is only in what gets preserved in the pruned response.
 
 ## Key behaviors
 
@@ -89,7 +103,20 @@ node mcp-server.js [--headless] [--mode act|browse|navigate|full]
   "mcpServers": {
     "browser": {
       "command": "node",
-      "args": ["/path/to/mcprune/mcp-server.js"]
+      "args": ["/path/to/mcprune/mcp-server.js", "--mode", "act"]
+    }
+  }
+}
+```
+
+For reading documentation sites, use `--mode browse`:
+
+```json
+{
+  "mcpServers": {
+    "browser": {
+      "command": "node",
+      "args": ["/path/to/mcprune/mcp-server.js", "--mode", "browse"]
     }
   }
 }

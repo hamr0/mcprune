@@ -1,6 +1,6 @@
 # Pruning Pipeline
 
-The core of mcprune: a 9-step rule-based pipeline in `src/prune.js`.
+The core of mcprune: a 9-step rule-based pipeline in `src/prune.js`. The mode (`act` or `browse`) controls which steps run and how nodes are filtered.
 
 ## Pipeline flow
 
@@ -8,13 +8,15 @@ The core of mcprune: a 9-step rule-based pipeline in `src/prune.js`.
 Raw YAML --> parse() --> [ANode tree]
                              |
                    1. extractRegions     <- keep landmarks matching mode
-                   2. pruneNode          <- drop paragraphs, images; context-match cards
+                   2. pruneNode          <- mode-aware: act drops content; browse keeps it
                    3. collapse           <- unwrap unnamed structural wrappers
-                   4. postClean          <- trim comboboxes, drop orphaned headings
-                   5. dedupLinks         <- first-occurrence dedup per product card
-                   6. dropNoiseButtons   <- energy labels, sponsored, "view options"
-                   7. truncateAfterFooter <- everything after "back to top"
-                   8. dropFilterGroups   <- sidebar refinement panels
+                   4. postClean          <- trim comboboxes; act drops orphaned headings
+                 ┌─── if act/navigate/full: ───┐
+                 │ 5. dedupLinks               │ <- e-commerce noise removal
+                 │ 6. dropNoiseButtons          │   (skipped in browse mode —
+                 │ 7. truncateAfterFooter       │    docs/articles don't have
+                 │ 8. dropFilterGroups          │    product card noise)
+                 └─────────────────────────────┘
                    9. serialize          <- back to YAML, strip URLs
                              |
                    [pruned YAML string]
@@ -22,7 +24,7 @@ Raw YAML --> parse() --> [ANode tree]
 
 ## Step details
 
-### 1. extractRegions (`prune.js:170-209`)
+### 1. extractRegions
 
 Keeps only landmark subtrees matching the mode. Three fallback paths:
 
@@ -32,20 +34,31 @@ Keeps only landmark subtrees matching the mode. Three fallback paths:
 | Has landmarks but no useful main | Treat interactive non-landmark nodes as implicit main |
 | No landmarks at all (HN-style) | Keep everything, rely on node-level pruning |
 
-### 2. pruneNode (`prune.js:239-333`)
+### 2. pruneNode — mode-aware
 
-Per-node decisions:
+Per-node decisions differ between act and browse modes:
 
-- **Always keep**: interactive elements (INTERACTIVE set)
-- **Always drop**: images, separators, complementary, superscripts
-- **Mode-dependent**: paragraphs dropped in `act` mode, kept in `browse`
-- **Context-aware**: listitems with zero keyword matches collapse to first link only
-- **Headings**: h1 always kept; h2+ dropped if they're description headers
-- **Text nodes**: kept if price, stock, shipping, or short label; dropped if long
-- **Named groups**: preserved (radiogroup "Color", etc.)
-- **Color swatches**: compressed to `kleuren(N): color1, color2, ...`
+| Content | Act mode | Browse mode |
+|---|---|---|
+| Interactive elements (INTERACTIVE set) | **Keep** | **Keep** |
+| Paragraphs | **Drop** | **Keep** (with children pruned) |
+| Code blocks | **Keep** | **Keep** |
+| Term/definition pairs | **Drop** | **Keep** |
+| Strong/emphasis | **Drop** | **Keep** |
+| Inline links (inside paragraphs) | **Drop** | **Keep** |
+| Images, separators | **Drop** | **Drop** |
+| Superscripts (footnotes) | **Drop** | **Drop** |
+| Navigation inside main | **Keep** | **Drop** (Wikipedia chrome) |
+| Complementary (sidebar TOC) | **Drop** | **Keep** |
+| Figures | **Drop** | **Caption only** (`[Figure: desc]`) |
+| Headings (h1) | **Keep** | **Keep** |
+| Headings (h2+, description-type) | **Drop** | **Keep** |
+| Text nodes | Prices, stock, short labels only | All text except decorators (`|`, `»`, `·`) |
+| Named groups | **Keep** (radiogroup "Color", etc.) | **Keep** |
+| Color swatches | Compressed to `kleuren(N): ...` | Compressed |
+| Product cards (context mismatch) | Condensed to first link | **Keep** full |
 
-### 3. collapse (`prune.js:392-413`)
+### 3. collapse
 
 Unwraps unnamed structural wrappers:
 - `generic > generic > button "Buy"` becomes `button "Buy"`
@@ -53,36 +66,26 @@ Unwraps unnamed structural wrappers:
 - Named groups are preserved
 - Multi-child structural nodes become `_promote` (children emitted at parent depth)
 
-### 4. postClean (`prune.js:420-461`)
+### 4. postClean
 
-- Combobox/listbox: keep just selected value, drop all options
-- Orphaned headings: h2+ not followed by interactive content are dropped
+| Action | Act mode | Browse mode |
+|---|---|---|
+| Trim combobox/listbox to selected value | Yes | Yes |
+| Drop orphaned headings (h2+ without interactive content after) | Yes | **No** (headings structure articles) |
 
-### 5. dedupLinks (`prune.js:534-563`)
+### 5-8. E-commerce noise removal (act/navigate/full only)
 
-Within each listitem (product card), keep only first occurrence of each link text. Amazon cards have 3+ links to the same product (image, title, rating).
+These steps are **skipped entirely in browse mode** — documentation and articles don't have product card noise.
 
-### 6. dropNoiseButtons (`prune.js:578-593`)
+**5. dedupLinks** — Within each listitem (product card), keep only first occurrence of each link text.
 
-Pattern-matched removal of:
-- Energy class labels, product info sheets
-- Sponsored ad feedback buttons
-- Generic "view options" / "see options" links
-- Footer legal links (privacy, cookies, contact)
+**6. dropNoiseButtons** — Pattern-matched removal of energy labels, sponsored feedback, "view options" links, footer legal links.
 
-### 7. truncateAfterFooter (`prune.js:617-630`)
+**7. truncateAfterFooter** — Recursive truncation at "back to top" buttons, h6 headings, "related searches" markers.
 
-Recursive truncation at footer markers:
-- "Back to top" buttons
-- h6 headings
-- "Related searches" / "Need help?" headings
-- Works even when markers are nested inside wrapper nodes
+**8. dropFilterGroups** — Removes sidebar filter panels detected by text patterns.
 
-### 8. dropFilterGroups (`prune.js:641-654`)
-
-Removes sidebar filter panels detected by text patterns like "filter to narrow", "apply filter", "refine by".
-
-### 9. serialize (`serialize.js`)
+### 9. serialize
 
 - Converts ANode tree back to Playwright YAML format
 - `_promote` nodes emit children at parent depth (flat output)

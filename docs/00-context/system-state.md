@@ -6,7 +6,7 @@
 mcprune/
   mcp-server.js           MCP proxy entry point — spawns Playwright MCP, intercepts responses
   src/
-    prune.js              9-step pruning pipeline + summarize()
+    prune.js              9-step pruning pipeline + summarize(), mode-aware filtering
     parse.js              Playwright ariaSnapshot YAML -> ANode tree
     serialize.js          ANode tree -> YAML, URL cleaning, tracking param stripping
     roles.js              ARIA role taxonomy (LANDMARKS, INTERACTIVE, GROUPS, STRUCTURAL)
@@ -15,14 +15,16 @@ mcprune/
     parse.test.js         8 parser tests
     prune.test.js         12 prune + summarize tests (Amazon product fixture)
     proxy.test.js         24 proxy utility tests
-    edge-cases.test.js    35 edge case + live fixture regression tests
-    fixtures/             4 real-world page snapshots (amazon, HN, wikipedia, gov.uk)
+    edge-cases.test.js    77 edge case + browse mode + live fixture regression tests
+    fixtures/             9 real-world page snapshots
   scripts/
     capture-live.js       Capture snapshots from 5 live sites
+    capture-dev-sites.js  Capture developer/docs site snapshots
     capture-amazon-nl.js  Interactive Amazon NL capture
     capture-batch2.js     Batch capture from 8 diverse sites
     inspect.js            Quick inspect/debug a fixture
   blueprint.md            Detailed technical documentation
+  docs/                   Structured project documentation
 ```
 
 ## Module dependency graph
@@ -58,12 +60,27 @@ src/proxy-utils.js
 
 ## Test coverage
 
-- **79 tests total**, all passing
+- **121 tests total**, all passing
 - Parser: role parsing, states, nesting, inline text, full fixture
 - Pruning: mode filtering, interactive preservation, noise removal, context filtering
 - Proxy: snapshot detection, context extraction, stats formatting
 - Edge cases: empty inputs, no-landmark pages, deep nesting, summarize edge cases
-- Regression: all 4 fixtures x 3 modes round-trip through parse(prune())
+- Browse mode: content preservation for MDN, Python docs, Stack Overflow, GitHub issue, npm
+- Regression: all 9 fixtures × 3 modes round-trip through parse(prune())
+
+## Test fixtures (9)
+
+| Fixture | Size | Type | Primary mode |
+|---|---|---|---|
+| `amazon-product.yaml` | 4.9K | E-commerce product page | act |
+| `live-gov-uk-form.yaml` | 4.6K | Government form | act |
+| `live-hackernews.yaml` | 40K | Forum/news (no landmarks) | act |
+| `live-wikipedia.yaml` | 121K | Reference/wiki | browse |
+| `live-mdn-docs.yaml` | 39K | Developer documentation | browse |
+| `live-python-docs.yaml` | 89K | Language documentation | browse |
+| `live-stackoverflow.yaml` | 67K | Q&A site | browse |
+| `live-github-issue.yaml` | 8.3K | Code repository PR page | browse |
+| `live-npm-package.yaml` | 20K | Package registry | browse |
 
 ## Performance benchmarks
 
@@ -71,7 +88,7 @@ src/proxy-utils.js
 |---|---|---|---|
 | Amazon NL search (30 products) | ~100K | ~14K | 85.8% |
 | Amazon NL product page | ~28K | ~3.3K | 88.0% |
-| Wikipedia article | ~54K | ~8.6K | 84.0% |
+| Wikipedia article (browse) | ~54K | ~8.6K | 84.0% |
 | Amazon product (fixture) | ~1.2K | ~289 | 76.5% |
 
 ## Dependencies

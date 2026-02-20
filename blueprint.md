@@ -8,7 +8,7 @@
 
 The core insight: Playwright's `ariaSnapshot` format is a YAML-like accessibility tree — the same data structure screen readers use. But raw snapshots are massive (100K-400K+ tokens for a typical e-commerce page). LLMs choke on this. mcprune applies the same filtering logic that screen readers use (landmark navigation, interactive element focus, structural collapsing) to reduce these trees by 75-95%, while preserving every actionable element, price, and ref the agent needs.
 
-**Zero ML. Pure rule-based. ~230ms for 20 tests.**
+**Zero ML. Pure rule-based. 121 tests, ~630ms.**
 
 ## Architecture
 
@@ -31,20 +31,34 @@ The core insight: Playwright's `ariaSnapshot` format is a YAML-like accessibilit
 | File | Role |
 |------|------|
 | `mcp-server.js` | MCP proxy — spawns Playwright MCP, intercepts all tool responses, applies pruning |
-| `src/prune.js` | Core pruning engine — 9-step pipeline, context-aware filtering |
+| `src/proxy-utils.js` | Extracted proxy logic — snapshot detection, context extraction, stats formatting |
+| `src/prune.js` | Core pruning engine — 9-step pipeline, mode-aware filtering |
 | `src/parse.js` | YAML parser — Playwright ariaSnapshot format → JavaScript tree |
 | `src/serialize.js` | YAML serializer — pruned tree → Playwright-compatible YAML with URL cleaning |
 | `src/roles.js` | ARIA role taxonomy — LANDMARKS, INTERACTIVE, GROUPS, STRUCTURAL sets |
 
 ### How it works end-to-end
 
+The mode (`act` or `browse`) controls only how mcprune prunes the snapshot response. Playwright MCP executes the actual browser action regardless of mode. The proxy is transparent — it forwards all tool calls unchanged and only modifies the response.
+
+```
+1. Agent sends tool call         →  mcprune proxy  →  Playwright MCP
+   (browser_click, browser_type,     (forwards         (executes action,
+    browser_navigate, etc.)           unchanged)         returns snapshot)
+
+2. Playwright returns response   →  mcprune proxy  →  Agent receives
+   with embedded ariaSnapshot        prune(snapshot,    pruned snapshot
+                                     { mode, context }) + stats header
+```
+
+Detailed steps:
 1. **Agent sends tool call** (e.g., `browser_navigate`, `browser_click`, `browser_snapshot`)
-2. **Proxy forwards** the call to Playwright MCP subprocess
+2. **Proxy forwards** the call unchanged to Playwright MCP subprocess
 3. **Playwright executes** the browser action and returns the result (which embeds an ariaSnapshot)
 4. **Proxy intercepts** the response, detects embedded snapshots via `looksLikeSnapshot()`
 5. **Proxy runs** `prune(snapshot, { mode, context })` and `summarize(snapshot)`
 6. **Proxy replaces** the raw snapshot with pruned version + stats header
-7. **Agent receives** a compact, actionable page representation with all refs intact
+7. **Agent receives** a compact representation with all `[ref=eN]` markers intact — it can click, type, and interact exactly as before
 
 ### Context tracking
 
@@ -54,46 +68,67 @@ The proxy monitors agent actions to build search context:
 - `browser_navigate` URL → query params extracted (`?q=`, `?k=`, `?query=`, `?search_query=`)
 - Keywords are passed to `prune()` for relevance-based card filtering
 
-## The 9-Step Pruning Pipeline
+## The Pruning Pipeline
 
 ```
 Raw YAML ──► parse() ──► [ANode tree]
                               │
                     1. extractRegions     ← keep landmarks matching mode (act=main only)
-                    2. pruneNode          ← drop paragraphs, images, desc headings; context-match cards
-                    3. collapse           ← unwrap unnamed structural wrappers (generic > generic > button → button)
-                    4. postClean          ← trim combobox options, drop orphaned headings
-                    5. dedupLinks         ← first-occurrence dedup per product card
-                    6. dropNoiseButtons   ← energy labels, product sheets, sponsored, "view options"
-                    7. truncateAfterFooter ← recursive: everything after "back to top" is noise
-                    8. dropFilterGroups   ← sidebar refinement panels
-                    9. serialize          ← back to YAML, strip URLs, clean tracking params
+                    2. pruneNode          ← mode-aware: act drops paragraphs; browse keeps them
+                    3. collapse           ← unwrap unnamed structural wrappers
+                    4. postClean          ← trim comboboxes; act drops orphaned headings
+                  ┌─── if act/navigate/full: ───┐
+                  │ 5. dedupLinks               │ ← e-commerce noise removal
+                  │ 6. dropNoiseButtons          │   (skipped in browse mode —
+                  │ 7. truncateAfterFooter       │    docs/articles don't have
+                  │ 8. dropFilterGroups          │    product card noise)
+                  └─────────────────────────────┘
+                    9. serialize          ← back to YAML, strip URLs
                               │
                     [pruned YAML string]
 ```
 
 ### Step details
 
-| Step | What it does | Why |
-|------|-------------|-----|
-| **1. extractRegions** | Keeps only landmarks matching the mode (act → `main` only; navigate → `main` + `banner` + `nav` + `search`). If no `main` exists, falls back to interactive content outside landmarks. | Pages without landmarks (HN) get everything; pages with landmarks get surgical extraction |
-| **2. pruneNode** | Drops paragraphs, images, separators, superscripts, description headings. Keeps all interactive elements, prices, stock text, short labels. Context-aware: product cards with zero keyword matches collapse to title-only. Color swatch groups compress to `kleuren(5): Black, Blue, ...` | This is the core value — 50-60% reduction happens here |
-| **3. collapse** | Unwraps unnamed structural wrappers. `generic > generic > button "Buy"` becomes `button "Buy"`. Table layout roles (row, cell) always collapse. | Playwright's tree is deeply nested — agents don't need wrapper hierarchy |
-| **4. postClean** | Trims combobox/listbox children to just selected value. Drops headings not followed by interactive content. | A combobox with 50 options → just the combobox name + current value |
-| **5. dedupLinks** | Within each product card (listitem), keeps only first occurrence of each link text. | Amazon product cards have 3+ links to the same product (image, title, rating) |
-| **6. dropNoiseButtons** | Removes energy class labels, product information sheets, sponsored ad feedback, "view options" links, footer legal links. | These appear 10-30x per search page and add zero agent value |
-| **7. truncateAfterFooter** | Recursively truncates at "back to top" buttons, h6 headings, "related searches" headings. Works even when footer is nested inside wrapper nodes. | Everything after the footer is corporate links, legal text, subsidiaries |
-| **8. dropFilterGroups** | Removes sidebar filter panels detected by text patterns. | Filter groups on Amazon NL are 20+ collapsible sections — massive bloat |
-| **9. serialize** | Converts tree back to Playwright YAML. Strips `/url` properties (agents click by ref). Cleans tracking params from any remaining URLs. Truncates long URLs. | URLs were 62% of pre-strip output. Tracking params add nothing. |
+| Step | Act mode | Browse mode |
+|------|----------|-------------|
+| **1. extractRegions** | Keep `main` only (navigate adds banner/nav/search) | Keep `main` only |
+| **2. pruneNode** | Drop paragraphs, images, separators, superscripts, description headings. Keep interactive elements, prices, short labels. Context-match product cards. | Keep paragraphs, code blocks, term/definition pairs, inline links, strong/emphasis. Keep all headings. Drop superscripts, navigation inside main. Convert figures to `[Figure: caption]`. |
+| **3. collapse** | Unwrap unnamed structural wrappers, collapse table layout roles | Same |
+| **4. postClean** | Trim comboboxes. Drop orphaned headings (h2+ not followed by interactive content). | Trim comboboxes. Keep all headings (they structure the article). |
+| **5. dedupLinks** | First-occurrence dedup per product card | **Skipped** |
+| **6. dropNoiseButtons** | Remove energy labels, product sheets, sponsored, "view options" | **Skipped** |
+| **7. truncateAfterFooter** | Recursive truncation at "back to top" | **Skipped** |
+| **8. dropFilterGroups** | Remove sidebar filter panels | **Skipped** |
+| **9. serialize** | Back to YAML, strip URLs, clean tracking params | Same |
+
+### What browse mode preserves that act mode drops
+
+| Content type | Act mode | Browse mode | Why |
+|---|---|---|---|
+| Paragraphs | Dropped | **Kept** | Article text IS the content |
+| Inline links (inside paragraphs) | Dropped | **Kept** | Reference links in docs |
+| Long text (>30 chars) | Dropped | **Kept** | Documentation, code examples |
+| Text-only lists | Dropped | **Kept** | Instructions, bullet points |
+| Description/Specification headings | Dropped | **Kept** | Section structure |
+| Orphaned headings (no interactive after) | Dropped | **Kept** | Headings structure articles |
+| Code blocks | Kept | **Kept** | — |
+| Term/definition pairs | Dropped | **Kept** | API docs, parameter tables |
+| Complementary (sidebar TOC) | Dropped | **Kept** | "In this article" navigation |
+| Figures | Dropped | **Caption only** | `[Figure: description]` |
+| Superscripts (footnotes) | Dropped | **Dropped** | Citation noise `[1]` `[2]` |
+| Navigation inside main | Kept | **Dropped** | Wikipedia "Namespaces", "Views" chrome |
 
 ## Pruning Modes
 
-| Mode | Regions kept | Use case |
-|------|-------------|----------|
-| `act` | `main` only | E-commerce, forms — agent needs to take actions |
-| `browse` | `main` only | Reading content — same regions, less aggressive text dropping |
-| `navigate` | `main`, `banner`, `navigation`, `search` | Site exploration — agent needs nav links and search |
-| `full` | All landmarks | Debugging, full page understanding |
+| Mode | Regions kept | Pipeline steps | Use case |
+|------|-------------|----------------|----------|
+| `act` | `main` only | All 9 steps | E-commerce, forms — agent takes actions |
+| `browse` | `main` only | Steps 1-4 + 9 (skip 5-8) | Docs, articles — agent reads content |
+| `navigate` | `main` + `banner` + `nav` + `search` | All 9 steps | Site exploration — agent needs nav links |
+| `full` | All landmarks | All 9 steps | Debugging, full page view |
+
+The mode is set at proxy startup (`--mode act|browse`) and controls only how mcprune prunes. Playwright MCP executes all browser actions identically regardless of mode.
 
 ## ARIA Role Taxonomy
 
@@ -141,13 +176,14 @@ The summary line (generated by `summarize()`) gives the agent a quick overview: 
 
 ## Test Results
 
-### Unit tests: 20/20 passing
+### Unit tests: 121/121 passing
 
-| Suite | Tests | Coverage |
-|-------|-------|----------|
-| **parse** | 8 | Button with ref, states, text nodes, properties, nesting, inline text, landmarks, full Amazon fixture |
-| **prune** | 11 | Act mode drops (banner, footer, nav, images, descriptions, complementary, reviews, gallery buttons), act mode keeps (interactive, radiogroups, prices), navigate mode, token reduction assertion |
-| **summarize** | 1 | One-line summary format validation |
+| Suite | File | Tests | Coverage |
+|-------|------|-------|----------|
+| **parse** | `test/parse.test.js` | 8 | Button with ref, states, text nodes, properties, nesting, inline text, landmarks, full Amazon fixture |
+| **prune** | `test/prune.test.js` | 12 | Act mode drops (banner, footer, nav, images, descriptions, complementary, reviews, gallery), act mode keeps (interactive, radiogroups, prices), navigate mode, token reduction |
+| **proxy** | `test/proxy.test.js` | 24 | Snapshot detection (true/false cases), context extraction (type, navigate, URL params, edge cases), processSnapshot formatting and passthrough |
+| **edge-cases** | `test/edge-cases.test.js` | 77 | Empty/minimal inputs, no-landmark pages (HN, Wikipedia), structural collapse, context-aware pruning, summarize edge cases, browse mode content preservation (MDN, Python docs, Stack Overflow, GitHub issue, npm), round-trip parse safety (9 fixtures × 3 modes) |
 
 ### Token reduction benchmark (Amazon product fixture)
 
@@ -167,34 +203,38 @@ Reduction: 76.5%
 
 ### What the agent can do with pruned output
 
-The pruned snapshot preserves:
+**Act mode** — the pruned snapshot preserves:
 - All `[ref=eN]` markers for clicking/typing
 - All interactive elements (buttons, links, textboxes, comboboxes)
 - Product titles, prices, ratings, stock status
 - Page structure (headings, lists of results)
 - Form state (selected options, checked boxes)
 
-The agent can: navigate, search, click products, add to cart, fill forms, compare products — all from the pruned snapshot.
+The agent can: navigate, search, click products, add to cart, fill forms, compare products.
 
-## Test Fixtures (15 sites)
+**Browse mode** — additionally preserves:
+- Paragraphs, article text, documentation content
+- Code blocks, term/definition pairs
+- Inline links within paragraphs (reference links in docs)
+- All headings (structure articles and docs)
+- Complementary sidebars (table of contents)
+- Figure captions
 
-| Fixture | Size | Type |
-|---------|------|------|
-| `amazon-product.yaml` | 4.9K | E-commerce product page |
-| `live-amazon-nl-search.yaml` | 422K | E-commerce search results |
-| `live-amazon-nl-product.yaml` | 65K | E-commerce product page (NL) |
-| `live-airbnb.yaml` | 21K | Travel/SPA |
-| `live-allbirds.yaml` | 27K | Shopify e-commerce |
-| `live-bbc-news.yaml` | 38K | News site |
-| `live-booking-search.yaml` | 2.9K | Travel booking |
-| `live-craigslist.yaml` | 1.4K | Classifieds |
-| `live-github-repo.yaml` | 23K | Code repository |
-| `live-google-search.yaml` | 437B | Search engine |
-| `live-gov-uk-form.yaml` | 4.6K | Government form |
-| `live-gov-uk.yaml` | 7.9K | Government info |
-| `live-hackernews.yaml` | 40K | Forum/news |
-| `live-todomvc.yaml` | 2.0K | SPA |
-| `live-wikipedia.yaml` | 121K | Reference/wiki |
+The agent can: read documentation, follow reference links, understand API parameters.
+
+## Test Fixtures (9 in repo)
+
+| Fixture | Size | Type | Primary mode |
+|---------|------|------|-------------|
+| `amazon-product.yaml` | 4.9K | E-commerce product page | act |
+| `live-gov-uk-form.yaml` | 4.6K | Government form | act |
+| `live-hackernews.yaml` | 40K | Forum/news (no landmarks) | act |
+| `live-wikipedia.yaml` | 121K | Reference/wiki | browse |
+| `live-mdn-docs.yaml` | 39K | Developer documentation | browse |
+| `live-python-docs.yaml` | 89K | Language documentation | browse |
+| `live-stackoverflow.yaml` | 67K | Q&A site | browse |
+| `live-github-issue.yaml` | 8.3K | Code repository PR page | browse |
+| `live-npm-package.yaml` | 20K | Package registry | browse |
 
 ## Usage
 
@@ -236,10 +276,11 @@ Options:
 ### Running tests
 
 ```bash
-npm test                          # 20 unit tests
-node test/capture-live.js         # capture snapshots from 5 live sites
-node test/capture-amazon-nl.js    # interactive Amazon NL test
-node test/capture-batch2.js       # batch capture from 8 diverse sites
+npm test                          # 121 unit tests
+node scripts/capture-live.js      # capture snapshots from 5 live sites
+node scripts/capture-dev-sites.js # capture developer/docs site snapshots
+node scripts/capture-amazon-nl.js # interactive Amazon NL test
+node scripts/capture-batch2.js    # batch capture from 8 diverse sites
 ```
 
 ## Design Decisions
