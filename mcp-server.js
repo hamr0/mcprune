@@ -15,6 +15,7 @@
 import { spawn } from 'node:child_process';
 import { resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { looksLikeSnapshot, extractContext, processSnapshot } from './src/proxy-utils.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
@@ -80,18 +81,10 @@ process.stdin.on('data', (chunk) => {
         pendingSnapshots.add(msg.id);
 
         // Track context from user actions for relevance pruning
-        const params = msg.params;
-        if (params?.name === 'browser_type' && params?.arguments?.text) {
-          lastContext = params.arguments.text;
+        const ctx = extractContext(msg);
+        if (ctx) {
+          lastContext = ctx;
           process.stderr.write(`[mcprune] Context updated: "${lastContext}"\n`);
-        }
-        if (params?.name === 'browser_navigate' && params?.arguments?.url) {
-          // Extract search query from URL if present
-          try {
-            const u = new URL(params.arguments.url, 'https://placeholder.local');
-            const q = u.searchParams.get('q') || u.searchParams.get('k') || u.searchParams.get('query') || u.searchParams.get('search_query') || '';
-            if (q) { lastContext = q; process.stderr.write(`[mcprune] Context from URL: "${lastContext}"\n`); }
-          } catch {}
         }
       }
       // Forward to child as-is
@@ -126,19 +119,9 @@ child.stdout.on('data', (chunk) => {
             if (item.type === 'text' && item.text && looksLikeSnapshot(item.text)) {
               await loadPrune();
               const raw = item.text;
-              const pruned = prune(raw, { mode: pruneMode, context: lastContext });
-              const summary = summarize(raw);
+              item.text = processSnapshot(raw, { prune, summarize, mode: pruneMode, context: lastContext });
 
-              const rawTokens = Math.round(raw.length / 4);
-              const prunedTokens = Math.round(pruned.length / 4);
-              const reduction = ((1 - pruned.length / raw.length) * 100).toFixed(1);
-
-              // Replace the snapshot text with pruned version + summary header
-              item.text = `[mcprune: ${reduction}% reduction, ~${rawTokens} → ~${prunedTokens} tokens | ${summary}]\n\n${pruned}`;
-
-              process.stderr.write(
-                `[mcprune] Snapshot pruned: ${raw.length} → ${pruned.length} chars (${reduction}%) | ${summary}\n`
-              );
+              process.stderr.write(`[mcprune] Snapshot pruned\n`);
             }
           }
         }
@@ -151,14 +134,6 @@ child.stdout.on('data', (chunk) => {
     }
   });
 });
-
-/**
- * Check if a text block looks like a Playwright ariaSnapshot.
- */
-function looksLikeSnapshot(text) {
-  // Playwright snapshots start with "- role" lines
-  return /^- (banner|main|navigation|contentinfo|complementary|region|generic|heading|WebArea|link|button|search|dialog|form|textbox|list|listitem|img|text|table|row|rowgroup|cell)/m.test(text);
-}
 
 /**
  * Process complete newline-delimited lines from a buffer.
