@@ -16,6 +16,21 @@ const govYaml = readFileSync(
 const amazonYaml = readFileSync(
   new URL('./fixtures/amazon-product.yaml', import.meta.url), 'utf8'
 );
+const mdnYaml = readFileSync(
+  new URL('./fixtures/live-mdn-docs.yaml', import.meta.url), 'utf8'
+);
+const pythonYaml = readFileSync(
+  new URL('./fixtures/live-python-docs.yaml', import.meta.url), 'utf8'
+);
+const soYaml = readFileSync(
+  new URL('./fixtures/live-stackoverflow.yaml', import.meta.url), 'utf8'
+);
+const ghIssueYaml = readFileSync(
+  new URL('./fixtures/live-github-issue.yaml', import.meta.url), 'utf8'
+);
+const npmYaml = readFileSync(
+  new URL('./fixtures/live-npm-package.yaml', import.meta.url), 'utf8'
+);
 
 // --- Empty / minimal inputs ---
 
@@ -242,6 +257,251 @@ describe('live fixture regressions', () => {
   });
 });
 
+// --- Browse mode: developer/research sites ---
+
+describe('browse mode: MDN docs', () => {
+  it('keeps paragraphs with article text', () => {
+    const result = prune(mdnYaml, { mode: 'browse' });
+    assert.ok(result.includes('paragraph'), 'should keep paragraph nodes');
+  });
+
+  it('keeps code blocks', () => {
+    const result = prune(mdnYaml, { mode: 'browse' });
+    assert.ok(result.includes('code'), 'should keep code elements');
+  });
+
+  it('keeps section headings (Description, Syntax, etc.)', () => {
+    const result = prune(mdnYaml, { mode: 'browse' });
+    assert.ok(result.includes('heading'), 'should keep headings');
+    // Description heading should survive in browse mode (dropped in act)
+    const hasDescOrSyntax = result.includes('Syntax') || result.includes('Description')
+      || result.includes('Parameters') || result.includes('Return value');
+    assert.ok(hasDescOrSyntax, 'should keep doc section headings');
+  });
+
+  it('keeps inline links within paragraphs', () => {
+    const result = prune(mdnYaml, { mode: 'browse' });
+    // MDN has links like "Array" inside paragraph text
+    assert.ok(result.includes('link "Array"') || result.includes('link "iterative method"'),
+      'should keep inline reference links');
+  });
+
+  it('drops banner/nav chrome', () => {
+    const result = prune(mdnYaml, { mode: 'browse' });
+    assert.ok(!result.includes('button "HTML"'), 'should drop nav buttons');
+    assert.ok(!result.includes('button "CSS"'), 'should drop nav buttons');
+  });
+
+  it('achieves meaningful reduction while preserving content', () => {
+    const result = prune(mdnYaml, { mode: 'browse' });
+    const reduction = 1 - result.length / mdnYaml.length;
+    assert.ok(reduction > 0.5, `MDN browse should reduce >50%, got ${(reduction * 100).toFixed(1)}%`);
+  });
+});
+
+describe('browse mode: Python docs', () => {
+  it('keeps article paragraphs', () => {
+    const result = prune(pythonYaml, { mode: 'browse' });
+    assert.ok(result.includes('paragraph'), 'should keep paragraphs');
+    assert.ok(result.includes('coroutine') || result.includes('asyncio'),
+      'should keep Python docs content');
+  });
+
+  it('keeps code examples as text', () => {
+    const result = prune(pythonYaml, { mode: 'browse' });
+    // Python docs have code as text nodes: ">>> import asyncio"
+    assert.ok(result.includes('import asyncio') || result.includes('async def'),
+      'should keep code examples');
+  });
+
+  it('keeps term/definition pairs (API docs)', () => {
+    const result = prune(pythonYaml, { mode: 'browse' });
+    assert.ok(result.includes('term') || result.includes('definition'),
+      'should keep term/definition pairs');
+  });
+
+  it('keeps all section headings', () => {
+    const result = prune(pythonYaml, { mode: 'browse' });
+    assert.ok(result.includes('heading "Coroutines and Tasks"'), 'should keep h1');
+    assert.ok(result.includes('heading "Coroutines"') || result.includes('heading "Awaitables"'),
+      'should keep h2 section headings');
+  });
+
+  it('drops navigation chrome outside main', () => {
+    const result = prune(pythonYaml, { mode: 'browse' });
+    // Python docs have a "Related" navigation with index/modules/next/previous links
+    assert.ok(!result.includes('navigation "Related"'), 'should drop top nav');
+  });
+});
+
+describe('browse mode: Stack Overflow', () => {
+  it('keeps question and answer text', () => {
+    const result = prune(soYaml, { mode: 'browse' });
+    assert.ok(result.includes('paragraph'), 'should keep answer paragraphs');
+  });
+
+  it('keeps links within answers', () => {
+    const result = prune(soYaml, { mode: 'browse' });
+    assert.ok(result.includes('link'), 'should keep reference links');
+  });
+
+  it('achieves meaningful reduction', () => {
+    const result = prune(soYaml, { mode: 'browse' });
+    const reduction = 1 - result.length / soYaml.length;
+    assert.ok(reduction > 0.5, `SO browse should reduce >50%, got ${(reduction * 100).toFixed(1)}%`);
+  });
+});
+
+describe('browse mode: GitHub issue', () => {
+  it('keeps issue/comment content', () => {
+    const result = prune(ghIssueYaml, { mode: 'browse' });
+    assert.ok(result.includes('paragraph') || result.includes('text'),
+      'should keep issue body text');
+  });
+
+  it('achieves meaningful reduction', () => {
+    const result = prune(ghIssueYaml, { mode: 'browse' });
+    const reduction = 1 - result.length / ghIssueYaml.length;
+    assert.ok(reduction > 0.5, `GitHub issue browse should reduce >50%, got ${(reduction * 100).toFixed(1)}%`);
+  });
+});
+
+describe('browse mode: npm package', () => {
+  it('keeps package description content', () => {
+    const result = prune(npmYaml, { mode: 'browse' });
+    assert.ok(result.includes('link') || result.includes('text'),
+      'should keep package info');
+  });
+
+  it('achieves meaningful reduction', () => {
+    const result = prune(npmYaml, { mode: 'browse' });
+    const reduction = 1 - result.length / npmYaml.length;
+    assert.ok(reduction > 0.4, `npm browse should reduce >40%, got ${(reduction * 100).toFixed(1)}%`);
+  });
+});
+
+describe('browse mode: content preservation unit tests', () => {
+  it('keeps paragraphs in browse, drops in act', () => {
+    const yaml = '- main:\n  - paragraph:\n    - text: This is important documentation text.';
+    const browse = prune(yaml, { mode: 'browse' });
+    const act = prune(yaml, { mode: 'act' });
+    assert.ok(browse.includes('important documentation'), 'browse should keep paragraph text');
+    assert.ok(!act.includes('important documentation'), 'act should drop paragraph');
+  });
+
+  it('keeps long text nodes in browse, drops in act', () => {
+    const yaml = '- main:\n  - text: This is a long description that explains how the algorithm works in detail and spans many words.';
+    const browse = prune(yaml, { mode: 'browse' });
+    const act = prune(yaml, { mode: 'act' });
+    assert.ok(browse.includes('algorithm works'), 'browse should keep long text');
+    assert.ok(!act.includes('algorithm works'), 'act should drop long text');
+  });
+
+  it('keeps text-only lists in browse, drops in act', () => {
+    const yaml = [
+      '- main:',
+      '  - list:',
+      '    - listitem:',
+      '      - text: Step one: configure the server',
+      '    - listitem:',
+      '      - text: Step two: run the tests',
+    ].join('\n');
+    const browse = prune(yaml, { mode: 'browse' });
+    const act = prune(yaml, { mode: 'act' });
+    assert.ok(browse.includes('configure the server'), 'browse should keep text list items');
+    assert.ok(!act.includes('configure the server'), 'act should drop text-only lists');
+  });
+
+  it('keeps all headings in browse, drops description headings in act', () => {
+    const yaml = [
+      '- main:',
+      '  - heading "Title" [level=1]',
+      '  - heading "Description" [level=2]',
+      '  - heading "Specification" [level=2]',
+      '  - button "Action" [ref=e1]',
+    ].join('\n');
+    const browse = prune(yaml, { mode: 'browse' });
+    const act = prune(yaml, { mode: 'act' });
+    assert.ok(browse.includes('Description'), 'browse should keep Description heading');
+    assert.ok(browse.includes('Specification'), 'browse should keep Specification heading');
+    assert.ok(!act.includes('heading "Description"'), 'act should drop Description heading');
+  });
+
+  it('drops navigation inside main in browse mode', () => {
+    const yaml = [
+      '- main:',
+      '  - navigation "Page tools":',
+      '    - button "Tools"',
+      '  - heading "Article" [level=1]',
+      '  - paragraph: The article content.',
+    ].join('\n');
+    const result = prune(yaml, { mode: 'browse' });
+    assert.ok(!result.includes('Page tools'), 'browse should drop nav inside main');
+    assert.ok(result.includes('Article'), 'browse should keep article heading');
+    assert.ok(result.includes('article content'), 'browse should keep article text');
+  });
+
+  it('drops superscripts (footnotes) in browse mode', () => {
+    const yaml = [
+      '- main:',
+      '  - paragraph:',
+      '    - text: Some fact.',
+      '    - superscript:',
+      '      - link "[1]"',
+    ].join('\n');
+    const result = prune(yaml, { mode: 'browse' });
+    assert.ok(!result.includes('superscript'), 'browse should drop footnote markers');
+    assert.ok(result.includes('Some fact'), 'browse should keep the text');
+  });
+
+  it('keeps complementary (sidebar) in browse, drops in act', () => {
+    const yaml = [
+      '- main:',
+      '  - heading "Array.map()" [level=1]',
+      '  - complementary:',
+      '    - heading "In this article" [level=2]',
+      '    - link "Syntax"',
+      '    - link "Examples"',
+    ].join('\n');
+    const browse = prune(yaml, { mode: 'browse' });
+    const act = prune(yaml, { mode: 'act' });
+    assert.ok(browse.includes('In this article'), 'browse should keep sidebar TOC');
+    assert.ok(!act.includes('In this article'), 'act should drop complementary');
+  });
+
+  it('converts figures to caption text in browse mode', () => {
+    const yaml = [
+      '- main:',
+      '  - figure "Elevator buttons with Braille":',
+      '    - link "Photo of buttons":',
+      '      - img "Photo of buttons"',
+      '    - text: Elevator buttons with Braille',
+    ].join('\n');
+    const result = prune(yaml, { mode: 'browse' });
+    assert.ok(result.includes('[Figure: Elevator buttons with Braille]'),
+      'browse should convert figure to caption text');
+    assert.ok(!result.includes('img'), 'browse should drop image inside figure');
+  });
+
+  it('skips steps 5-8 (dedup, noise, footer, filters) in browse mode', () => {
+    const yaml = [
+      '- main:',
+      '  - link "Product" [ref=e1]',
+      '  - link "Product" [ref=e2]',
+      '  - button "back to top"',
+      '  - link "After footer" [ref=e3]',
+    ].join('\n');
+    const browse = prune(yaml, { mode: 'browse' });
+    const act = prune(yaml, { mode: 'act' });
+    // Browse keeps duplicate links and content after "back to top"
+    assert.ok(browse.includes('ref=e2'), 'browse should keep duplicate links');
+    assert.ok(browse.includes('After footer'), 'browse should keep content after footer marker');
+    // Act dedup and truncates
+    assert.ok(!act.includes('ref=e2'), 'act should dedup links');
+    assert.ok(!act.includes('After footer'), 'act should truncate after footer');
+  });
+});
+
 // --- Round-trip: parse(prune(fixture)) should not throw ---
 
 describe('round-trip parse safety', () => {
@@ -250,6 +510,11 @@ describe('round-trip parse safety', () => {
     ['live-hackernews', hnYaml],
     ['live-wikipedia', wikiYaml],
     ['live-gov-uk-form', govYaml],
+    ['live-mdn-docs', mdnYaml],
+    ['live-python-docs', pythonYaml],
+    ['live-stackoverflow', soYaml],
+    ['live-github-issue', ghIssueYaml],
+    ['live-npm-package', npmYaml],
   ];
 
   for (const [name, yaml] of fixtures) {

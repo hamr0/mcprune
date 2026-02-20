@@ -1,0 +1,256 @@
+- region
+- link "Skip to content":
+  - /url: "#start-of-content"
+- banner:
+  - heading "Navigation Menu" [level=2]
+  - link "Homepage":
+    - /url: /
+  - navigation "Global":
+    - list:
+      - listitem:
+        - button "Platform"
+      - listitem:
+        - button "Solutions"
+      - listitem:
+        - button "Resources"
+      - listitem:
+        - button "Open Source"
+      - listitem:
+        - button "Enterprise"
+      - listitem:
+        - link "Pricing":
+          - /url: https://github.com/pricing
+  - button "Search or jump to…"
+  - link "Sign in":
+    - /url: /login?return_to=https%3A%2F%2Fgithub.com%2Fmicrosoft%2Fplaywright%2Fpull%2F35498
+  - link "Sign up":
+    - /url: /signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E%2Fvoltron%2Fpull_requests_fragments%2Fpull_request_layout&source=header-repo&source_repo=microsoft%2Fplaywright
+  - button "Appearance settings"
+- main:
+  - link "microsoft":
+    - /url: /microsoft
+  - text: /
+  - strong:
+    - link "playwright":
+      - /url: /microsoft/playwright
+  - text: Public
+  - list:
+    - listitem:
+      - link "You must be signed in to change notification settings":
+        - /url: /login?return_to=%2Fmicrosoft%2Fplaywright
+        - text: Notifications
+    - listitem:
+      - link "Fork 5.2k":
+        - /url: /login?return_to=%2Fmicrosoft%2Fplaywright
+    - listitem:
+      - link "You must be signed in to star a repository":
+        - /url: /login?return_to=%2Fmicrosoft%2Fplaywright
+        - text: Star 82.8k
+  - navigation "Repository":
+    - list:
+      - listitem:
+        - link "Code":
+          - /url: /microsoft/playwright
+      - listitem:
+        - link "Issues 591":
+          - /url: /microsoft/playwright/issues
+      - listitem:
+        - link "Pull requests 31":
+          - /url: /microsoft/playwright/pulls
+      - listitem:
+        - link "Actions":
+          - /url: /microsoft/playwright/actions
+      - listitem:
+        - link "Models":
+          - /url: /microsoft/playwright/models
+      - listitem:
+        - link "Security":
+          - /url: /microsoft/playwright/security
+      - listitem:
+        - link "Insights":
+          - /url: /microsoft/playwright/pulse
+  - 'heading "test: enable some getSelection tests in WebKit #35498" [level=1]'
+  - img "Pull request"
+  - text: Merged
+  - link "yury-s":
+    - /url: /yury-s
+  - text: merged 1 commit into
+  - link "microsoft:main":
+    - /url: /microsoft/playwright/tree/main
+  - text: from
+  - link "yury-s:wk-getSelection":
+    - /url: /yury-s/playwright/tree/wk-getSelection
+  - button "Copy head branch name to clipboard"
+  - text: "Apr 4, 2025on Apr 4, 2025 Lines changed: 4 additions & 4 deletions"
+  - navigation "Pull request navigation tabs":
+    - tablist:
+      - tab "Conversation (0)" [selected]
+      - tab "Commits (1)"
+      - tab "Checks (29)"
+      - tab "Files changed (3)"
+  - heading "Conversation" [level=2]
+  - link "@yury-s":
+    - /url: /yury-s
+    - img "@yury-s"
+  - group:
+    - button "Show options":
+      - img "Show options"
+  - text: Member
+  - heading "yury-s commented Apr 4, 2025on Apr 4, 2025" [level=3]:
+    - strong:
+      - link "yury-s":
+        - /url: /yury-s
+    - text: commented
+    - link "Apr 4, 2025on Apr 4, 2025":
+      - /url: "#issue-2972976428"
+  - paragraph: They seem to be passing now.
+  - link "@yury-s":
+    - /url: /yury-s
+    - img "@yury-s"
+  - code:
+    - 'link "test: enable some getSelection tests in WebKit"':
+      - /url: /microsoft/playwright/pull/35498/commits/e6368b969822785959704922b07027daf8fece00
+  - group:
+    - img "29 / 29 checks OK"
+  - code:
+    - link "e6368b9":
+      - /url: /microsoft/playwright/pull/35498/commits/e6368b969822785959704922b07027daf8fece00
+  - link "@yury-s":
+    - /url: /yury-s
+    - img "@yury-s"
+  - link "yury-s":
+    - /url: /yury-s
+  - text: mentioned this pull request
+  - link "Apr 4, 2025on Apr 4, 2025":
+    - /url: "#ref-pullrequest-2931667854"
+  - 'link "Remove special handling for getSelection() with Firefox from tests #35271"':
+    - /url: /microsoft/playwright/pull/35271
+  - text: Merged
+  - link "mxschmitt":
+    - /url: /mxschmitt
+    - img "mxschmitt"
+  - strong:
+    - link "mxschmitt":
+      - /url: /mxschmitt
+  - text: approved these changes
+  - link "Apr 4, 2025on Apr 4, 2025":
+    - /url: "#pullrequestreview-2743780559"
+  - link "View reviewed changes":
+    - /url: /microsoft/playwright/pull/35498/files/e6368b969822785959704922b07027daf8fece00
+  - link "dgozman":
+    - /url: /dgozman
+    - img "dgozman"
+  - strong:
+    - link "dgozman":
+      - /url: /dgozman
+  - text: approved these changes
+  - link "Apr 4, 2025on Apr 4, 2025":
+    - /url: "#pullrequestreview-2743791653"
+  - link "View reviewed changes":
+    - /url: /microsoft/playwright/pull/35498/files/e6368b969822785959704922b07027daf8fece00
+  - button "View details"
+  - link "@yury-s":
+    - /url: /yury-s
+    - img "@yury-s"
+  - link "yury-s":
+    - /url: /yury-s
+  - text: merged commit
+  - link "96f8b17":
+    - /url: /microsoft/playwright/commit/96f8b170180a91daee52bb10a3bf6b25fd2e896f
+    - code: 96f8b17
+  - text: into microsoft:main
+  - link "Apr 4, 2025on Apr 4, 2025":
+    - /url: https://github.com/microsoft/playwright/pull/35498#event-17134917556
+  - text: 29 checks passed
+  - link "@yury-s":
+    - /url: /yury-s
+    - img "@yury-s"
+  - link "yury-s":
+    - /url: /yury-s
+  - text: deleted the wk-getSelection branch
+  - link "April 4, 2025 19:2611 months ago":
+    - /url: "#event-17134917741"
+  - link "Sign up for free":
+    - /url: /join?source=comment-repo
+  - strong: to join this conversation on GitHub
+  - text: . Already have an account?
+  - link "Sign in to comment":
+    - /url: /login?return_to=https%3A%2F%2Fgithub.com%2Fmicrosoft%2Fplaywright%2Fpull%2F35498
+  - form "Select reviewers":
+    - heading "Reviewers" [level=3]
+    - paragraph:
+      - link "@dgozman":
+        - /url: /dgozman
+        - img "@dgozman"
+      - link "dgozman":
+        - /url: /dgozman
+      - link "dgozman approved these changes":
+        - /url: /microsoft/playwright/pull/35498/files/e6368b969822785959704922b07027daf8fece00
+    - group:
+      - text: +1 more reviewer
+      - paragraph:
+        - link "@mxschmitt":
+          - /url: /mxschmitt
+          - img "@mxschmitt"
+        - link "mxschmitt":
+          - /url: /mxschmitt
+        - link "mxschmitt approved these changes":
+          - /url: /microsoft/playwright/pull/35498/files/e6368b969822785959704922b07027daf8fece00
+  - form "Select assignees":
+    - heading "Assignees" [level=3]
+    - text: No one assigned
+  - heading "Labels" [level=3]
+  - text: None yet
+  - form "Select projects":
+    - heading "Projects" [level=3]
+    - text: None yet
+  - form "Select milestones":
+    - heading "Milestone" [level=3]
+    - text: No milestone
+  - form "Link issues":
+    - heading "Development" [level=3]
+    - paragraph: Successfully merging this pull request may close these issues.
+    - paragraph: None yet
+  - heading "3 participants" [level=3]
+  - link "@yury-s":
+    - /url: /yury-s
+    - img "@yury-s"
+  - link "@dgozman":
+    - /url: /dgozman
+    - img "@dgozman"
+  - link "@mxschmitt":
+    - /url: /mxschmitt
+    - img "@mxschmitt"
+- contentinfo:
+  - heading "Footer" [level=2]
+  - link "GitHub Homepage":
+    - /url: https://github.com
+  - text: © 2026 GitHub, Inc.
+  - navigation "Footer":
+    - heading "Footer navigation" [level=3]
+    - list "Footer navigation":
+      - listitem:
+        - link "Terms":
+          - /url: https://docs.github.com/site-policy/github-terms/github-terms-of-service
+      - listitem:
+        - link "Privacy":
+          - /url: https://docs.github.com/site-policy/privacy-policies/github-privacy-statement
+      - listitem:
+        - link "Security":
+          - /url: https://github.com/security
+      - listitem:
+        - link "Status":
+          - /url: https://www.githubstatus.com/
+      - listitem:
+        - link "Community":
+          - /url: https://github.community/
+      - listitem:
+        - link "Docs":
+          - /url: https://docs.github.com/
+      - listitem:
+        - link "Contact":
+          - /url: https://support.github.com?tags=dotcom-footer
+      - listitem:
+        - button "Manage cookies"
+      - listitem:
+        - button "Do not share my personal information"

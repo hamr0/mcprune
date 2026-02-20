@@ -1,0 +1,1415 @@
+- banner:
+  - link "Skip to main content":
+    - /url: "#content"
+  - link "Stack Overflow":
+    - /url: https://stackoverflow.com
+  - link "About":
+    - /url: https://stackoverflow.co/
+  - button "Products"
+  - link "For Teams":
+    - /url: https://stackoverflow.co/internal/
+  - search:
+    - combobox "Search"
+  - navigation "Topbar":
+    - list:
+      - listitem
+      - listitem
+      - listitem:
+        - link "Log in":
+          - /url: https://stackoverflow.com/users/login?ssrc=head&returnurl=https%3a%2f%2fstackoverflow.com%2fquestions%2f9549780%2fwhat-does-this-symbol-mean-in-javascript
+      - listitem:
+        - link "Sign up":
+          - /url: https://stackoverflow.com/users/signup?ssrc=head&returnurl=https%3a%2f%2fstackoverflow.com%2fquestions%2f9549780%2fwhat-does-this-symbol-mean-in-javascript
+- navigation "Primary":
+  - list:
+    - listitem:
+      - list:
+        - listitem:
+          - link "Home":
+            - /url: /
+        - listitem:
+          - link "Questions":
+            - /url: /questions
+        - listitem:
+          - link "AI Assist":
+            - /url: https://stackoverflow.com/ai-assist
+        - listitem:
+          - link "Tags":
+            - /url: /tags
+        - listitem
+        - listitem:
+          - link "Challenges":
+            - /url: /beta/challenges
+        - listitem:
+          - link "Chat" [expanded]:
+            - /url: https://chat.stackoverflow.com/?tab=explore
+        - listitem:
+          - link "Articles":
+            - /url: https://stackoverflow.blog/contributed?utm_medium=referral&utm_source=stackoverflow-community&utm_campaign=so-blog&utm_content=experiment-articles
+        - listitem:
+          - link "Users":
+            - /url: /users
+        - listitem
+        - listitem:
+          - link "Companies":
+            - /url: https://stackoverflow.com/jobs/companies?so_medium=stackoverflow&so_source=SiteNav
+        - listitem:
+          - button "Collectives"
+        - listitem:
+          - paragraph:
+            - text: Communities for your favorite technologies.
+            - link "Explore all Collectives":
+              - /url: /collectives-all
+    - listitem:
+      - text: Stack Internal
+      - img
+      - paragraph:
+        - text: Stack Overflow for Teams is now called
+        - strong: Stack Internal
+        - text: . Bring the best of human thought and AI automation together at your work.
+      - link "Try for free":
+        - /url: https://stackoverflowteams.com/teams/create/free/?utm_medium=referral&utm_source=stackoverflow-community&utm_campaign=side-bar&utm_content=explore-teams
+      - link "Learn more":
+        - /url: https://stackoverflow.co/internal/?utm_medium=referral&utm_source=stackoverflow-community&utm_campaign=side-bar&utm_content=explore-teams
+- heading "What does this symbol mean in JavaScript?" [level=1]:
+  - link "What does this symbol mean in JavaScript?":
+    - /url: /questions/9549780/what-does-this-symbol-mean-in-javascript
+- link "Ask Question":
+  - /url: /questions/ask
+- text: Asked
+- time: 13 years, 11 months ago
+- text: Modified
+- link "2 years, 9 months ago":
+  - /url: "?lastactivity"
+- text: Viewed 427k times
+- main "question and answers":
+  - button "Up vote"
+  - text: "86"
+  - button "Down vote"
+  - button "Save"
+  - link "Timeline":
+    - /url: /posts/9549780/timeline
+  - status:
+    - text: This question's answers are a
+    - link "community effort":
+      - /url: /help/privileges/edit-community-wiki
+    - text: . Edit existing answers to improve this post. It is not currently accepting new answers or interactions.
+  - heading "What is this?" [level=2]
+  - paragraph:
+    - text: This is a collection of questions that come up every now and then about syntax in JavaScript. This is also a Community Wiki,
+    - strong: so everyone is invited to participate in maintaining this list.
+  - heading "Why is this?" [level=2]
+  - paragraph: Stack Overflow does not allow searching for particular characters. As a consequence, many questions about operators and other syntax tokens are not found easily when searching for them. This also makes closing duplicates more difficult. The list below is to help with this issue.
+  - paragraph: The main idea is to have links to existing questions on Stack Overflow, so it's easier for us to reference them, not to copy over content from the ECMAScript Spec.
+  - paragraph:
+    - text: Additionally, this is a blatant copy of the
+    - link "PHP":
+      - /url: https://stackoverflow.com/questions/3737139/reference-what-does-this-symbol-mean-in-php
+    - text: symbol reference. We needed a JS one.
+  - separator
+  - paragraph:
+    - strong: Please help. Edit and add links to other operators/syntax references, or if you can't find good questions/answers on a particular piece of syntax, add an answer to this question and link it
+  - list:
+    - listitem:
+      - link "show questions tagged 'javascript'":
+        - /url: /questions/tagged/javascript
+        - text: javascript
+  - link "Share":
+    - /url: /q/9549780
+  - button "Follow"
+  - link "edited Jun 20, 2020 at 9:12":
+    - /url: /posts/9549780/revisions
+  - text: community wiki
+  - link "18 revs, 8 users 40%":
+    - /url: /posts/9549780/revisions
+  - link "Thomas Shields":
+    - /url: /users/719312
+  - list:
+    - listitem:
+      - text: "@amnotiam: Doesn't really matter, but this may be much easier to find/remember than any of the individual posts this links to. I had such a hard time searching for info on the"
+      - code: "|"
+      - text: operator. The
+      - link "PHP version":
+        - /url: http://stackoverflow.com/questions/3737139/reference-what-does-this-symbol-mean-in-php
+      - text: has been very useful as a go-to for closing dupes. –
+      - link "No Results Found":
+        - /url: /users/398242/no-results-found
+      - link "Commented Mar 3, 2012 at 21:17":
+        - /url: "#comment12103041_9549780"
+    - listitem:
+      - text: 1 I'm of the opinion that this should, barring an official policy change, remain. ...or, perhaps, added to the tag-wiki. But the wiki doesn't seem an appropriate place for this content. It seems, despite the lack of potential for any 'answers' like enough a 'canonical question' that I'd be tempted to reopen. Though I'd yield to a mod's review. –
+      - link "David Thomas":
+        - /url: /users/82548/david-thomas
+      - link "Commented Mar 3, 2012 at 21:40":
+        - /url: "#comment12103272_9549780"
+    - listitem:
+      - text: "1 @David Thomas: Unfortunately, tag wikis still suck. This is why even the book question remains a question today. –"
+      - link "BoltClock":
+        - /url: /users/106224/boltclock
+      - link "Commented Mar 3, 2012 at 21:44":
+        - /url: "#comment12103321_9549780"
+    - listitem:
+      - text: "@ruakh yet see this obviously much-loved community wiki:"
+      - link "stackoverflow.com/questions/388242/…":
+        - /url: http://stackoverflow.com/questions/388242/the-definitive-c-book-guide-and-list
+      - text: "- most of the content in in the question, with answers adding on additional information. That's the idea here. –"
+      - link "Thomas Shields":
+        - /url: /users/719312/thomas-shields
+      - link "Commented Mar 3, 2012 at 21:59":
+        - /url: "#comment12103496_9549780"
+    - listitem:
+      - text: "@ruakh I rolled it back to fit the format of the PHP question that's linked - which, i may note, has not been closed or changed in format. It's much simpler to compile a list of common questions in a community wiki format than ask a very broad set of questions (as you edited it) and have to browse dozens of answers trying to find the one you want. I'll go with community on this one, but so far, it seems people generally like it the way it is. –"
+      - link "Thomas Shields":
+        - /url: /users/719312/thomas-shields
+      - link "Commented Mar 3, 2012 at 22:12":
+        - /url: "#comment12103685_9549780"
+  - text: Comments disabled on deleted / locked posts / reviews |
+  - button "Show 2 more comments"
+  - heading "1 Answer" [level=2]
+  - text: "Sorted by:"
+  - combobox "Sorted by:":
+    - option "Highest score (default)" [selected]
+    - option "Trending (recent votes count more)"
+    - option "Date modified (newest first)"
+    - option "Date created (oldest first)"
+  - button "Up vote"
+  - text: "275"
+  - button "Down vote"
+  - button "Save"
+  - note "Accepted"
+  - link "Timeline":
+    - /url: /posts/9550412/timeline
+  - paragraph:
+    - text: See the documentation on MDN about
+    - link "expressions and operators":
+      - /url: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators
+    - text: and
+    - link "statements":
+      - /url: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements
+    - text: .
+  - heading "Basic keywords and general expressions" [level=2]
+  - heading "this keyword:" [level=3]:
+    - code: this
+    - text: "keyword:"
+  - list:
+    - listitem:
+      - link "How does the \"this\" keyword work, and when should it be used?":
+        - /url: https://stackoverflow.com/q/3127429/1529630
+  - heading "var x = function() vs. function x() — Function declaration syntax" [level=3]:
+    - code: var x = function()
+    - text: vs.
+    - code: function x()
+    - text: — Function declaration syntax
+  - list:
+    - listitem:
+      - 'link "var functionName = function() {} vs function functionName() {}"':
+        - /url: https://stackoverflow.com/questions/336859/javascript-var-functionname-function-vs-function-functionname
+  - 'heading "(function(){…})() — IIFE (Immediately Invoked Function Expression)" [level=3]':
+    - code: "(function(){"
+    - text: …
+    - code: "})()"
+    - text: — IIFE (Immediately Invoked Function Expression)
+  - list:
+    - listitem:
+      - link "What is the purpose?":
+        - /url: https://stackoverflow.com/q/592396/1048572
+      - text: ","
+      - link "How is it called?":
+        - /url: https://stackoverflow.com/q/8228281/1048572
+    - listitem:
+      - 'link "Why does (function(){…})(); work but function(){…}(); doesn''t?"':
+        - /url: https://stackoverflow.com/q/1634268/1048572
+        - text: Why does
+        - code: "(function(){…})();"
+        - text: work but
+        - code: "function(){…}();"
+        - text: doesn't?
+    - listitem:
+      - 'link "(function(){…})(); vs (function(){…}());"':
+        - /url: https://stackoverflow.com/q/3384504/1048572
+        - code: "(function(){…})();"
+        - text: vs
+        - code: "(function(){…}());"
+    - listitem:
+      - link "shorter alternatives":
+        - /url: https://stackoverflow.com/q/5827290/1048572
+      - text: ":"
+      - list:
+        - listitem:
+          - code: "!function(){…}();"
+          - text: "-"
+          - link "What does the exclamation mark do before the function?":
+            - /url: https://stackoverflow.com/q/3755606/1048572
+        - listitem:
+          - code: "+function(){…}();"
+          - text: "-"
+          - link "JavaScript plus sign in front of function expression":
+            - /url: https://stackoverflow.com/q/13341698/1048572
+        - listitem:
+          - 'link "!function(){ }() vs (function(){ })()"':
+            - /url: https://stackoverflow.com/q/8305915/1048572
+          - text: ","
+          - link "! vs leading semicolon":
+            - /url: https://stackoverflow.com/q/24067605/1048572
+            - code: "!"
+            - text: vs leading semicolon
+    - listitem:
+      - 'link "(function(window, undefined){…}(window));"':
+        - /url: https://stackoverflow.com/q/2716069/1048572
+        - code: "(function(window, undefined){…}(window));"
+  - heading "someFunction()() — Functions which return other functions" [level=3]:
+    - code: someFunction()()
+    - text: — Functions which return other functions
+  - list:
+    - listitem:
+      - link "Two sets of parentheses after function call":
+        - /url: https://stackoverflow.com/questions/18234491/two-sets-of-parentheses-after-function-call
+  - 'heading "=> — Equal sign, greater than: arrow function expression syntax" [level=3]':
+    - code: =>
+    - text: "— Equal sign, greater than: arrow function expression syntax"
+  - list:
+    - listitem:
+      - link "What's the meaning of \"=>\" (an arrow formed from equals & greater than) in JavaScript?":
+        - /url: https://stackoverflow.com/questions/24900875/whats-the-meaning-of-in-javascript
+  - 'heading "|> — Pipe, greater than: Pipeline operator" [level=3]':
+    - code: "|>"
+    - text: "— Pipe, greater than: Pipeline operator"
+  - list:
+    - listitem:
+      - link "What does the \"|>\" operator do in JavaScript?":
+        - /url: https://stackoverflow.com/questions/55143363/what-does-the-operator-do-in-javascript
+  - 'heading "function*, yield, yield* — Star after function or yield: generator functions" [level=3]':
+    - code: function*
+    - text: ","
+    - code: yield
+    - text: ","
+    - code: yield*
+    - text: — Star after
+    - code: function
+    - text: or
+    - code: yield
+    - text: ": generator functions"
+  - list:
+    - listitem:
+      - link "What is \"function*\" in JavaScript?":
+        - /url: https://stackoverflow.com/q/9620586/1529630
+    - listitem:
+      - link "What's the yield keyword in JavaScript?":
+        - /url: https://stackoverflow.com/q/2282140/1529630
+    - listitem:
+      - link "Delegated yield (yield star, yield *) in generator functions":
+        - /url: https://stackoverflow.com/q/17491779/1529630
+  - 'heading "[…], [ value ], Array() — Square brackets: array notation" [level=3]':
+    - code: "["
+    - text: …
+    - code: "]"
+    - text: ","
+    - code: "[ value ]"
+    - text: ","
+    - code: Array()
+    - text: "— Square brackets: array notation"
+  - list:
+    - listitem:
+      - link "What’s the difference between \"Array()\" and \"[]\" while declaring a JavaScript array?":
+        - /url: https://stackoverflow.com/questions/931872/whats-the-difference-between-array-and-while-declaring-a-javascript-ar
+    - listitem:
+      - link "What is array literal notation in javascript and when should you use it?":
+        - /url: https://stackoverflow.com/questions/1094723/what-is-array-literal-notation-in-javascript-and-when-should-you-use-it
+  - paragraph:
+    - text: If the square brackets appear on the left side of an assignment (
+    - code: "[a] = ..."
+    - text: ), or inside a function's parameters, it's a
+    - link "destructuring assignment":
+      - /url: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment
+    - text: .
+  - list:
+    - listitem:
+      - link "Where can I get info on the object parameter syntax for JavaScript functions?":
+        - /url: https://stackoverflow.com/questions/10804982/where-can-i-get-info-on-the-object-parameter-syntax-for-javascript-functions
+  - 'heading "{…}, { key: value }, { [key]: value } — Curly brackets: object literal syntax (not to be confused with blocks)" [level=3]':
+    - code: "{"
+    - text: …
+    - code: "}"
+    - text: ","
+    - code: "{ key: value }"
+    - text: ","
+    - code: "{ [key]: value }"
+    - text: "— Curly brackets: object literal syntax (not to be confused with blocks)"
+  - list:
+    - listitem:
+      - link "What do curly braces in JavaScript mean?":
+        - /url: https://stackoverflow.com/questions/9699064/what-do-curly-braces-in-javascript-mean
+    - listitem:
+      - 'link "Javascript object literal: what exactly is {a, b, c}?"':
+        - /url: https://stackoverflow.com/questions/34414766/javascript-or-json-what-exactly-is-a-b-c
+    - listitem:
+      - link "What do square brackets around a property name in an object literal mean?":
+        - /url: https://stackoverflow.com/questions/34831262/what-do-square-brackets-around-a-property-name-in-an-object-literal-mean
+    - listitem:
+      - link "How does this object method definition work without the \"function\" keyword?":
+        - /url: https://stackoverflow.com/questions/32404617/how-does-this-object-method-definition-work-without-the-function-keyword
+      - text: (ES2015 Method definitions)
+  - paragraph:
+    - text: If the curly brackets appear on the left side of an assignment (
+    - code: "{ a } = ..."
+    - text: ) or inside a function's parameters, it's a
+    - link "destructuring assignment":
+      - /url: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment
+    - text: .
+  - 'heading "`…${…}…` — Backticks, dollar sign with curly brackets: template literals" [level=3]':
+    - code: "`"
+    - text: …
+    - code: "${"
+    - text: …
+    - code: "}"
+    - text: …
+    - code: "`"
+    - text: "— Backticks, dollar sign with curly brackets: template literals"
+  - list:
+    - listitem:
+      - 'link "What does this `…${…}…` code from the node docs mean?"':
+        - /url: https://stackoverflow.com/q/36107981/1048572
+        - text: What does this
+        - code: "`…${…}…`"
+        - text: code from the node docs mean?
+    - listitem:
+      - 'link "Usage of the backtick character (`) in JavaScript?"':
+        - /url: https://stackoverflow.com/questions/27678052/usage-of-the-backtick-character-in-javascript
+    - listitem:
+      - link "What is the purpose of template literals (backticks) following a function in ES6?":
+        - /url: https://stackoverflow.com/questions/53507972/what-is-the-purpose-of-template-literals-backticks-following-a-variable-defini
+  - 'heading "/…/ — Slashes: regular expression literals" [level=3]':
+    - code: /
+    - text: …
+    - code: /
+    - text: "— Slashes: regular expression literals"
+  - list:
+    - listitem:
+      - link "Meaning of javascript text between two slashes":
+        - /url: https://stackoverflow.com/questions/16345748/meaning-of-javascript-text-between-two-slashes
+  - 'heading "$ — Dollar sign in regex replace patterns: $$, $&, $`, $'', $n" [level=3]':
+    - code: $
+    - text: "— Dollar sign in regex replace patterns:"
+    - code: $$
+    - text: ","
+    - code: $&
+    - text: ","
+    - code: "$`"
+    - text: ","
+    - code: $'
+    - text: ","
+    - code: $n
+  - list:
+    - listitem:
+      - link "JavaScript replace() method dollar signs":
+        - /url: https://stackoverflow.com/questions/38866071/javascript-replace-method-dollar-signs
+  - 'heading "() — Parentheses: grouping operator" [level=3]':
+    - code: ()
+    - text: "— Parentheses: grouping operator"
+  - list:
+    - listitem:
+      - 'link "MDN: Grouping operator"':
+        - /url: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Grouping
+  - separator
+  - heading "Property-related expressions" [level=2]
+  - 'heading "obj.prop, obj[prop], obj[\"prop\"] — Square brackets or dot: property accessors" [level=3]':
+    - code: obj.prop
+    - text: ","
+    - code: obj[prop]
+    - text: ","
+    - code: obj["prop"]
+    - text: "— Square brackets or dot: property accessors"
+  - list:
+    - listitem:
+      - 'link "JavaScript property access: dot notation vs. brackets?"':
+        - /url: https://stackoverflow.com/q/4968406
+  - 'heading "?., ?.[], ?.() — Question mark, dot: optional chaining operator" [level=3]':
+    - code: "?."
+    - text: ","
+    - code: "?.[]"
+    - text: ","
+    - code: "?.()"
+    - text: "— Question mark, dot: optional chaining operator"
+  - list:
+    - listitem:
+      - link "Question mark after parameter":
+        - /url: https://stackoverflow.com/q/63722601
+    - listitem:
+      - link "Null-safe property access (and conditional assignment) in ES6/2015":
+        - /url: https://stackoverflow.com/questions/32139078/null-safe-property-access-and-conditional-assignment-in-es6-2015
+    - listitem:
+      - link "Optional Chaining in JavaScript":
+        - /url: https://stackoverflow.com/questions/26183944/optional-chaining-in-javascript
+    - listitem:
+      - link "Is there a null-coalescing (Elvis) operator or safe navigation operator in javascript?":
+        - /url: https://stackoverflow.com/questions/6613952/is-there-a-null-coalescing-elvis-operator-or-safe-navigation-operator-in-javas
+    - listitem:
+      - link "Is there a \"null coalescing\" operator in JavaScript?":
+        - /url: https://stackoverflow.com/questions/476436/is-there-a-null-coalescing-operator-in-javascript
+  - 'heading ":: — Double colon: bind operator" [level=3]':
+    - code: "::"
+    - text: "— Double colon: bind operator"
+  - list:
+    - listitem:
+      - link "JavaScript double colon (bind operator)":
+        - /url: https://stackoverflow.com/q/31220078/1529630
+  - heading "new operator" [level=3]:
+    - code: new
+    - text: operator
+  - list:
+    - listitem:
+      - link "What is the 'new' keyword in JavaScript?":
+        - /url: https://stackoverflow.com/q/1646698/1529630
+    - listitem:
+      - link "What is \"new.target\"?":
+        - /url: https://stackoverflow.com/q/32450516/1529630
+  - 'heading "...iter — Three dots: spread syntax; rest parameters" [level=3]':
+    - code: ...iter
+    - text: "— Three dots: spread syntax; rest parameters"
+  - list:
+    - listitem:
+      - code: "(...rest) => {}"
+      - text: —
+      - link "What is the meaning of “…args” (three dots) in a function definition?":
+        - /url: https://stackoverflow.com/q/42184674
+    - listitem:
+      - code: fn(...args)
+      - text: —
+      - link "What is the meaning of “foo(…arg)” (three dots in a function call)?":
+        - /url: https://stackoverflow.com/q/42118201
+    - listitem:
+      - code: "[...iter]"
+      - text: —
+      - link "javascript es6 array feature […data, 0] “spread operator”":
+        - /url: https://stackoverflow.com/q/33890525
+    - listitem:
+      - code: "{...props}"
+      - text: —
+      - link "Javascript Property with three dots (…)":
+        - /url: https://stackoverflow.com/q/48464211
+      - text: ","
+      - link "What does the '…rest' stand for in this object destructuring?":
+        - /url: https://stackoverflow.com/q/47689680
+  - separator
+  - heading "Increment and decrement" [level=2]
+  - 'heading "++, -- — Double plus or minus: pre- / post-increment / -decrement operators" [level=3]':
+    - code: ++
+    - text: ","
+    - code: "--"
+    - text: "— Double plus or minus: pre- / post-increment / -decrement operators"
+  - list:
+    - listitem:
+      - link "++someVariable vs someVariable++ in Javascript":
+        - /url: https://stackoverflow.com/q/3469885/1048572
+        - code: ++someVariable
+        - text: vs
+        - code: someVariable++
+        - text: in Javascript
+  - separator
+  - heading "Unary and binary (arithmetic, logical, bitwise) operators" [level=2]
+  - heading "delete operator" [level=3]:
+    - code: delete
+    - text: operator
+  - list:
+    - listitem:
+      - link "What is the purpose of the delete operator in Javascript?":
+        - /url: https://stackoverflow.com/q/8945276/1529630
+  - heading "void operator" [level=3]:
+    - code: void
+    - text: operator
+  - list:
+    - listitem:
+      - 'link "What does `void 0` mean?"':
+        - /url: https://stackoverflow.com/q/7452341/1048572
+  - 'heading "+, - — Plus and minus: addition or concatenation, and subtraction operators; unary sign operators" [level=3]':
+    - code: +
+    - text: ","
+    - code: "-"
+    - text: "— Plus and minus: addition or concatenation, and subtraction operators; unary sign operators"
+  - list:
+    - listitem:
+      - link "What does = +_ mean in JavaScript":
+        - /url: https://stackoverflow.com/q/15129137/1048572
+      - text: ","
+      - link "Single plus operator in javascript":
+        - /url: https://stackoverflow.com/q/14470973/1048572
+    - listitem:
+      - link "What's the significant use of unary plus and minus operators?":
+        - /url: https://stackoverflow.com/q/5450076/1048572
+    - listitem:
+      - link "Why is [1,2] + [3,4] = \"1,23,4\" in JavaScript?":
+        - /url: https://stackoverflow.com/questions/7124884/why-is-1-2-3-4-1-23-4-in-javascript
+    - listitem:
+      - link "Why does JavaScript handle the plus and minus operators between strings and numbers differently?":
+        - /url: https://stackoverflow.com/questions/24383788/1048572
+  - 'heading "|, &, ^, ~ — Single pipe, ampersand, circumflex, tilde: bitwise OR, AND, XOR, & NOT operators" [level=3]':
+    - code: "|"
+    - text: ","
+    - code: "&"
+    - text: ","
+    - code: ^
+    - text: ","
+    - code: ~
+    - text: "— Single pipe, ampersand, circumflex, tilde:"
+    - link "bitwise OR, AND, XOR, & NOT operators":
+      - /url: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators#Bitwise_logical_operators
+  - list:
+    - listitem:
+      - link "What do these JavaScript bitwise operators do?":
+        - /url: https://stackoverflow.com/questions/4535328/what-do-these-operators-do
+    - listitem:
+      - 'link "How to: The ~ operator?"':
+        - /url: https://stackoverflow.com/q/6260475/1048572
+    - listitem:
+      - link "Is there a & logical operator in Javascript":
+        - /url: https://stackoverflow.com/q/3374811/1048572
+    - listitem:
+      - link "What does the \"|\" (single pipe) do in JavaScript?":
+        - /url: https://stackoverflow.com/q/6194950/1048572
+    - listitem:
+      - link "What does the operator |= do in JavaScript?":
+        - /url: https://stackoverflow.com/q/12854644/1048572
+    - listitem:
+      - link "What does the ^ (caret) symbol do in JavaScript?":
+        - /url: https://stackoverflow.com/q/3618340/1048572
+    - listitem:
+      - link "Using bitwise OR 0 to floor a number":
+        - /url: https://stackoverflow.com/questions/7487977/using-bitwise-or-0-to-floor-a-number
+      - text: ","
+      - link "How does x|0 floor the number in JavaScript?":
+        - /url: https://stackoverflow.com/questions/9049677/how-does-x0-floor-the-number-in-javascript
+    - listitem:
+      - link "Why does ~1 equal -2?":
+        - /url: https://stackoverflow.com/q/31377474/1048572
+        - text: Why does
+        - code: ~1
+        - text: equal
+        - code: "-2"
+        - text: "?"
+    - listitem:
+      - link "What does ~~ (\"double tilde\") do in Javascript?":
+        - /url: https://stackoverflow.com/q/4055633/1048572
+    - listitem:
+      - link "How does !!~ (not not tilde/bang bang tilde) alter the result of a 'contains/included' Array method call?":
+        - /url: https://stackoverflow.com/q/9316612/1048572
+      - text: (also
+      - link "here":
+        - /url: https://stackoverflow.com/q/12299665/1048572
+      - text: and
+      - link "here":
+        - /url: https://stackoverflow.com/q/10582286/1048572
+      - text: )
+  - 'heading "% — Percent sign: remainder operator" [level=3]':
+    - code: "%"
+    - text: "— Percent sign: remainder operator"
+  - list:
+    - listitem:
+      - link "What does % do in JavaScript?":
+        - /url: https://stackoverflow.com/questions/8900652/what-does-do-in-javascript
+  - 'heading "&&, ||, ! — Double ampersand, double pipe, exclamation point: logical operators" [level=3]':
+    - code: "&&"
+    - text: ","
+    - code: "||"
+    - text: ","
+    - code: "!"
+    - text: "— Double ampersand, double pipe, exclamation point: logical operators"
+  - list:
+    - listitem:
+      - link "Logical operators in JavaScript — how do you use them?":
+        - /url: https://stackoverflow.com/questions/4535647/logical-operators-in-javascript-how-do-you-use-them
+    - listitem:
+      - link "Logical operator || in javascript, 0 stands for Boolean false?":
+        - /url: https://stackoverflow.com/questions/9579262/logical-operator-in-javascript-0-stands-for-boolean-false
+    - listitem:
+      - 'link "What does \"var FOO = FOO || {}\" (assign a variable or an empty object to that variable) mean in Javascript?"':
+        - /url: https://stackoverflow.com/questions/6439579/what-does-var-foo-foo-mean-in-javascript
+      - text: ","
+      - link "JavaScript OR (||) variable assignment explanation":
+        - /url: https://stackoverflow.com/q/2100758/1048572
+      - text: ","
+      - link "What does the construct x = x || y mean?":
+        - /url: https://stackoverflow.com/q/2802055/1048572
+    - listitem:
+      - link "Javascript AND operator within assignment":
+        - /url: https://stackoverflow.com/q/3163407/1048572
+    - listitem:
+      - link "What is \"x && foo()\"?":
+        - /url: https://stackoverflow.com/q/6970346/1048572
+      - text: (also
+      - link "here":
+        - /url: https://stackoverflow.com/q/12664230/1048572
+      - text: and
+      - link "here":
+        - /url: https://stackoverflow.com/q/6829736/1048572
+      - text: )
+    - listitem:
+      - link "What is the !! (not not) operator in JavaScript?":
+        - /url: https://stackoverflow.com/questions/784929/what-is-the-not-not-operator-in-javascript
+    - listitem:
+      - link "What is an exclamation point in JavaScript?":
+        - /url: https://stackoverflow.com/questions/8012003/what-is-an-exclamation-point-in-javascript
+  - 'heading "?? — Double question mark: nullish-coalescing operator" [level=3]':
+    - code: "??"
+    - text: "— Double question mark: nullish-coalescing operator"
+  - list:
+    - listitem:
+      - link "How is the nullish coalescing operator (??) different from the logical OR operator (||) in ECMAScript?":
+        - /url: https://stackoverflow.com/q/65022531/4642212
+    - listitem:
+      - link "Is there a null-coalescing (Elvis) operator or safe navigation operator in javascript?":
+        - /url: https://stackoverflow.com/questions/6613952/is-there-a-null-coalescing-elvis-operator-or-safe-navigation-operator-in-javas
+    - listitem:
+      - link "Is there a \"null coalescing\" operator in JavaScript?":
+        - /url: https://stackoverflow.com/questions/476436/is-there-a-null-coalescing-operator-in-javascript
+  - 'heading "** — Double star: power operator (exponentiation)" [level=3]':
+    - code: "**"
+    - text: "— Double star: power operator (exponentiation)"
+  - list:
+    - listitem:
+      - code: x ** 2
+      - text: is equivalent to
+      - code: Math.pow(x, 2)
+    - listitem:
+      - link "Is the double asterisk ** a valid JavaScript operator?":
+        - /url: https://stackoverflow.com/questions/33284569/is-the-double-asterisk-a-valid-javascript-operator
+    - listitem:
+      - link "MDN documentation":
+        - /url: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Exponentiation
+  - separator
+  - heading "Equality operators" [level=2]
+  - 'heading "==, === — Equal signs: equality operators" [level=3]':
+    - code: ==
+    - text: ","
+    - code: ===
+    - text: "— Equal signs: equality operators"
+  - list:
+    - listitem:
+      - link "Which equals operator (== vs ===) should be used in JavaScript comparisons?":
+        - /url: https://stackoverflow.com/questions/359494/javascript-vs-does-it-matter-which-equal-operator-i-use
+    - listitem:
+      - link "How does JS type coercion work?":
+        - /url: https://stackoverflow.com/questions/27523765/how-does-js-type-coercion-work
+    - listitem:
+      - link "In Javascript, <int-value> == \"<int-value>\" evaluates to true. Why is it so?":
+        - /url: https://stackoverflow.com/questions/664886/in-javascript-int-value-int-value-evaluates-to-true-why-is-it-so
+    - listitem:
+      - link "[] == ![] evaluates to true":
+        - /url: https://stackoverflow.com/questions/38662231
+    - listitem:
+      - link "Why does \"undefined equals false\" return false?":
+        - /url: https://stackoverflow.com/questions/19277458/why-does-undefined-equals-false-return-false/19277873
+    - listitem:
+      - link "Why does !new Boolean(false) equals false in JavaScript?":
+        - /url: https://stackoverflow.com/questions/8695341/why-does-new-booleanfalse-equals-false-in-javascript
+    - listitem:
+      - link "Javascript 0 == '0'. Explain this example":
+        - /url: https://stackoverflow.com/questions/25190495/javascript-0-0-explain-this-example
+    - listitem:
+      - link "Why false == \"false\" is false?":
+        - /url: https://stackoverflow.com/questions/38814212/why-false-false-is-false
+  - 'heading "!=, !== — Exclamation point and equal signs: inequality operators" [level=3]':
+    - code: "!="
+    - text: ","
+    - code: "!=="
+    - text: "— Exclamation point and equal signs: inequality operators"
+  - list:
+    - listitem:
+      - link "!= vs. !==":
+        - /url: https://stackoverflow.com/questions/1889260/javascript-operator
+    - listitem:
+      - link "What is the difference between != and !== operators in JavaScript?":
+        - /url: https://stackoverflow.com/questions/1889260/javascript-operator
+  - separator
+  - heading "Bit shift operators" [level=2]
+  - 'heading "<<, >>, >>> — Two or three angle brackets: bit shift operators" [level=3]':
+    - code: <<
+    - text: ","
+    - code: ">>"
+    - text: ","
+    - code: ">>>"
+    - text: "— Two or three angle brackets:"
+    - link "bit shift operators":
+      - /url: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators#Bitwise_shift_operators
+  - list:
+    - listitem:
+      - link "What do these JavaScript bitwise operators do?":
+        - /url: https://stackoverflow.com/questions/4535328/what-do-these-operators-do
+    - listitem:
+      - link "Double more-than symbol in JavaScript":
+        - /url: https://stackoverflow.com/q/5528119
+    - listitem:
+      - link "What is the JavaScript >>> operator and how do you use it?":
+        - /url: https://stackoverflow.com/q/1822350/1048572
+  - separator
+  - heading "Conditional operator" [level=2]
+  - 'heading "…?…:… — Question mark and colon: conditional (ternary) operator" [level=3]':
+    - text: …
+    - code: "?"
+    - text: …
+    - code: ":"
+    - text: "… — Question mark and colon: conditional (ternary) operator"
+  - list:
+    - listitem:
+      - link "Question mark and colon in JavaScript":
+        - /url: https://stackoverflow.com/q/1771786/1048572
+    - listitem:
+      - link "Operator precedence with JavaScript's ternary operator":
+        - /url: https://stackoverflow.com/q/1788917/1048572
+    - listitem:
+      - 'link "How do you use the ? : (conditional) operator in JavaScript?"':
+        - /url: https://stackoverflow.com/q/6259982/1106925
+  - separator
+  - heading "Assignment operators" [level=2]:
+    - link "Assignment operators":
+      - /url: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators#Assignment_operators
+  - 'heading "= — Equal sign: assignment operator" [level=3]':
+    - code: =
+    - text: "— Equal sign: assignment operator"
+  - list:
+    - listitem:
+      - 'link "What is the difference between the `=` and `==` operators and what is `===`? (Single, double, and triple equals)"':
+        - /url: https://stackoverflow.com/questions/11871616/in-javascript-vs/
+  - paragraph:
+    - text: This symbol is also used for
+    - emphasis: default parameters
+    - text: or
+    - emphasis: default values
+    - text: in a
+    - link "destructuring assignment":
+      - /url: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment
+    - text: ":"
+  - list:
+    - listitem:
+      - 'link "What does (state = {}) => state mean?"':
+        - /url: https://stackoverflow.com/q/35526463
+    - listitem:
+      - 'link "What does ({\"key\": \"value\"} = {}) syntax mean inside a JavaScript function"':
+        - /url: https://stackoverflow.com/q/65523228
+  - 'heading "%= — Percent equals: remainder assignment" [level=3]':
+    - code: "%="
+    - text: "— Percent equals: remainder assignment"
+  - list:
+    - listitem:
+      - link "Having Confusion with Modulo operator":
+        - /url: https://stackoverflow.com/q/62771733
+  - 'heading "+= — Plus equals: addition assignment operator" [level=3]':
+    - code: +=
+    - text: "— Plus equals: addition assignment operator"
+  - list:
+    - listitem:
+      - link "How does += (plus equal) work?":
+        - /url: https://stackoverflow.com/questions/6826260/how-does-plus-equal-work
+  - 'heading "&&=, ||=, ??= — Double ampersand, pipe, or question mark, followed by equal sign: logical assignments" [level=3]':
+    - link "&&=":
+      - /url: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_AND_assignment
+      - code: "&&="
+    - text: ","
+    - link "||=":
+      - /url: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_OR_assignment
+      - code: "||="
+    - text: ","
+    - link "??=":
+      - /url: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_nullish_assignment
+      - code: "??="
+    - text: "— Double ampersand, pipe, or question mark, followed by equal sign: logical assignments"
+  - list:
+    - listitem:
+      - link "What purpose do &&=, ||= and ??= serve?":
+        - /url: https://stackoverflow.com/q/64617548
+    - listitem:
+      - link "Replace a value if null or undefined in JavaScript":
+        - /url: https://stackoverflow.com/a/62824506
+    - listitem:
+      - link "Set a variable if undefined":
+        - /url: https://stackoverflow.com/a/62824667
+    - listitem:
+      - link "Ruby’s ||= (or equals) in JavaScript?":
+        - /url: https://stackoverflow.com/a/58635332
+        - text: Ruby’s
+        - code: "||="
+        - text: (or equals) in JavaScript?
+    - listitem:
+      - link "Original proposal":
+        - /url: https://github.com/tc39/proposal-logical-assignment
+    - listitem:
+      - link "Specification":
+        - /url: https://tc39.es/ecma262/#sec-assignment-operators
+  - 'heading "<<=, >>=, >>>=, &=, ^=, |= — Double less than, double greater than, triple greater than, ampersand, caret, or pipe followed by equal sign: bitwise assignments" [level=3]':
+    - code: <<=
+    - text: ","
+    - code: ">>="
+    - text: ","
+    - code: ">>>="
+    - text: ","
+    - code: "&="
+    - text: ","
+    - code: ^=
+    - text: ","
+    - code: "|="
+    - text: "— Double less than, double greater than, triple greater than, ampersand, caret, or pipe followed by equal sign: bitwise assignments"
+  - list:
+    - listitem:
+      - link "What do these JavaScript bitwise operators do?":
+        - /url: https://stackoverflow.com/q/4535328
+  - heading "Destructuring" [level=3]
+  - list:
+    - listitem:
+      - text: "of function parameters:"
+      - link "Where can I get info on the object parameter syntax for JavaScript functions?":
+        - /url: https://stackoverflow.com/q/10804982/1048572
+    - listitem:
+      - text: "of arrays:"
+      - 'link "Multiple assignment in JavaScript? What does `[ a, b, c ] = [ 1, 2, 3 ]` mean?"':
+        - /url: https://stackoverflow.com/q/3986348/1048572
+    - listitem:
+      - text: "of objects/imports:"
+      - 'link "Javascript object bracket notation ({ Navigation } =) on left side of assign"':
+        - /url: https://stackoverflow.com/q/26999820/1048572
+  - separator
+  - heading "Comma operator" [level=2]
+  - heading ", — Comma operator (not to be confused with the comma used in variable declarations)" [level=3]:
+    - code: ","
+    - text: — Comma operator (not to be confused with the comma used in variable declarations)
+  - list:
+    - listitem:
+      - link "What does the comma operator do in JavaScript?":
+        - /url: https://stackoverflow.com/questions/3561043/javascript-syntax-what-comma-means
+    - listitem:
+      - link "Comma operator returns first value instead of second in argument list?":
+        - /url: https://stackoverflow.com/questions/5580596/javascript-comma-operator
+    - listitem:
+      - link "When is the comma operator useful?":
+        - /url: https://stackoverflow.com/questions/9579546/comma-operator-where-it-can-really-be-useful
+  - separator
+  - heading "Control flow" [level=2]
+  - 'heading "{…} — Curly brackets: blocks (not to be confused with object literal syntax)" [level=3]':
+    - code: "{"
+    - text: …
+    - code: "}"
+    - text: "— Curly brackets: blocks (not to be confused with object literal syntax)"
+  - list:
+    - listitem:
+      - link "JavaScript curly braces with no function or json":
+        - /url: https://stackoverflow.com/questions/18130025/javascript-curly-braces-with-no-function-or-json
+  - heading "Declarations" [level=2]
+  - heading "var, let, const — Declaring variables" [level=3]:
+    - code: var
+    - text: ","
+    - code: let
+    - text: ","
+    - code: const
+    - text: — Declaring variables
+  - list:
+    - listitem:
+      - link "What is the difference between \"let\" and \"var\"?":
+        - /url: https://stackoverflow.com/q/762011/1529630
+    - listitem:
+      - link "Are there constants in JavaScript?":
+        - /url: https://stackoverflow.com/q/130396/1529630
+    - listitem:
+      - link "What is the temporal dead zone?":
+        - /url: https://stackoverflow.com/q/33198849/1529630
+    - listitem:
+      - code: var a, b;
+      - text: "— Comma used in variable declarations (not to be confused with the comma operator):"
+      - 'link "JavaScript variable definition: Commas vs. Semicolons"':
+        - /url: https://stackoverflow.com/q/3781406/4642212
+  - separator
+  - heading "Label" [level=2]
+  - 'heading "label: — Colon: labels" [level=3]':
+    - code: "label:"
+    - text: "— Colon: labels"
+  - list:
+    - listitem:
+      - 'link "What does the JavaScript syntax foo: mean?"':
+        - /url: https://stackoverflow.com/questions/39655737
+    - listitem:
+      - link "What does ':' (colon) do in JavaScript?":
+        - /url: https://stackoverflow.com/questions/418799
+  - separator
+  - heading "Other" [level=2]
+  - 'heading "123n — n after integer: BigInt" [level=3]':
+    - code: 123n
+    - text: —
+    - code: "n"
+    - text: "after integer: BigInt"
+  - list:
+    - listitem:
+      - link "What does character 'n' after numeric literal mean in JavaScript?":
+        - /url: https://stackoverflow.com/q/59977095
+  - 'heading "# — Hash (number sign): Private methods or private fields" [level=3]':
+    - code: "#"
+    - text: "— Hash (number sign): Private methods or private fields"
+  - list:
+    - listitem:
+      - 'link "What does the # symbol do in JavaScript?"':
+        - /url: https://stackoverflow.com/q/64968964/4642212
+        - text: What does the
+        - code: "#"
+        - text: symbol do in JavaScript?
+  - 'heading "_ — Underscore: separator in numeric literals" [level=2]':
+    - code: _
+    - text: "— Underscore: separator in numeric literals"
+  - list:
+    - listitem:
+      - link "Javascript numeric separators?":
+        - /url: https://stackoverflow.com/q/58965960
+    - listitem:
+      - link "Is there a Javascript equivalent to the Ruby syntax using underscores (e.g. 10_000 = 10000) to make larger integers human readable?":
+        - /url: https://stackoverflow.com/q/20350106
+  - time
+  - link "Share":
+    - /url: /a/9550412
+  - link "Improve this answer":
+    - /url: /posts/9550412/edit
+  - button "Follow"
+  - link "edited May 19, 2023 at 13:57":
+    - /url: /posts/9550412/revisions
+  - text: community wiki
+  - link "85 revs, 22 users 27%":
+    - /url: /posts/9550412/revisions
+  - link "Sebastian Simon":
+    - /url: /users/4642212
+  - text: Sign up to request clarification or add additional context in comments.
+  - button
+  - button "6 Comments":
+    - heading "6 Comments" [level=2]
+  - button "Add a comment":
+    - paragraph: Add a comment
+  - list:
+    - listitem:
+      - link "User profile":
+        - /url: /users/9277453/olex-nikonov
+      - link "Olex Nikonov":
+        - /url: /users/9277453/olex-nikonov
+      - link "Over a year ago":
+        - /url: "#comment130131448_9550412"
+        - time: Over a year ago
+      - text: what is it?
+      - code: object!.someKey
+      - button "0"
+      - button "Reply"
+      - button "Open menu"
+    - listitem:
+      - link "User profile":
+        - /url: /users/11557354/anime-no-sekai
+      - link "Anime no Sekai":
+        - /url: /users/11557354/anime-no-sekai
+      - link "Over a year ago":
+        - /url: "#comment130134319_9550412"
+        - time: Over a year ago
+      - text: "@AlexeyNikonov I don't think that there is the"
+      - code: object!.somKey
+      - text: syntax in JavaScript, but in most languages it indicates that you are force-unwrapping a value, saying that you are sure that the object is defined and that it is not optional
+      - button "0"
+      - button "Reply"
+      - button "Open menu"
+    - listitem:
+      - link "User profile":
+        - /url: /users/1048572/bergi
+      - link "Bergi":
+        - /url: /users/1048572/bergi
+      - link "Over a year ago":
+        - /url: "#comment130136175_9550412"
+        - time: Over a year ago
+      - text: "@AlexeyNikonov That's typescript"
+      - button "0"
+      - button "Reply"
+      - button "Open menu"
+    - listitem:
+      - link "User profile":
+        - /url: /users/9277453/olex-nikonov
+      - link "Olex Nikonov":
+        - /url: /users/9277453/olex-nikonov
+      - link "Over a year ago":
+        - /url: "#comment130143760_9550412"
+        - time: Over a year ago
+      - text: "@Bergi but what is the name of this operator ? i'd like to google about it more"
+      - button "0"
+      - button "Reply"
+      - button "Open menu"
+    - listitem:
+      - link "User profile":
+        - /url: /users/4642212/sebastian-simon
+      - link "Sebastian Simon":
+        - /url: /users/4642212/sebastian-simon
+      - link "Over a year ago":
+        - /url: "#comment130150595_9550412"
+        - time: Over a year ago
+      - text: "@AlexeyNikonov It’s easy to just type the"
+      - link "symbol names into Google":
+        - /url: //google.com/search?q=TypeScript+exclamation+point+dot
+      - text: .
+      - button "0"
+      - button "Reply"
+      - button "Open menu"
+  - button "Add a comment"
+  - text: "|"
+  - button "Show 1 more comment"
+  - paragraph: Start asking to get answers
+  - paragraph: Find the answer to your question by asking.
+  - link "Ask question":
+    - /url: /questions/ask
+  - paragraph: Explore related questions
+  - list:
+    - listitem:
+      - link "show questions tagged 'javascript'":
+        - /url: /questions/tagged/javascript
+        - text: javascript
+  - paragraph: See similar questions with these tags.
+- complementary "sidebar":
+  - list:
+    - listitem: The Overflow Blog
+    - listitem:
+      - link "Data is the new oil, and your database is the only way to extract it":
+        - /url: https://stackoverflow.blog/2026/02/17/data-is-the-new-oil/?cb=1
+    - listitem:
+      - link "Even GenAI uses Wikipedia as a source":
+        - /url: https://stackoverflow.blog/2026/02/20/even-genai-uses-wikipedia-as-a-source/?cb=1
+    - listitem: Featured on Meta
+    - listitem:
+      - link "All users on Stack Exchange can now participate in chat":
+        - /url: https://meta.stackexchange.com/questions/417109/all-users-on-stack-exchange-can-now-participate-in-chat?cb=1
+    - listitem:
+      - link "Logo updates to Stack Overflow's visual identity":
+        - /url: https://meta.stackexchange.com/questions/417394/logo-updates-to-stack-overflows-visual-identity?cb=1
+    - listitem:
+      - 'link "Policy: Generative AI (e.g., ChatGPT) is banned"':
+        - /url: https://meta.stackoverflow.com/questions/421831/policy-generative-ai-e-g-chatgpt-is-banned?cb=1
+    - listitem:
+      - 'link "New site design and philosophy for Stack Overflow: Starting February 24, 2026..."':
+        - /url: https://meta.stackoverflow.com/questions/438177/new-site-design-and-philosophy-for-stack-overflow-starting-february-24-2026-at?cb=1
+  - text: Community activity Last 1 hr
+  - list:
+    - listitem: Users online activity 5313 users online
+    - listitem:
+      - img "Number of questions asked"
+      - text: 4 questions
+    - listitem:
+      - img "Number of questions that received an answer"
+      - text: 15 answers
+    - listitem:
+      - img "Number of comments posted"
+      - text: 45 comments
+    - listitem:
+      - img "Number of upvotes on posts"
+      - text: 124 upvotes
+  - img "Popular tags"
+  - paragraph: Popular tags
+  - link "javascript":
+    - /url: https://stackoverflow.com/questions/tagged/javascript
+  - link "search":
+    - /url: https://stackoverflow.com/questions/tagged/search
+  - link "c++":
+    - /url: https://stackoverflow.com/questions/tagged/c++
+  - link "performance":
+    - /url: https://stackoverflow.com/questions/tagged/performance
+  - link "html":
+    - /url: https://stackoverflow.com/questions/tagged/html
+  - link "python":
+    - /url: https://stackoverflow.com/questions/tagged/python
+  - img "Popular unanswered question"
+  - paragraph: Popular unanswered question
+  - link "How to prevent the virtual keyboard from getting stuck to the text field in Jetpack Compose?":
+    - /url: https://stackoverflow.com/questions/79892486
+  - link "kotlin":
+    - /url: https://stackoverflow.com/questions/tagged/kotlin
+  - link "android-jetpack-compose":
+    - /url: https://stackoverflow.com/questions/tagged/android-jetpack-compose
+  - link "android-jetpack":
+    - /url: https://stackoverflow.com/questions/tagged/android-jetpack
+  - link "android-jetpack-compose-material3":
+    - /url: https://stackoverflow.com/questions/tagged/android-jetpack-compose-material3
+  - link "android-compose-textfield":
+    - /url: https://stackoverflow.com/questions/tagged/android-compose-textfield
+  - link "User avatar":
+    - /url: https://stackoverflow.com/users/30730101
+    - img "User avatar"
+  - link "Moloch":
+    - /url: https://stackoverflow.com/users/30730101
+  - list:
+    - listitem: "11"
+  - time: yesterday
+  - heading "Linked" [level=4]
+  - link "32":
+    - /url: https://stackoverflow.com/questions/48682468/es6-arrow-functions-and-array-map?lq=1
+  - link "ES6 arrow functions and array.map":
+    - /url: https://stackoverflow.com/questions/48682468/es6-arrow-functions-and-array-map?noredirect=1&lq=1
+  - link "3":
+    - /url: https://stackoverflow.com/questions/11871616/whats-the-difference-between-and-in-javascript?lq=1
+  - link "What's the difference between = and == in JavaScript?":
+    - /url: https://stackoverflow.com/questions/11871616/whats-the-difference-between-and-in-javascript?noredirect=1&lq=1
+  - link "5":
+    - /url: https://stackoverflow.com/questions/32957729/what-is-in-javascript?lq=1
+  - link "What is += in Javascript?":
+    - /url: https://stackoverflow.com/questions/32957729/what-is-in-javascript?noredirect=1&lq=1
+  - link "9":
+    - /url: https://stackoverflow.com/questions/61431181/java-script-arrow-function-returns-x-x?lq=1
+  - link "java-script arrow function returns (x++,x)":
+    - /url: https://stackoverflow.com/questions/61431181/java-script-arrow-function-returns-x-x?noredirect=1&lq=1
+  - link "1":
+    - /url: https://stackoverflow.com/questions/57113335/123-returns-3-can-someone-explain-why?lq=1
+  - link "1&&2&&3 returns 3. Can someone explain why":
+    - /url: https://stackoverflow.com/questions/57113335/123-returns-3-can-someone-explain-why?noredirect=1&lq=1
+  - link "0":
+    - /url: https://stackoverflow.com/questions/22190953/toggle-button-color-on-click?lq=1
+  - link "Toggle button color on click":
+    - /url: https://stackoverflow.com/questions/22190953/toggle-button-color-on-click?noredirect=1&lq=1
+  - link "4":
+    - /url: https://stackoverflow.com/questions/64725624/what-is-the-difference-between-using-only-paranthesis-and-curly-braces-within-pa?lq=1
+  - link "What is the difference between using only paranthesis and curly braces within paranthesis while defining function in ReactJS?":
+    - /url: https://stackoverflow.com/questions/64725624/what-is-the-difference-between-using-only-paranthesis-and-curly-braces-within-pa?noredirect=1&lq=1
+  - link "4":
+    - /url: https://stackoverflow.com/questions/46929776/square-brackets-around-variable-name-javascript?lq=1
+  - link "Square brackets around variable name (Javascript)":
+    - /url: https://stackoverflow.com/questions/46929776/square-brackets-around-variable-name-javascript?noredirect=1&lq=1
+  - link "5":
+    - /url: https://stackoverflow.com/questions/51986933/what-does-the-do-in-javascript?lq=1
+  - link "What does the ... do in Javascript?":
+    - /url: https://stackoverflow.com/questions/51986933/what-does-the-do-in-javascript?noredirect=1&lq=1
+  - link "2":
+    - /url: https://stackoverflow.com/questions/71390996/what-does-mean-in-javascript?lq=1
+  - link "what does ?? mean in JavaScript":
+    - /url: https://stackoverflow.com/questions/71390996/what-does-mean-in-javascript?noredirect=1&lq=1
+  - link "See more linked questions":
+    - /url: https://stackoverflow.com/questions/linked/9549780?lq=1
+  - heading "Related" [level=4]
+  - link "2":
+    - /url: https://stackoverflow.com/questions/4740775/what-does-this-js-expression-mean?rq=3
+  - link "What does this JS Expression mean?":
+    - /url: https://stackoverflow.com/questions/4740775/what-does-this-js-expression-mean?rq=3
+  - link "1":
+    - /url: https://stackoverflow.com/questions/5101638/what-does-this-javascript-code-mean?rq=3
+  - link "What does this javascript code mean?":
+    - /url: https://stackoverflow.com/questions/5101638/what-does-this-javascript-code-mean?rq=3
+  - link "1":
+    - /url: https://stackoverflow.com/questions/7832524/what-does-an-array-literal-with-the-for-keyword-inside-mean-in-javascript?rq=3
+  - 'link "What does an array literal with the `for` keyword inside mean in JavaScript?"':
+    - /url: https://stackoverflow.com/questions/7832524/what-does-an-array-literal-with-the-for-keyword-inside-mean-in-javascript?rq=3
+  - link "0":
+    - /url: https://stackoverflow.com/questions/8927193/what-does-this-javascript-variable-mean?rq=3
+  - link "What does this javascript variable mean?":
+    - /url: https://stackoverflow.com/questions/8927193/what-does-this-javascript-variable-mean?rq=3
+  - link "1":
+    - /url: https://stackoverflow.com/questions/12849645/what-does-this-javascript-statement-mean?rq=3
+  - link "What does this Javascript statement mean?":
+    - /url: https://stackoverflow.com/questions/12849645/what-does-this-javascript-statement-mean?rq=3
+  - link "1":
+    - /url: https://stackoverflow.com/questions/14030096/what-does-the-symbol-means-in-javascript?rq=3
+  - link "what does the symbol >> means in javascript":
+    - /url: https://stackoverflow.com/questions/14030096/what-does-the-symbol-means-in-javascript?rq=3
+  - link "-1":
+    - /url: https://stackoverflow.com/questions/23128981/what-does-this-line-of-javascript-shorthand-means?rq=3
+  - link "what does this line of javascript shorthand means?":
+    - /url: https://stackoverflow.com/questions/23128981/what-does-this-line-of-javascript-shorthand-means?rq=3
+  - link "-1":
+    - /url: https://stackoverflow.com/questions/37175336/symbol-in-javascript?rq=3
+  - link "Symbol in Javascript":
+    - /url: https://stackoverflow.com/questions/37175336/symbol-in-javascript?rq=3
+  - link "6":
+    - /url: https://stackoverflow.com/questions/37370780/what-does-this-in-this-snippet?rq=3
+  - link "What does this in this snippet?":
+    - /url: https://stackoverflow.com/questions/37370780/what-does-this-in-this-snippet?rq=3
+  - link "-2":
+    - /url: https://stackoverflow.com/questions/43536250/what-the-following-code-represent?rq=3
+  - link "What the following code represent?":
+    - /url: https://stackoverflow.com/questions/43536250/what-the-following-code-represent?rq=3
+  - heading "Hot Network Questions" [level=4]:
+    - link "Hot Network Questions":
+      - /url: https://stackexchange.com/questions?tab=hot
+  - list:
+    - listitem:
+      - link "Where is the center of mass of a donut-shaped object?":
+        - /url: https://physics.stackexchange.com/questions/869378/where-is-the-center-of-mass-of-a-donut-shaped-object
+    - listitem:
+      - link "What happens if the British Monarch commits a serious crime?":
+        - /url: https://politics.stackexchange.com/questions/94257/what-happens-if-the-british-monarch-commits-a-serious-crime
+    - listitem:
+      - link "Do our scriptures make any distinction between sins committed knowingly and unknowingly?":
+        - /url: https://hinduism.stackexchange.com/questions/69641/do-our-scriptures-make-any-distinction-between-sins-committed-knowingly-and-unkn
+    - listitem:
+      - link "How Can I Convert to Buddhism Without a Nearby Monastery?":
+        - /url: https://buddhism.stackexchange.com/questions/55424/how-can-i-convert-to-buddhism-without-a-nearby-monastery
+    - listitem:
+      - link "Why the races have to restart if someone leaves the starting position before starter pistol signal?":
+        - /url: https://sports.stackexchange.com/questions/30240/why-the-races-have-to-restart-if-someone-leaves-the-starting-position-before-sta
+    - listitem:
+      - link "Avoiding scams with online Thailand cannabis paperwork":
+        - /url: https://travel.stackexchange.com/questions/203307/avoiding-scams-with-online-thailand-cannabis-paperwork
+    - listitem:
+      - link "Circular Linked List Implementation":
+        - /url: https://codereview.stackexchange.com/questions/301377/circular-linked-list-implementation
+    - listitem:
+      - link "Did Jesus literally come out from God in John 8:42?":
+        - /url: https://hermeneutics.stackexchange.com/questions/114878/did-jesus-literally-come-out-from-god-in-john-842
+    - listitem:
+      - link "Mary Renault's describing the island of Keos as \"a stern land\" in \"The Praise Singer\"":
+        - /url: https://literature.stackexchange.com/questions/31701/mary-renaults-describing-the-island-of-keos-as-a-stern-land-in-the-praise-si
+    - listitem:
+      - link "Are Rakshasa part of the infernal hierarchy?":
+        - /url: https://rpg.stackexchange.com/questions/218822/are-rakshasa-part-of-the-infernal-hierarchy
+    - listitem:
+      - link "How should I patch drywall around a new subpanel?":
+        - /url: https://diy.stackexchange.com/questions/329289/how-should-i-patch-drywall-around-a-new-subpanel
+    - listitem:
+      - link "What is the relationship between emergence and supervenience?":
+        - /url: https://philosophy.stackexchange.com/questions/136410/what-is-the-relationship-between-emergence-and-supervenience
+    - listitem:
+      - link "What distinguishes engineering validation from simple functional demonstration in prototype design projects?":
+        - /url: https://engineering.stackexchange.com/questions/65355/what-distinguishes-engineering-validation-from-simple-functional-demonstration-i
+    - listitem:
+      - link "What's the meaning of this symbol with an infinite symbol and an A?":
+        - /url: https://gaming.stackexchange.com/questions/417884/whats-the-meaning-of-this-symbol-with-an-infinite-symbol-and-an-a
+    - listitem:
+      - link "How to avoid pushing a \"Sleep\" command?":
+        - /url: https://softwareengineering.stackexchange.com/questions/460897/how-to-avoid-pushing-a-sleep-command
+    - listitem:
+      - link "how can I determine the process that is talking to/through a specific TTY?":
+        - /url: https://unix.stackexchange.com/questions/804593/how-can-i-determine-the-process-that-is-talking-to-through-a-specific-tty
+    - listitem:
+      - link "Find the outcome of a Cortex Prime dice roll":
+        - /url: https://codegolf.stackexchange.com/questions/287387/find-the-outcome-of-a-cortex-prime-dice-roll
+    - listitem:
+      - link "Book about 3 main characters who gain powers from injection from crazy scientist":
+        - /url: https://scifi.stackexchange.com/questions/303330/book-about-3-main-characters-who-gain-powers-from-injection-from-crazy-scientist
+    - listitem:
+      - 'link "Make a distorted circle a circle again, after rescaling in the `axis` environment"':
+        - /url: https://tex.stackexchange.com/questions/759948/make-a-distorted-circle-a-circle-again-after-rescaling-in-the-axis-environmen
+    - listitem:
+      - link "Identify tv episode, everyone's got a brain chip - except one man who ultimately must destroy it":
+        - /url: https://scifi.stackexchange.com/questions/303324/identify-tv-episode-everyones-got-a-brain-chip-except-one-man-who-ultimately
+    - listitem:
+      - link "Is \"Spider-Man is a good movie\" an unfalsifiable statement?":
+        - /url: https://philosophy.stackexchange.com/questions/136376/is-spider-man-is-a-good-movie-an-unfalsifiable-statement
+    - listitem:
+      - link "Example where a convergence property of the product topology fails under the box topology? (Munkres exercise)":
+        - /url: https://math.stackexchange.com/questions/5125269/example-where-a-convergence-property-of-the-product-topology-fails-under-the-box
+    - listitem:
+      - link "Wrap a leafy plant onto a dodecahedron":
+        - /url: https://puzzling.stackexchange.com/questions/137104/wrap-a-leafy-plant-onto-a-dodecahedron
+    - listitem:
+      - link "Security in the standalone and simplfied UC model":
+        - /url: https://crypto.stackexchange.com/questions/119384/security-in-the-standalone-and-simplfied-uc-model
+- contentinfo:
+  - link "Stack Overflow":
+    - /url: https://stackoverflow.com
+  - navigation "Footer":
+    - heading "Stack Overflow" [level=5]:
+      - link "Stack Overflow":
+        - /url: https://stackoverflow.com
+    - list:
+      - listitem:
+        - link "Questions":
+          - /url: /questions
+      - listitem:
+        - link "Help":
+          - /url: /help
+      - listitem:
+        - link "Chat":
+          - /url: https://chat.stackoverflow.com/?tab=explore
+    - heading "Business" [level=5]:
+      - link "Business":
+        - /url: https://stackoverflow.co/
+    - list:
+      - listitem:
+        - link "Stack Internal":
+          - /url: https://stackoverflow.co/internal/?utm_medium=referral&utm_source=stackoverflow-community&utm_campaign=footer&utm_content=teams
+      - listitem:
+        - link "Stack Data Licensing":
+          - /url: https://stackoverflow.co/data-licensing/?utm_medium=referral&utm_source=stackoverflow-community&utm_campaign=footer&utm_content=data-licensing
+      - listitem:
+        - link "Stack Ads":
+          - /url: https://stackoverflow.co/advertising/?utm_medium=referral&utm_source=stackoverflow-community&utm_campaign=footer&utm_content=advertising
+    - heading "Company" [level=5]:
+      - link "Company":
+        - /url: https://stackoverflow.co/
+    - list:
+      - listitem:
+        - link "About":
+          - /url: https://stackoverflow.co/
+      - listitem:
+        - link "Press":
+          - /url: https://stackoverflow.co/company/press/
+      - listitem:
+        - link "Work Here":
+          - /url: https://stackoverflow.co/company/work-here/
+      - listitem:
+        - link "Legal":
+          - /url: https://stackoverflow.com/legal
+      - listitem:
+        - link "Privacy Policy":
+          - /url: https://stackoverflow.com/legal/privacy-policy
+      - listitem:
+        - link "Terms of Service":
+          - /url: https://stackoverflow.com/legal/terms-of-service/public
+      - listitem:
+        - link "Contact Us":
+          - /url: /contact
+      - listitem:
+        - button "Cookie Settings"
+      - listitem:
+        - link "Cookie Policy":
+          - /url: https://policies.stackoverflow.co/stack-overflow/cookie-policy
+    - heading "Stack Exchange Network" [level=5]:
+      - link "Stack Exchange Network":
+        - /url: https://stackexchange.com
+    - list:
+      - listitem:
+        - link "Technology":
+          - /url: https://stackexchange.com/sites#technology
+      - listitem:
+        - link "Culture & recreation":
+          - /url: https://stackexchange.com/sites#culturerecreation
+      - listitem:
+        - link "Life & arts":
+          - /url: https://stackexchange.com/sites#lifearts
+      - listitem:
+        - link "Science":
+          - /url: https://stackexchange.com/sites#science
+      - listitem:
+        - link "Professional":
+          - /url: https://stackexchange.com/sites#professional
+      - listitem:
+        - link "Business":
+          - /url: https://stackexchange.com/sites#business
+      - listitem:
+        - link "API":
+          - /url: https://api.stackexchange.com/
+      - listitem:
+        - link "Data":
+          - /url: https://data.stackexchange.com/
+  - list:
+    - listitem:
+      - link "Blog":
+        - /url: https://stackoverflow.blog?blb=1
+    - listitem:
+      - link "Facebook":
+        - /url: https://www.facebook.com/officialstackoverflow/
+    - listitem:
+      - link "Twitter":
+        - /url: https://twitter.com/stackoverflow
+    - listitem:
+      - link "LinkedIn":
+        - /url: https://linkedin.com/company/stack-overflow
+    - listitem:
+      - link "Instagram":
+        - /url: https://www.instagram.com/thestackoverflow
+  - paragraph:
+    - text: Site design / logo © 2026 Stack Exchange Inc; user contributions licensed under
+    - link "CC BY-SA":
+      - /url: https://stackoverflow.com/help/licensing
+    - text: . rev 2026.2.19.39917
+- region "Cookie banner":
+  - dialog "We Care About Your Privacy":
+    - heading "We Care About Your Privacy" [level=2]
+    - text: We and our 277 partners store and access personal data, like browsing data or unique identifiers, on your device. Selecting Accept all cookies enables tracking technologies to support the purposes shown under we and our partners process data to provide. Selecting Necessary cookies only or withdrawing your consent will disable them. If trackers are disabled, some content and ads you see may not be as relevant to you. You can resurface this menu to change your choices or withdraw consent at any time by clicking the Customize Settings link on the bottom of the webpage. Your choices will have effect within our Website. For more details, refer to our Privacy Policy.
+    - link "Cookie Policy":
+      - /url: https://policies.stackoverflow.co/stack-overflow/cookie-policy/
+    - text: .
+    - heading "We and our partners perform the following based on your settings:" [level=3]
+    - paragraph:
+      - text: Use precise geolocation data. Actively scan device characteristics for identification. Understand audiences through statistics or combinations of data from different sources. Store and/or access information on a device. Develop and improve services. Create profiles to personalise content. Measure content performance. Use limited data to select content. Measure advertising performance. Use limited data to select advertising. Create profiles for personalised advertising. Use profiles to select personalised advertising. Use profiles to select personalised content.
+      - button "List of Partners (vendors)"
+    - button "Accept all cookies"
+    - button "Necessary cookies only"
+    - button "Customize Settings, Opens the preference center dialog": Customize Settings

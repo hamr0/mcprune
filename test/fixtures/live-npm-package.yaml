@@ -1,0 +1,559 @@
+- region "Site notifications":
+  - text: ⚠️
+  - alert:
+    - text: "Security Update: Classic tokens have been revoked. Granular tokens are now limited to 90 days and require 2FA by default. Update your CI/CD workflows to avoid disruption."
+    - link "Learn more about npm authentication changes":
+      - /url: https://gh.io/all-npm-classic-tokens-revoked
+      - text: Learn more
+    - text: .
+  - button "Close notification": ×
+- banner:
+  - text: "skip to:"
+  - link "skip to content":
+    - /url: "#main"
+    - text: content
+  - link "skip to package search":
+    - /url: "#search"
+    - text: package search
+  - link "skip to sign in":
+    - /url: "#signin"
+    - text: sign in
+  - text: ❤
+  - navigation "Product Navigation":
+    - list:
+      - listitem:
+        - link "Pro":
+          - /url: /products/pro
+      - listitem:
+        - link "Teams":
+          - /url: /products/teams
+      - listitem:
+        - link "Pricing":
+          - /url: /products
+      - listitem:
+        - link "Documentation":
+          - /url: https://docs.npmjs.com
+  - text: npm
+  - link "Npm":
+    - /url: /
+  - combobox "Search packages"
+  - button "Search"
+  - link "Sign Up":
+    - /url: /signup
+  - link "Sign In":
+    - /url: /login
+- main:
+  - heading "express DefinitelyTyped icon, indicating that this package has TypeScript declarations provided by the separate @types/express package" [level=1]:
+    - text: express
+    - link "DefinitelyTyped icon, indicating that this package has TypeScript declarations provided by the separate @types/express package":
+      - /url: /package/@types/express
+      - img "DefinitelyTyped icon, indicating that this package has TypeScript declarations provided by the separate @types/express package"
+  - text: 5.2.1 • Public • Published
+  - time: 3 months ago
+  - tablist:
+    - tab "Readme" [selected]
+    - tab "Code Beta"
+    - tab "28 Dependencies"
+    - tab "98676 Dependents"
+    - tab "287 Versions"
+  - tabpanel "Readme":
+    - article:
+      - paragraph:
+        - link "Express Logo":
+          - /url: https://expressjs.com/
+          - img "Express Logo"
+      - paragraph:
+        - strong:
+          - text: Fast, unopinionated, minimalist web framework for
+          - link "Node.js":
+            - /url: https://nodejs.org
+          - text: .
+      - paragraph:
+        - strong:
+          - text: This project has a
+          - link "Code of Conduct":
+            - /url: https://github.com/expressjs/.github/blob/HEAD/CODE_OF_CONDUCT.md
+          - text: .
+      - heading "Table of contents" [level=2]
+      - 'link "Permalink: Table of contents"':
+        - /url: "#table-of-contents"
+      - list:
+        - listitem:
+          - link "Table of contents":
+            - /url: "#table-of-contents"
+        - listitem:
+          - link "Installation":
+            - /url: "#installation"
+        - listitem:
+          - link "Features":
+            - /url: "#features"
+        - listitem:
+          - link "Docs & Community":
+            - /url: "#docs--community"
+        - listitem:
+          - link "Quick Start":
+            - /url: "#quick-start"
+        - listitem:
+          - link "Philosophy":
+            - /url: "#philosophy"
+        - listitem:
+          - link "Examples":
+            - /url: "#examples"
+        - listitem:
+          - link "Contributing":
+            - /url: "#contributing"
+          - list:
+            - listitem:
+              - link "Security Issues":
+                - /url: "#security-issues"
+            - listitem:
+              - link "Running Tests":
+                - /url: "#running-tests"
+        - listitem:
+          - link "Current project team members":
+            - /url: "#current-project-team-members"
+          - list:
+            - listitem:
+              - link "TC (Technical Committee)":
+                - /url: "#tc-technical-committee"
+              - list:
+                - listitem:
+                  - link "TC emeriti members":
+                    - /url: "#tc-emeriti-members"
+            - listitem:
+              - link "Triagers":
+                - /url: "#triagers"
+              - list:
+                - listitem:
+                  - link "Emeritus Triagers":
+                    - /url: "#emeritus-triagers"
+        - listitem:
+          - link "License":
+            - /url: "#license"
+      - paragraph:
+        - link "NPM Version":
+          - /url: https://npmjs.org/package/express
+          - img "NPM Version"
+        - link "NPM Downloads":
+          - /url: https://npmcharts.com/compare/express?minimal=true
+          - img "NPM Downloads"
+        - link "Linux Build":
+          - /url: https://github.com/expressjs/express/actions/workflows/ci.yml
+          - img "Linux Build"
+        - link "Test Coverage":
+          - /url: https://coveralls.io/r/expressjs/express?branch=master
+          - img "Test Coverage"
+        - link "OpenSSF Scorecard Badge":
+          - /url: https://ossf.github.io/scorecard-visualizer/#/projects/github.com/expressjs/express
+          - img "OpenSSF Scorecard Badge"
+      - text: "import express from 'express' const app = express() app.get('/', (req, res) => { res.send('Hello World') }) app.listen(3000, () => { console.log('Server is running on http://localhost:3000') })"
+      - heading "Installation" [level=2]
+      - 'link "Permalink: Installation"':
+        - /url: "#installation"
+      - paragraph:
+        - text: This is a
+        - link "Node.js":
+          - /url: https://nodejs.org/en/
+        - text: module available through the
+        - link "npm registry":
+          - /url: https://www.npmjs.com/
+        - text: .
+      - paragraph:
+        - text: Before installing,
+        - link "download and install Node.js":
+          - /url: https://nodejs.org/en/download/
+        - text: . Node.js 18 or higher is required.
+      - paragraph:
+        - text: If this is a brand new project, make sure to create a
+        - code: package.json
+        - text: first with the
+        - link "npm init command":
+          - /url: https://docs.npmjs.com/creating-a-package-json-file
+          - code: npm init
+          - text: command
+        - text: .
+      - paragraph:
+        - text: Installation is done using the
+        - link "npm install command":
+          - /url: https://docs.npmjs.com/getting-started/installing-npm-packages-locally
+          - code: npm install
+          - text: command
+        - text: ":"
+      - text: npm install express
+      - paragraph:
+        - text: Follow
+        - link "our installing guide":
+          - /url: https://expressjs.com/en/starter/installing.html
+        - text: for more information.
+      - heading "Features" [level=2]
+      - 'link "Permalink: Features"':
+        - /url: "#features"
+      - list:
+        - listitem: Robust routing
+        - listitem: Focus on high performance
+        - listitem: Super-high test coverage
+        - listitem: HTTP helpers (redirection, caching, etc)
+        - listitem: View system supporting 14+ template engines
+        - listitem: Content negotiation
+        - listitem: Executable for generating applications quickly
+      - heading "Docs & Community" [level=2]
+      - 'link "Permalink: Docs & Community"':
+        - /url: "#docs--community"
+      - list:
+        - listitem:
+          - link "Website and Documentation":
+            - /url: https://expressjs.com/
+          - text: "- ["
+          - link "website repo":
+            - /url: https://github.com/expressjs/expressjs.com
+          - text: "]"
+        - listitem:
+          - link "GitHub Organization":
+            - /url: https://github.com/expressjs
+          - text: for Official Middleware & Modules
+        - listitem:
+          - link "Github Discussions":
+            - /url: https://github.com/expressjs/discussions
+          - text: for discussion on the development and usage of Express
+      - paragraph:
+        - strong: PROTIP
+        - text: Be sure to read the
+        - link "migration guide to v5":
+          - /url: https://expressjs.com/en/guide/migrating-5
+      - heading "Quick Start" [level=2]
+      - 'link "Permalink: Quick Start"':
+        - /url: "#quick-start"
+      - paragraph:
+        - text: The quickest way to get started with express is to utilize the executable
+        - link "express(1)":
+          - /url: https://github.com/expressjs/generator
+          - code: express(1)
+        - text: "to generate an application as shown below:"
+      - paragraph: "Install the executable. The executable's major version will match Express's:"
+      - text: npm install -g express-generator@4
+      - paragraph: "Create the app:"
+      - text: express /tmp/foo && cd /tmp/foo
+      - paragraph: "Install dependencies:"
+      - text: npm install
+      - paragraph: "Start the server:"
+      - text: npm start
+      - paragraph:
+        - text: "View the website at:"
+        - link "http://localhost:3000":
+          - /url: http://localhost:3000
+      - heading "Philosophy" [level=2]
+      - 'link "Permalink: Philosophy"':
+        - /url: "#philosophy"
+      - paragraph: The Express philosophy is to provide small, robust tooling for HTTP servers, making it a great solution for single page applications, websites, hybrids, or public HTTP APIs.
+      - paragraph:
+        - text: Express does not force you to use any specific ORM or template engine. With support for over 14 template engines via
+        - link "@ladjs/consolidate":
+          - /url: https://github.com/ladjs/consolidate
+        - text: ", you can quickly craft your perfect framework."
+      - heading "Examples" [level=2]
+      - 'link "Permalink: Examples"':
+        - /url: "#examples"
+      - paragraph: "To view the examples, clone the Express repository:"
+      - text: git clone https://github.com/expressjs/express.git --depth 1 && cd express
+      - paragraph: "Then install the dependencies:"
+      - text: npm install
+      - paragraph: "Then run whichever example you want:"
+      - text: node examples/content-negotiation
+      - heading "Contributing" [level=2]
+      - 'link "Permalink: Contributing"':
+        - /url: "#contributing"
+      - paragraph: The Express.js project welcomes all constructive contributions. Contributions take many forms, from code for bug fixes and enhancements, to additions and fixes to documentation, additional tests, triaging incoming pull requests and issues, and more!
+      - paragraph:
+        - text: See the
+        - link "Contributing Guide":
+          - /url: https://github.com/expressjs/.github/blob/HEAD/CONTRIBUTING.md
+        - text: for more technical details on contributing.
+      - heading "Security Issues" [level=3]
+      - 'link "Permalink: Security Issues"':
+        - /url: "#security-issues"
+      - paragraph:
+        - text: If you discover a security vulnerability in Express, please see
+        - link "Security Policies and Procedures":
+          - /url: https://github.com/expressjs/express/blob/HEAD/SECURITY.md
+        - text: .
+      - heading "Running Tests" [level=3]
+      - 'link "Permalink: Running Tests"':
+        - /url: "#running-tests"
+      - paragraph: "To run the test suite, first install the dependencies:"
+      - text: npm install
+      - paragraph:
+        - text: Then run
+        - code: npm test
+        - text: ":"
+      - text: npm test
+      - heading "Current project team members" [level=2]
+      - 'link "Permalink: Current project team members"':
+        - /url: "#current-project-team-members"
+      - paragraph:
+        - text: For information about the governance of the express.js project, see
+        - link "GOVERNANCE.md":
+          - /url: https://github.com/expressjs/discussions/blob/HEAD/docs/GOVERNANCE.md
+        - text: .
+      - paragraph:
+        - text: The original author of Express is
+        - link "TJ Holowaychuk":
+          - /url: https://github.com/tj
+      - paragraph:
+        - link "List of all contributors":
+          - /url: https://github.com/expressjs/express/graphs/contributors
+      - heading "TC (Technical Committee)" [level=3]
+      - 'link "Permalink: TC (Technical Committee)"':
+        - /url: "#tc-technical-committee"
+      - list:
+        - listitem:
+          - link "UlisesGascon":
+            - /url: https://github.com/UlisesGascon
+          - text: "-"
+          - strong: Ulises Gascón
+          - text: (he/him)
+        - listitem:
+          - link "jonchurch":
+            - /url: https://github.com/jonchurch
+          - text: "-"
+          - strong: Jon Church
+        - listitem:
+          - link "wesleytodd":
+            - /url: https://github.com/wesleytodd
+          - text: "-"
+          - strong: Wes Todd
+        - listitem:
+          - link "LinusU":
+            - /url: https://github.com/LinusU
+          - text: "-"
+          - strong: Linus Unnebäck
+        - listitem:
+          - link "blakeembrey":
+            - /url: https://github.com/blakeembrey
+          - text: "-"
+          - strong: Blake Embrey
+        - listitem:
+          - link "sheplu":
+            - /url: https://github.com/sheplu
+          - text: "-"
+          - strong: Jean Burellier
+        - listitem:
+          - link "crandmck":
+            - /url: https://github.com/crandmck
+          - text: "-"
+          - strong: Rand McKinney
+        - listitem:
+          - link "ctcpip":
+            - /url: https://github.com/ctcpip
+          - text: "-"
+          - strong: Chris de Almeida
+      - group: TC emeriti members
+      - heading "Triagers" [level=3]
+      - 'link "Permalink: Triagers"':
+        - /url: "#triagers"
+      - list:
+        - listitem:
+          - link "aravindvnair99":
+            - /url: https://github.com/aravindvnair99
+          - text: "-"
+          - strong: Aravind Nair
+        - listitem:
+          - link "bjohansebas":
+            - /url: https://github.com/bjohansebas
+          - text: "-"
+          - strong: Sebastian Beltran
+        - listitem:
+          - link "carpasse":
+            - /url: https://github.com/carpasse
+          - text: "-"
+          - strong: Carlos Serrano
+        - listitem:
+          - link "CBID2":
+            - /url: https://github.com/CBID2
+          - text: "-"
+          - strong: Christine Belzie
+        - listitem:
+          - link "UlisesGascon":
+            - /url: https://github.com/UlisesGascon
+          - text: "-"
+          - strong: Ulises Gascón
+          - text: (he/him)
+        - listitem:
+          - link "IamLizu":
+            - /url: https://github.com/IamLizu
+          - text: "-"
+          - strong: S M Mahmudul Hasan
+          - text: (he/him)
+        - listitem:
+          - link "Phillip9587":
+            - /url: https://github.com/Phillip9587
+          - text: "-"
+          - strong: Phillip Barta
+        - listitem:
+          - link "efekrskl":
+            - /url: https://github.com/efekrskl
+          - text: "-"
+          - strong: Efe Karasakal
+      - group: Triagers emeriti members
+      - heading "License" [level=2]
+      - 'link "Permalink: License"':
+        - /url: "#license"
+      - paragraph:
+        - link "MIT":
+          - /url: https://github.com/expressjs/express/blob/HEAD/LICENSE
+    - heading "Readme" [level=2]
+    - heading "Keywords" [level=3]
+    - list:
+      - listitem:
+        - link "express":
+          - /url: /search?q=keywords:express
+      - listitem:
+        - link "framework":
+          - /url: /search?q=keywords:framework
+      - listitem:
+        - link "sinatra":
+          - /url: /search?q=keywords:sinatra
+      - listitem:
+        - link "web":
+          - /url: /search?q=keywords:web
+      - listitem:
+        - link "http":
+          - /url: /search?q=keywords:http
+      - listitem:
+        - link "rest":
+          - /url: /search?q=keywords:rest
+      - listitem:
+        - link "restful":
+          - /url: /search?q=keywords:restful
+      - listitem:
+        - link "router":
+          - /url: /search?q=keywords:router
+      - listitem:
+        - link "app":
+          - /url: /search?q=keywords:app
+      - listitem:
+        - link "api":
+          - /url: /search?q=keywords:api
+  - tabpanel
+  - tabpanel
+  - tabpanel "28 Dependencies"
+  - tabpanel "98676 Dependents"
+  - tabpanel "287 Versions"
+  - complementary "Package sidebar":
+    - heading "Package Sidebar" [level=2]
+    - heading "Install" [level=3]
+    - paragraph:
+      - code: npm i express
+      - button "Copy install command line"
+    - heading "Repository" [level=3]
+    - paragraph:
+      - link "Repository github.com/expressjs/express":
+        - /url: https://github.com/expressjs/express
+        - text: github.com/expressjs/express
+    - heading "Homepage" [level=3]
+    - paragraph:
+      - link "Homepage expressjs.com/":
+        - /url: https://expressjs.com/
+        - text: expressjs.com/
+    - link "Fund this package":
+      - /url: https://opencollective.com/express
+      - strong: Fund
+      - text: this package
+    - button "Showing weekly downloads":
+      - heading "Weekly Downloads" [level=3]
+      - paragraph: 42,411,851
+    - heading "Version" [level=3]
+    - paragraph: 5.2.1
+    - heading "License" [level=3]
+    - paragraph: MIT
+    - heading "Unpacked Size" [level=3]
+    - paragraph: 75.4 kB
+    - heading "Total Files" [level=3]
+    - paragraph: "10"
+    - heading "Last publish" [level=3]
+    - paragraph:
+      - time: 3 months ago
+    - heading "Collaborators" [level=3]
+    - list "Collaborators":
+      - listitem:
+        - link "wesleytodd":
+          - /url: /~wesleytodd
+          - img "wesleytodd"
+      - listitem:
+        - link "jonchurch":
+          - /url: /~jonchurch
+          - img "jonchurch"
+      - listitem:
+        - link "ctcpip":
+          - /url: /~ctcpip
+          - img "ctcpip"
+      - listitem:
+        - link "ulisesgascon":
+          - /url: /~ulisesgascon
+          - img "ulisesgascon"
+      - listitem:
+        - link "sheplu":
+          - /url: /~sheplu
+          - img "sheplu"
+    - link "Analyze security with Socket":
+      - /url: https://socket.dev/npm/package/express
+      - strong: Analyze security
+      - text: with Socket
+    - link "Check bundle size":
+      - /url: https://bundlephobia.com/package/express
+      - strong: Check bundle size
+    - link "View package health":
+      - /url: https://snyk.io/advisor/npm-package/express
+      - strong: View package health
+    - link "Explore dependencies":
+      - /url: https://npmgraph.js.org/?q=express
+      - strong: Explore dependencies
+    - link "Report malware":
+      - /url: /support?inquire=security&security-inquire=malware&package=express&version=5.2.1
+      - strong: Report
+      - text: malware
+- contentinfo:
+  - heading "Footer" [level=2]
+  - link "Visit npm GitHub page":
+    - /url: https://github.com/npm
+  - link "GitHub":
+    - /url: https://github.com
+  - heading "Support" [level=3]
+  - list "Support":
+    - listitem:
+      - link "Help":
+        - /url: https://docs.npmjs.com
+    - listitem:
+      - link "Advisories":
+        - /url: https://github.com/advisories
+    - listitem:
+      - link "Status":
+        - /url: http://status.npmjs.org/
+    - listitem:
+      - link "Contact npm":
+        - /url: /support
+  - heading "Company" [level=3]
+  - list "Company":
+    - listitem:
+      - link "About":
+        - /url: /about
+    - listitem:
+      - link "Blog":
+        - /url: https://github.blog/tag/npm/
+    - listitem:
+      - link "Press":
+        - /url: /press
+  - heading "Terms & Policies" [level=3]
+  - list "Terms & Policies":
+    - listitem:
+      - link "Policies":
+        - /url: /policies/
+    - listitem:
+      - link "Terms of Use":
+        - /url: /policies/terms
+    - listitem:
+      - link "Code of Conduct":
+        - /url: /policies/conduct
+    - listitem:
+      - link "Privacy":
+        - /url: /policies/privacy
+- text: Viewing express version 5.2.1

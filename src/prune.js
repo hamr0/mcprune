@@ -38,6 +38,8 @@ export function prune(yaml, options = {}) {
   // Step 1: Extract landmark subtrees that match the mode
   const kept = extractRegions(tree, allowedRegions);
 
+  const isBrowse = mode === 'browse';
+
   // Step 2: Prune nodes within kept regions
   const ctx = { mode, parentRole: null, keywords };
   const pruned = kept.map(region => pruneNode(region, ctx)).filter(Boolean);
@@ -48,19 +50,25 @@ export function prune(yaml, options = {}) {
     : pruned;
 
   // Step 4: Post-prune cleanup (dedup, noise removal, context filtering)
-  const cleaned = collapsed.map(n => postClean(n)).filter(Boolean);
+  const cleaned = collapsed.map(n => postClean(n, isBrowse)).filter(Boolean);
 
-  // Step 5: Dedup links — keep first ref per unique link text
-  const deduped = dedupLinks(cleaned);
+  // Steps 5-8: e-commerce noise removal — skip in browse mode (docs/articles don't have this noise)
+  let noFilters;
+  if (isBrowse) {
+    noFilters = cleaned;
+  } else {
+    // Step 5: Dedup links — keep first ref per unique link text
+    const deduped = dedupLinks(cleaned);
 
-  // Step 6: Drop noise buttons (energy labels, product sheets, ad feedback)
-  const denoised = deduped.map(n => dropNoiseButtons(n)).filter(Boolean);
+    // Step 6: Drop noise buttons (energy labels, product sheets, ad feedback)
+    const denoised = deduped.map(n => dropNoiseButtons(n)).filter(Boolean);
 
-  // Step 7: Truncate after "back to top" — everything below is footer
-  const truncated = truncateAfterFooter(denoised);
+    // Step 7: Truncate after "back to top" — everything below is footer
+    const truncated = truncateAfterFooter(denoised);
 
-  // Step 8: Drop sidebar filter groups
-  const noFilters = truncated.map(n => dropFilterGroups(n)).filter(Boolean);
+    // Step 8: Drop sidebar filter groups
+    noFilters = truncated.map(n => dropFilterGroups(n)).filter(Boolean);
+  }
 
   // Step 9: Serialize back to YAML
   return serialize(noFilters, { preserveRefs, stripUrls });
@@ -237,19 +245,62 @@ function isRegionAllowed(node, allowedRegions) {
  * @returns {import('./parse.js').ANode|null}
  */
 function pruneNode(node, ctx) {
+  const isBrowse = ctx.mode === 'browse';
+
   // In act mode, drop links inside paragraphs — they're inline content references,
   // not page actions. ("assistive technology" link inside article text ≠ "Add to Cart")
   if (ctx.mode === 'act' && node.role === 'link' && ctx.parentRole === 'paragraph') {
     return null;
   }
 
-  // In act mode, drop entire paragraphs — they're content, not actions
-  if (ctx.mode === 'act' && node.role === 'paragraph') {
+  // In act mode, drop entire paragraphs — they're content, not actions.
+  // In browse mode, paragraphs ARE the content — keep and recurse.
+  if (node.role === 'paragraph') {
+    if (ctx.mode === 'act') return null;
+    return { ...node, children: pruneChildren(node.children, ctx) };
+  }
+
+  // Drop superscript (footnote markers like [1], [2]) — noise in both modes
+  if (node.role === 'superscript') {
     return null;
   }
 
-  // In act mode, drop superscript (footnote markers)
-  if (ctx.mode === 'act' && node.role === 'superscript') {
+  // In browse mode, drop navigation landmarks nested inside main
+  // (Wikipedia "Namespaces", "Views", "Page tools" are chrome, not content)
+  if (isBrowse && node.role === 'navigation') {
+    return null;
+  }
+
+  // Keep code blocks (code examples in docs)
+  if (node.role === 'code') {
+    return node;
+  }
+
+  // Keep term/definition pairs (parameter docs on MDN, Python docs)
+  if (node.role === 'term' || node.role === 'definition') {
+    return { ...node, children: pruneChildren(node.children, ctx) };
+  }
+
+  // Keep strong/emphasis in browse mode (inline formatting in docs)
+  if (isBrowse && (node.role === 'strong' || node.role === 'emphasis')) {
+    return { ...node, children: pruneChildren(node.children, ctx) };
+  }
+
+  // Keep blockquote in browse mode (quotes in articles)
+  if (isBrowse && node.role === 'blockquote') {
+    return { ...node, children: pruneChildren(node.children, ctx) };
+  }
+
+  // Figures in browse mode: keep caption text, drop image links
+  if (isBrowse && node.role === 'figure') {
+    const caption = node.name || '';
+    if (caption) {
+      return {
+        role: 'text', name: '', ref: '', states: {}, props: {},
+        text: `[Figure: ${caption}]`,
+        children: [],
+      };
+    }
     return null;
   }
 
@@ -260,7 +311,8 @@ function pruneNode(node, ctx) {
 
   // Context-aware pruning: if we have keywords and this is a listitem (product card),
   // check if ANY text in the subtree matches. If zero matches, collapse to minimal.
-  if (ctx.keywords.length > 0 && node.role === 'listitem' && hasInteractive(node)) {
+  // Skip in browse mode — agent is reading, not filtering product cards.
+  if (!isBrowse && ctx.keywords.length > 0 && node.role === 'listitem' && hasInteractive(node)) {
     const subtreeText = extractText(node).toLowerCase();
     const hits = ctx.keywords.filter(kw => subtreeText.includes(kw)).length;
     if (hits === 0) {
@@ -277,15 +329,16 @@ function pruneNode(node, ctx) {
   }
   if (node.role === 'group' && node.name) {
     // Color swatch groups: "beschikbare kleuren", "available colors"
-    if (/kleuren|colors?|couleurs?|farben/i.test(node.name)) {
+    if (!isBrowse && /kleuren|colors?|couleurs?|farben/i.test(node.name)) {
       return collapseColorSwatches(node);
     }
     return { ...node, children: pruneChildren(node.children, ctx) };
   }
 
-  // Keep h1 always (page identity). Drop h2+ headings for non-actionable sections.
+  // Keep h1 always (page identity). In act mode, drop h2+ headings for non-actionable sections.
+  // In browse mode, keep ALL headings — they structure the article.
   if (node.role === 'heading') {
-    if (node.states.level !== '1') {
+    if (!isBrowse && node.states.level !== '1') {
       const descriptionHeadings = /about this|description|detail|feature|specification|overview/i;
       if (node.name && descriptionHeadings.test(node.name)) return null;
     }
@@ -294,34 +347,51 @@ function pruneNode(node, ctx) {
 
   // Keep text nodes that are contextually useful
   if (node.role === 'text') {
-    return keepTextNode(node) ? node : null;
+    return keepTextNode(node, ctx.mode) ? node : null;
   }
 
-  // Drop images
-  if (node.role === 'img') return null;
+  // Drop images (in browse mode, keep named images — diagrams, figures with alt text)
+  if (node.role === 'img') {
+    if (isBrowse && node.name) return { ...node, children: [] };
+    return null;
+  }
 
   // Drop separators
   if (node.role === 'separator') return null;
 
-  // Drop auxiliary landmarks that got through (complementary, etc.)
-  if (node.role === 'complementary') return null;
+  // In browse mode, keep complementary regions (table of contents, "In this article" sidebar)
+  // In act mode, drop them — they're not actionable
+  if (node.role === 'complementary') {
+    if (isBrowse) return { ...node, children: pruneChildren(node.children, ctx) };
+    return null;
+  }
 
   // Drop named regions about images/reviews in act mode
   if (node.role === 'region') {
-    const auxPatterns = /image|review|recommend|related|similar|also viewed/i;
-    if (node.name && auxPatterns.test(node.name)) return null;
+    if (!isBrowse) {
+      const auxPatterns = /image|review|recommend|related|similar|also viewed/i;
+      if (node.name && auxPatterns.test(node.name)) return null;
+    }
+  }
+
+  // Keep note/aside roles in browse mode (MDN notes, warnings)
+  if (isBrowse && (node.role === 'note' || node.role === 'status')) {
+    return { ...node, children: pruneChildren(node.children, ctx) };
   }
 
   // For structural/unnamed nodes: recurse into children, promote keepers
   const childCtx = { ...ctx, parentRole: node.role };
   const keptChildren = pruneChildren(node.children, childCtx);
 
-  // Pure text lists (product descriptions) — drop if no interactive children
-  if (node.role === 'list' && keptChildren.every(c => !hasInteractive(c))) {
-    return null;
-  }
-  if (node.role === 'listitem' && !hasInteractive(node)) {
-    return null;
+  // Pure text lists (product descriptions) — drop if no interactive children.
+  // In browse mode, keep text-only lists — they're article content (instructions, bullet points).
+  if (!isBrowse) {
+    if (node.role === 'list' && keptChildren.every(c => !hasInteractive(c))) {
+      return null;
+    }
+    if (node.role === 'listitem' && !hasInteractive(node)) {
+      return null;
+    }
   }
 
   // If this structural node has kept children, keep it (may be collapsed later)
@@ -344,14 +414,21 @@ function pruneChildren(children, ctx) {
 
 /**
  * Decide whether a text node is worth keeping.
- * Keep: prices, stock status, labels near interactive elements.
- * Drop: long descriptions, marketing copy.
+ * Act mode: prices, stock status, short labels. Drop long descriptions.
+ * Browse mode: keep most text — it's the article content the agent is reading.
  */
-function keepTextNode(node) {
+function keepTextNode(node, mode) {
   const t = node.text || '';
   if (!t) return false;
 
-  // Keep prices
+  // Browse mode: keep all text except very short noise tokens
+  if (mode === 'browse') {
+    // Drop single-char separator tokens ("|", "»", etc.)
+    if (t.length <= 2 && /^[|»·•→←>\-]$/.test(t.trim())) return false;
+    return true;
+  }
+
+  // Act mode: keep prices
   if (/\$[\d,]+\.?\d*/.test(t)) return true;
 
   // Keep stock/availability
@@ -417,7 +494,7 @@ function collapse(node) {
  * - Drop orphaned headings (h2+ not followed by interactive content)
  * - Trim combobox/listbox option children to just selected value
  */
-function postClean(node) {
+function postClean(node, isBrowse) {
   if (!node) return null;
 
   // Trim combobox options — the LLM just needs the combobox name + current value
@@ -428,10 +505,11 @@ function postClean(node) {
   }
 
   // Recurse into children
-  node.children = node.children.map(c => postClean(c)).filter(Boolean);
+  node.children = node.children.map(c => postClean(c, isBrowse)).filter(Boolean);
 
   // Drop orphaned headings: h2+ with no interactive sibling after them in parent
-  if (node.children) {
+  // Skip in browse mode — headings structure the article even without interactive siblings
+  if (!isBrowse && node.children) {
     node.children = dropOrphanedHeadings(node.children);
   }
 
