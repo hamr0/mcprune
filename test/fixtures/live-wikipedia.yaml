@@ -1,0 +1,2490 @@
+- link "Jump to content":
+  - /url: "#bodyContent"
+- banner:
+  - navigation "Site":
+    - button "Main menu"
+  - link "Wikipedia The Free Encyclopedia":
+    - /url: /wiki/Main_Page
+    - img "Wikipedia"
+    - img "The Free Encyclopedia"
+  - search:
+    - searchbox "Search Wikipedia"
+    - button "Search"
+  - navigation "Personal tools":
+    - list:
+      - listitem:
+        - link "Donate":
+          - /url: https://donate.wikimedia.org/?wmf_source=donate&wmf_medium=sidebar&wmf_campaign=en.wikipedia.org&uselang=en
+      - listitem:
+        - link "Create account":
+          - /url: /w/index.php?title=Special:CreateAccount&returnto=Accessibility
+      - listitem:
+        - link "Log in":
+          - /url: /w/index.php?title=Special:UserLogin&returnto=Accessibility
+- navigation "Contents":
+  - heading "Contents" [level=2]
+  - button "hide"
+  - list:
+    - listitem:
+      - link "(Top)":
+        - /url: "#"
+    - listitem:
+      - link "Legislation":
+        - /url: "#Legislation"
+      - button "Toggle Legislation subsection"
+      - list
+    - listitem:
+      - link "Assistive technology and adaptive technology":
+        - /url: "#Assistive_technology_and_adaptive_technology"
+      - list
+    - listitem:
+      - link "Employment":
+        - /url: "#Employment"
+      - button "Toggle Employment subsection"
+      - list
+    - listitem:
+      - link "Transportation":
+        - /url: "#Transportation"
+      - button "Toggle Transportation subsection"
+      - list
+    - listitem:
+      - link "Public space":
+        - /url: "#Public_space"
+      - list
+    - listitem:
+      - link "Housing":
+        - /url: "#Housing"
+      - button "Toggle Housing subsection"
+      - list
+    - listitem:
+      - link "Voting":
+        - /url: "#Voting"
+      - list
+    - listitem:
+      - link "Disability, information technology (IT) and telecommunications":
+        - /url: "#Disability,_information_technology_(IT)_and_telecommunications"
+      - button "Toggle Disability, information technology (IT) and telecommunications subsection"
+      - list
+    - listitem:
+      - link "Education and accessibility for students":
+        - /url: "#Education_and_accessibility_for_students"
+      - button "Toggle Education and accessibility for students subsection"
+      - list
+    - listitem:
+      - link "See also":
+        - /url: "#See_also"
+      - list
+    - listitem:
+      - link "References":
+        - /url: "#References"
+      - list
+    - listitem:
+      - link "External links":
+        - /url: "#External_links"
+      - list
+- main:
+  - heading "Accessibility" [level=1]
+  - button "Go to an article in another language. Available in 42 languages"
+  - navigation "Namespaces":
+    - list:
+      - listitem:
+        - link "Article":
+          - /url: /wiki/Accessibility
+      - listitem:
+        - link "Talk":
+          - /url: /wiki/Talk:Accessibility
+  - navigation "Views":
+    - list:
+      - listitem:
+        - link "Read":
+          - /url: /wiki/Accessibility
+      - listitem:
+        - link "Edit":
+          - /url: /w/index.php?title=Accessibility&action=edit
+      - listitem:
+        - link "View history":
+          - /url: /w/index.php?title=Accessibility&action=history
+  - navigation "Page tools":
+    - button "Tools"
+  - navigation "Appearance":
+    - text: Appearance
+    - button "hide"
+    - text: Text
+    - list:
+      - listitem:
+        - radio "Small"
+        - text: Small
+        - radio "Standard" [checked]
+        - text: Standard
+        - radio "Large"
+        - text: Large
+    - text: Width
+    - list:
+      - listitem:
+        - radio "Standard" [checked]
+        - text: Standard
+        - radio "Wide"
+        - text: Wide
+    - text: Color (beta)
+    - list:
+      - listitem:
+        - radio "Automatic"
+        - text: Automatic
+        - radio "Light" [checked]
+        - text: Light
+        - radio "Dark"
+        - text: Dark
+  - text: From Wikipedia, the free encyclopedia
+  - note:
+    - text: For design of products or environments for access by all users, see
+    - link "Universal design":
+      - /url: /wiki/Universal_design
+    - text: . For design of websites etc. for access by all users, see
+    - link "Web accessibility":
+      - /url: /wiki/Web_accessibility
+    - text: . For measures of spatial accessibility, see
+    - link "Accessibility (transport)":
+      - /url: /wiki/Accessibility_(transport)
+    - text: . For the logical notion, see
+    - link "Accessibility relation":
+      - /url: /wiki/Accessibility_relation
+    - text: . For the process in agenda-setting theory, see
+    - link "Agenda-setting theory § Accessibility":
+      - /url: /wiki/Agenda-setting_theory#Accessibility
+    - text: .
+  - note:
+    - text: For Wikipedia's accessibility guideline, see
+    - link "Wikipedia:Accessibility":
+      - /url: /wiki/Wikipedia:Accessibility
+    - text: .
+  - figure "Elevator buttons with Braille markings":
+    - link "Panel on an elevator showing the floor buttons with Braille markings":
+      - /url: /wiki/File:MAD_BS_Moon_fixtures_(cropped_2).jpg
+      - img "Panel on an elevator showing the floor buttons with Braille markings"
+    - text: Elevator buttons with Braille markings
+  - figure "The public transport system in Curitiba, Brazil, offers universal access via wheelchair lifts.":
+    - link "A woman with a baby carriage uses a platform lift to access a station above street level":
+      - /url: /wiki/File:Curitiba_10_2006_05_RIT.jpg
+      - img "A woman with a baby carriage uses a platform lift to access a station above street level"
+    - text: The
+    - link "public transport system in Curitiba":
+      - /url: /wiki/Rede_Integrada_de_Transporte
+    - text: ", Brazil, offers universal access via"
+    - link "wheelchair lifts":
+      - /url: /wiki/Wheelchair_lift
+    - text: .
+  - paragraph:
+    - text: Accessibility is the design of products, devices, services, vehicles, or environments to be usable by
+    - link "disabled":
+      - /url: /wiki/Disabled
+    - text: people.
+    - superscript:
+      - link "[1]":
+        - /url: "#cite_note-1"
+    - text: The concept of accessible design and practice of accessible developments ensures both "direct access" (i.e. unassisted) and "indirect access" meaning compatibility with a person's
+    - link "assistive technology":
+      - /url: /wiki/Assistive_technology
+    - text: (for example, computer
+    - link "screen readers":
+      - /url: /wiki/Screen_reader
+    - text: ).
+    - superscript:
+      - link "[2]":
+        - /url: "#cite_note-2"
+  - paragraph:
+    - text: Accessibility can be viewed as the "ability to access" and benefit from some system or entity. The concept focuses on enabling access for people with disabilities, or enabling access through the use of
+    - link "assistive technology":
+      - /url: /wiki/Assistive_technology
+    - text: ; however, research and development in accessibility brings benefits to everyone.
+    - superscript:
+      - link "[3]":
+        - /url: "#cite_note-3"
+    - superscript:
+      - link "[4]":
+        - /url: "#cite_note-4"
+    - superscript:
+      - link "[5]":
+        - /url: "#cite_note-5"
+    - superscript:
+      - link "[6]":
+        - /url: "#cite_note-6"
+    - superscript:
+      - link "[7]":
+        - /url: "#cite_note-7"
+    - text: Therefore, an accessible society should eliminate
+    - link "digital divide":
+      - /url: /wiki/Digital_divide
+    - text: or
+    - link "knowledge divide":
+      - /url: /wiki/Knowledge_divide
+    - text: .
+  - paragraph:
+    - text: Accessibility is not to be confused with
+    - link "usability":
+      - /url: /wiki/Usability
+    - text: ", which is the extent to which a product (such as a device, service, or environment) can be used by specified users to achieve specified goals with effectiveness, efficiency, and satisfaction in a specified context of use."
+    - superscript:
+      - link "[8]":
+        - /url: "#cite_note-8"
+  - paragraph:
+    - text: Accessibility is also strongly related to
+    - link "universal design":
+      - /url: /wiki/Universal_design
+    - text: ", the process of creating products that are usable by the widest possible range of people, operating within the widest possible range of situations."
+    - superscript:
+      - link "[9]":
+        - /url: "#cite_note-9"
+    - text: Universal design typically provides a single general solution that can accommodate people with disabilities as well as the rest of the population. By contrast, accessible design is focused on ensuring that there are no barriers to accessibility for all people, including those with disabilities.
+  - heading "Legislation" [level=2]
+  - text: "["
+  - link "edit":
+    - /url: /w/index.php?title=Accessibility&action=edit&section=1
+  - text: "]"
+  - figure "International Symbol of Access denotes area with access for those with disabilities.":
+    - link "White line figure of a person seated over the axis of a wheel on blue background":
+      - /url: /wiki/File:MUTCD_D9-6.svg
+      - img "White line figure of a person seated over the axis of a wheel on blue background"
+    - link "International Symbol of Access":
+      - /url: /wiki/International_Symbol_of_Access
+    - text: denotes area with access for those with disabilities.
+  - paragraph:
+    - text: The
+    - link "disability rights movement":
+      - /url: /wiki/Disability_rights_movement
+    - text: advocates equal access to social, political, and economic life which includes not only physical access but access to the same tools, services, organizations and facilities as non-disabled people (e.g., museums
+    - superscript:
+      - link "[10]":
+        - /url: "#cite_note-10"
+    - superscript:
+      - link "[11]":
+        - /url: "#cite_note-11"
+    - text: ). Article 9 of the United Nations
+    - link "Convention on the Rights of Persons with Disabilities":
+      - /url: /wiki/Convention_on_the_Rights_of_Persons_with_Disabilities
+    - text: commits signatories to provide for full accessibility in their countries.
+    - superscript:
+      - link "[12]":
+        - /url: "#cite_note-12"
+  - paragraph:
+    - text: While it is often used to describe facilities or amenities to assist people with impaired mobility, through the provision of facilities like
+    - link "wheelchair ramps":
+      - /url: /wiki/Wheelchair_ramp
+    - text: ", the term can include other types of disability. Accessible facilities therefore extend to areas such as"
+    - link "Braille":
+      - /url: /wiki/Braille
+    - text: signage,
+    - link "elevators":
+      - /url: /wiki/Elevator
+    - text: ", audio signals at"
+    - link "pedestrian crossings":
+      - /url: /wiki/Pedestrian_crossing
+    - text: ", walkway contours,"
+    - link "website accessibility":
+      - /url: /wiki/Website_accessibility
+    - text: and
+    - link "accessible publishing":
+      - /url: /wiki/Accessible_publishing
+    - text: .
+    - superscript:
+      - link "[13]":
+        - /url: "#cite_note-13"
+  - paragraph:
+    - text: In the United States, government mandates including Section 508, WCAG,
+    - superscript:
+      - link "[14]":
+        - /url: "#cite_note-14"
+    - text: DDA are all enforcing practices to standardize accessibility testing engineering in product development.
+  - paragraph: Accessibility modifications may be required to enable persons with disabilities to gain access to education, employment, transportation, housing, recreation, or even simply to exercise their right to vote.
+  - heading "National legislation" [level=3]
+  - text: "["
+  - link "edit":
+    - /url: /w/index.php?title=Accessibility&action=edit&section=2
+  - text: "]"
+  - paragraph: "Various countries have legislation requiring physical accessibility which are (in order of enactment):"
+  - list:
+    - listitem:
+      - text: In the US, under the
+      - link "Americans with Disabilities Act of 1990":
+        - /url: /wiki/Americans_with_Disabilities_Act_of_1990
+      - text: ","
+      - superscript:
+        - link "[15]":
+          - /url: "#cite_note-15"
+      - text: new public and private business construction generally must be accessible. Existing private businesses are required to increase the accessibility of their facilities when making any other renovations in proportion to the cost of the other renovations. The
+      - link "United States Access Board":
+        - /url: /wiki/United_States_Access_Board
+      - superscript:
+        - link "[16]":
+          - /url: "#cite_note-16"
+      - text: is "A Federal Agency Committed to Accessible Design for
+      - link "People with Disabilities":
+        - /url: /wiki/Americans_with_disabilities
+      - text: "\". The"
+      - link "Job Accommodation Network":
+        - /url: /wiki/Job_Accommodation_Network
+      - text: discusses accommodations for people with disabilities in the workplace.
+      - superscript:
+        - link "[17]":
+          - /url: "#cite_note-17"
+      - text: Many states in the US have their own disability laws.
+    - listitem:
+      - text: In Australia, the
+      - link "Disability Discrimination Act 1992":
+        - /url: /wiki/Disability_Discrimination_Act_1992
+      - text: has numerous provisions for accessibility.
+      - superscript:
+        - link "[18]":
+          - /url: "#cite_note-18"
+    - listitem:
+      - text: In South Africa the
+      - link "Promotion of Equality and Prevention of Unfair Discrimination Act 2000":
+        - /url: /wiki/Promotion_of_Equality_and_Prevention_of_Unfair_Discrimination_Act_2000
+      - text: has numerous provisions for accessibility.
+      - superscript:
+        - link "[19]":
+          - /url: "#cite_note-19"
+    - listitem:
+      - text: In the UK, the
+      - link "Equality Act 2010":
+        - /url: /wiki/Equality_Act_2010
+      - text: has numerous provisions for accessibility.
+      - superscript:
+        - link "[20]":
+          - /url: "#cite_note-20"
+    - listitem:
+      - text: In Sri Lanka, the Supreme Court, on 27 April 2011 gave a landmark order to boost the inherent right of disabled persons to have unhindered access to public buildings and facilities.
+      - superscript:
+        - link "[21]":
+          - /url: "#cite_note-21"
+    - listitem:
+      - text: In Norway, the Discrimination and Accessibility Act (
+      - link "Norwegian":
+        - /url: /wiki/Norwegian_language
+      - text: ": Diskriminerings- og tilgjengelighetsloven) defines lack of accessibility as discrimination and obliges public authorities to implement universal design in their areas. The Act refers to issue-specific legislation regarding accessibility in e.g. ICT, the built environment, transport and education."
+      - superscript:
+        - link "[22]":
+          - /url: "#cite_note-22"
+    - listitem:
+      - text: In Brazil, the law on the inclusion of people with disabilities has numerous provisions for accessibility.
+      - superscript:
+        - link "[23]":
+          - /url: "#cite_note-23"
+    - listitem:
+      - text: In Canada, relevant federal legislation includes the
+      - link "Canadian Human Rights Act":
+        - /url: /wiki/Canadian_Human_Rights_Act
+      - text: ","
+      - link "the Employment Equity Act":
+        - /url: /wiki/Employment_equity_(Canada)
+      - text: ", the"
+      - link "Canadian Labour Code":
+        - /url: /wiki/Canadian_Labour_Code
+      - text: ", and the Accessible Canada Act (Bill-C81) which made Royal Assent on June 21, 2019."
+      - superscript:
+        - link "[24]":
+          - /url: "#cite_note-24"
+  - figure "Ramps and mobi-mats enable wheelchair users to visit a sandy seashore.":
+    - link "Beachshore with a mobi-mat leading from the kerb to the seashore":
+      - /url: /wiki/File:Beach_accessibility_mobi-mat_and_wheelchair_ramp.jpg
+      - img "Beachshore with a mobi-mat leading from the kerb to the seashore"
+    - text: Ramps and
+    - link "mobi-mats":
+      - /url: /wiki/Mobi-mat
+    - text: enable wheelchair users to visit a sandy seashore.
+  - paragraph:
+    - text: Legislation may also be enacted on a state, provincial or local level. In
+    - link "Ontario, Canada":
+      - /url: /wiki/Ontario,_Canada
+    - text: ", the"
+    - link "Ontarians with Disabilities Act":
+      - /url: /wiki/Ontarians_with_Disabilities_Act
+    - text: of 2001 is meant to "improve the identification, removal and prevention of barriers faced by persons with disabilities".
+    - superscript:
+      - link "[25]":
+        - /url: "#cite_note-25"
+  - paragraph:
+    - text: The
+    - link "European Union":
+      - /url: /wiki/European_Union
+    - text: "(EU), which has signed the United Nations' Convention on the Rights of Persons with Disabilities, also has adopted a European Disability Strategy for 2010–20. The Strategy includes the following goals, among others:"
+    - superscript:
+      - link "[26]":
+        - /url: "#cite_note-26"
+  - list:
+    - listitem: Devising policies for inclusive, high-quality education;
+    - listitem: Ensuring the European Platform Against Poverty includes a special focus on people with disabilities (the forum brings together experts who share best practices and experience);
+    - listitem: Working towards the recognition of disability cards throughout the EU to ensure equal treatment when working, living or travelling in the bloc
+    - listitem: Establishing accessibility standards for voting locations and campaign materials.
+    - listitem: Taking the rights of people with disabilities into account in external development programmes and for EU candidate countries.
+  - paragraph:
+    - text: A European Accessibility Act was proposed in late 2012.
+    - superscript:
+      - link "[27]":
+        - /url: "#cite_note-27"
+    - text: This Act would establish standards within member countries for accessible products, services, and public buildings. The harmonization of accessibility standards within the EU "would facilitate the social integration of persons with disabilities and the elderly and their mobility across member states, thereby also fostering the free movement principle".
+    - superscript:
+      - link "[28]":
+        - /url: "#cite_note-28"
+  - paragraph: Enforcement of the European Accessibility Act (EAA) begins in June 2025
+  - heading "Assistive technology and adaptive technology" [level=2]
+  - text: "["
+  - link "edit":
+    - /url: /w/index.php?title=Accessibility&action=edit&section=3
+  - text: "]"
+  - figure "The Opportunities Fair and Beyond Art Exhibition was organised in Birmingham, England, to help people with disabilities and their carers find out what services, support and opportunities are available to them.":
+    - link "People gathered around a table wearing headphones. The journalist holds the microphone for a physically disabled person to speak":
+      - /url: /wiki/File:Birmingham_opportunities_fair.jpg
+      - img "People gathered around a table wearing headphones. The journalist holds the microphone for a physically disabled person to speak"
+    - text: The Opportunities Fair and Beyond Art Exhibition was organised in
+    - link "Birmingham":
+      - /url: /wiki/Birmingham
+    - text: ", England, to help people with disabilities and their carers find out what services, support and opportunities are available to them."
+  - paragraph:
+    - link "Assistive technology":
+      - /url: /wiki/Assistive_technology
+    - text: is the creation of a new device that assists a person in completing a task that would otherwise be impossible. Some examples include new computer software programs like
+    - link "screen readers":
+      - /url: /wiki/Screen_reader
+    - text: ", and inventions such as"
+    - link "assistive listening devices":
+      - /url: /wiki/Assistive_listening_devices
+    - text: ", including"
+    - link "hearing aids":
+      - /url: /wiki/Hearing_aid
+    - text: ", and"
+    - link "traffic lights":
+      - /url: /wiki/Traffic_light
+    - text: with a standard
+    - link "color code":
+      - /url: /wiki/Color_code
+    - text: that enables
+    - link "colorblind":
+      - /url: /wiki/Colorblind
+    - text: individuals to understand the correct signal.
+  - paragraph:
+    - text: Adaptive technology is the modification, or adaptation, of existing devices, methods, or the creation of new uses for existing devices, to enable a person to complete a task.
+    - superscript:
+      - link "[29]":
+        - /url: "#cite_note-29"
+    - text: Examples include the use of remote controls, and the
+    - link "autocomplete":
+      - /url: /wiki/Autocomplete
+    - text: (word completion)
+    - superscript:
+      - link "[30]":
+        - /url: "#cite_note-30"
+    - text: feature in computer word processing programs, which both help individuals with mobility impairments to complete tasks. Adaptations to wheelchair tires are another example; widening the tires enables wheelchair users to move over soft surfaces, such as deep snow on ski hills, and sandy beaches.
+  - paragraph:
+    - text: Assistive technology and adaptive technology have a key role in developing the means for people with disabilities to live more independently, and to more fully participate in mainstream society. Recent research has demonstrated that tablet-based assistive technologies can enable adults with intellectual and motor disabilities to engage in independent leisure activities and video communication, enhancing social participation and autonomy. These programs use commercially available tablets and applications with simplified interfaces to support users in accessing media and making video calls with minimal assistance.
+    - superscript:
+      - link "[31]":
+        - /url: "#cite_note-31"
+    - text: In order to have access to assistive or adaptive technology, however, educating the public and even legislating requirements to incorporate this technology have been necessary.
+  - paragraph: The UN CRPD, and courts in the United States, Japan, UK, and elsewhere, have decided that when it is needed to assure secret ballot, authorities should provide voters with assistive technology.
+  - paragraph: The European Court of Human Rights, on the contrary, in case Toplak v. Slovenia ruled that due to high costs, the abandonment of the assistive equipment in elections did not violate human rights.
+  - heading "Employment" [level=2]
+  - text: "["
+  - link "edit":
+    - /url: /w/index.php?title=Accessibility&action=edit&section=4
+  - text: "]"
+  - figure "William P. Milton Jr., deputy director of the Office of Human Resource Management, outlined the \"Four Simple Steps to Hiring Qualified Candidates with Disabilities\" to employees of the U.S. Department of Agriculture during a 2011 National Disability Employment Awareness Month event in Washington, D.C.":
+    - link "A man is speaking behind a microphone podium during a conference. Behind him, there is a screen showing a presentation slide reading \"Four Simple Steps to Hiring Qualified Candidates with Disabilities\"":
+      - /url: /wiki/File:Usda_hiring_applicants_with_disabilities.jpg
+      - img "A man is speaking behind a microphone podium during a conference. Behind him, there is a screen showing a presentation slide reading \"Four Simple Steps to Hiring Qualified Candidates with Disabilities\""
+    - text: William P. Milton Jr., deputy director of the Office of Human Resource Management, outlined the "Four Simple Steps to Hiring Qualified Candidates with Disabilities" to employees of the
+    - link "U.S. Department of Agriculture":
+      - /url: /wiki/United_States_Department_of_Agriculture
+    - text: during a 2011
+    - link "National Disability Employment Awareness Month":
+      - /url: /wiki/National_Disability_Employment_Awareness_Month
+    - text: event in
+    - link "Washington, D.C.":
+      - /url: /wiki/Washington,_D.C.
+  - paragraph:
+    - text: Accessibility of employment covers a wide range of issues, from skills training, to
+    - link "occupational therapy":
+      - /url: /wiki/Occupational_therapy
+    - text: ","
+    - superscript:
+      - link "[32]":
+        - /url: "#cite_note-32"
+    - text: finding employment, and retaining employment.
+  - paragraph:
+    - text: Employment rates for workers with disabilities are lower than for the general workforce. Workers in Western countries fare relatively well, having access to more services and training as well as legal protections against employment discrimination. Despite this, in the United States the 2012 unemployment rate for workers with disabilities was 12.9%, while it was 7.3% for workers without disabilities.
+    - superscript:
+      - link "[33]":
+        - /url: "#cite_note-33"
+    - text: More than half of workers with disabilities (52%) earned less than $25,000 in the previous year, compared with just 38% of workers with no disabilities. This translates into an earnings gap where individuals with disabilities earn about 25 percent less of what workers without disabilities earn. Among occupations with 100,000 or more people, dishwashers had the highest disability rate (14.3%), followed by refuse and recyclable material collectors (12.7%), personal care aides (11.9%), and janitors and building cleaners (11.8%). The rates for refuse and recyclable material collectors, personal care aides, and janitors and building cleaners were not statistically different from one another.
+    - superscript:
+      - link "[34]":
+        - /url: "#cite_note-34"
+  - paragraph:
+    - text: Surveys of non-Western countries are limited, but the available statistics also indicate fewer jobs being filled by workers with disabilities. In India, a large 1999 survey found that "of the 'top 100 multinational companies' in the country [...] the employment rate of persons with disabilities in the private sector was a mere 0.28%, 0.05% in multinational companies and only 0.58% in the top 100 IT companies in the country".
+    - superscript:
+      - link "[35]":
+        - /url: "#cite_note-dsq-sds-35"
+    - text: India, like much of the world, has large sections of the economy that are without strong regulation or social protections, such as the
+    - link "informal economy":
+      - /url: /wiki/Informal_economy
+    - text: .
+    - superscript:
+      - link "[36]":
+        - /url: "#cite_note-36"
+    - text: "Other factors have been cited as contributing to the high unemployment rate, such as public service regulations. Although employment for workers with disabilities is higher in the public sector due to hiring programs targeting persons with disabilities, regulations currently restrict types of work available to persons with disabilities: \"Disability-specific employment reservations are limited to the public sector and a large number of the reserved positions continue to be vacant despite nearly two decades of enactment of the PWD Act\"."
+    - superscript:
+      - link "[35]":
+        - /url: "#cite_note-dsq-sds-35"
+  - paragraph: Expenses related to adaptive or assistive technology required to participate in the workforce may be tax deductible expenses for individuals with a medical practitioner's prescription in some jurisdictions.
+  - heading "Disability management" [level=3]
+  - text: "["
+  - link "edit":
+    - /url: /w/index.php?title=Accessibility&action=edit&section=5
+  - text: "]"
+  - paragraph:
+    - text: Disability management (DM) is a specialized area of
+    - link "human resources":
+      - /url: /wiki/Human_resources
+    - text: that supports efforts of employers to better integrate and retain workers with disabilities. Some workplaces have policies in place to provide "reasonable accommodation" for employees with disabilities, but many do not. In some jurisdictions, employers may have legal requirements to end
+    - link "discrimination against persons with disabilities":
+      - /url: /wiki/Ableism
+    - text: .
+  - paragraph:
+    - text: It has been noted by researchers that where accommodations are in place for employees with disabilities, these frequently apply to individuals with "pre-determined or apparent disabilities as determined by national social protection or Equality Authorities",
+    - superscript:
+      - link "[37]":
+        - /url: "#cite_note-Geisen165-37"
+    - text: which include persons with pre-existing conditions who receive an official disability designation. One of the biggest challenges for employers is in developing policies and practises to manage employees who develop disabilities during the course of employment. Even where these exist, they tend to focus on workplace injuries, overlooking job retention challenges faced by employees who acquire a non-occupation injury or illness. Protecting employability is a factor that can help close the unemployment gap for persons with disabilities.
+    - superscript:
+      - link "[37]":
+        - /url: "#cite_note-Geisen165-37"
+  - heading "Transportation" [level=2]
+  - text: "["
+  - link "edit":
+    - /url: /w/index.php?title=Accessibility&action=edit&section=6
+  - text: "]"
+  - note:
+    - text: For the metric of transport connectivity for planning purposes, see
+    - link "Accessibility (transport)":
+      - /url: /wiki/Accessibility_(transport)
+    - text: .
+  - paragraph:
+    - text: Providing mobility to people with disabilities includes changes for public facilities like gently sloping paths of travel for people using wheelchairs and difficulty walking up stairs, or audio announcements for the blind (either live or
+    - link "automated":
+      - /url: /w/index.php?title=Automated_on-train_announcements&action=edit&redlink=1
+    - text: ); dedicated services like
+    - link "paratransit":
+      - /url: /wiki/Paratransit
+    - text: ; and adaptations to personal vehicles.
+  - heading "Adapted automobiles for persons with disabilities" [level=3]
+  - text: "["
+  - link "edit":
+    - /url: /w/index.php?title=Accessibility&action=edit&section=7
+  - text: "]"
+  - note:
+    - text: "See also:"
+    - link "Adapted automobile":
+      - /url: /wiki/Adapted_automobile
+  - figure "A wheelchair accessible taxi with a rear ramp, Tokyo Motor Show 2009":
+    - link:
+      - /url: /wiki/File:Taxi_wheelchair.jpg
+      - img
+    - text: A wheelchair accessible
+    - link "taxi":
+      - /url: /wiki/Taxi
+    - text: with a rear ramp,
+    - link "Tokyo Motor Show":
+      - /url: /wiki/Tokyo_Motor_Show
+    - text: "2009"
+  - paragraph:
+    - text: Automobile accessibility also refers to ease of use by disabled people. Automobiles, whether a car or a van, can be adapted for a range of physical disabilities. Foot pedals can be raised, or replaced with hand-controlled devices. Wheelchair hoists, lifts or ramps may be customized according to the needs of the driver.
+    - link "Ergonomic":
+      - /url: /wiki/Ergonomic
+    - text: adaptations, such as a lumbar support cushion, may also be needed.
+    - superscript:
+      - link "[38]":
+        - /url: "#cite_note-38"
+  - paragraph:
+    - text: Generally, the more limiting the disability, the more expensive the adaptation needed for the vehicle. Financial assistance is available through some organizations, such as
+    - link "Motability":
+      - /url: /wiki/Motability
+    - text: in the United Kingdom, which requires a contribution by the prospective vehicle owner. Motability makes vehicles available for purchase or lease.
+    - superscript:
+      - link "[39]":
+        - /url: "#cite_note-39"
+  - paragraph:
+    - text: When an employee with a disability requires an adapted car for work use, the employee does not have to pay for a "
+    - link "reasonable adjustment":
+      - /url: /wiki/Reasonable_accommodation
+    - text: "\" in the United Kingdom; if the employer is unable to pay the cost, assistance is offered by government programs."
+    - superscript:
+      - link "[40]":
+        - /url: "#cite_note-40"
+  - heading "Low floor" [level=3]
+  - text: "["
+  - link "edit":
+    - /url: /w/index.php?title=Accessibility&action=edit&section=8
+  - text: "]"
+  - note:
+    - text: "\"Low floor\" redirects here. For more details, see"
+    - link "Low-floor bus":
+      - /url: /wiki/Low-floor_bus
+    - text: and
+    - link "Low-floor tram":
+      - /url: /wiki/Low-floor_tram
+    - text: .
+  - figure "Wheelchair ramps allows those on wheelchairs or personal mobility devices to board low-floor public transport vehicles.":
+    - link "A man on a motorized wheelchair is using a ramp to enter an SMRT bus":
+      - /url: /wiki/File:Person_on_PMD_boarding_an_SMRT_bus,_August_2022.jpg
+      - img "A man on a motorized wheelchair is using a ramp to enter an SMRT bus"
+    - text: Wheelchair ramps allows those on wheelchairs or
+    - link "personal mobility devices":
+      - /url: /wiki/Personal_transporter
+    - text: to board low-floor public transport vehicles.
+  - paragraph:
+    - text: A significant development in transportation, and
+    - link "public transport":
+      - /url: /wiki/Public_transport
+    - text: in particular, to achieve accessibility, is the move to "low-floor" vehicles. In a low-floor vehicle, access to part or all of the passenger cabin is unobstructed from one or more entrances by the presence of steps, enabling easier access for the infirm or people with
+    - link "push chairs":
+      - /url: /wiki/Baby_transport
+    - text: . A further aspect may be that the entrance and corridors are wide enough to accommodate a wheelchair. Low-floor vehicles have been developed for
+    - link "buses":
+      - /url: /wiki/Bus
+    - text: ","
+    - link "trolleybuses":
+      - /url: /wiki/Trolleybus
+    - text: ","
+    - link "trams":
+      - /url: /wiki/Trams
+    - text: and
+    - link "trains":
+      - /url: /wiki/Train
+    - text: .
+  - paragraph:
+    - text: A low floor in the vehicular sense is normally combined in a conceptual meaning with normal pedestrian access from a standard
+    - link "kerb (curb)":
+      - /url: /wiki/Curb
+    - text: height. However, the accessibility of a low-floor vehicle can also be utilised from slightly raising portions of kerb at
+    - link "bus stops":
+      - /url: /wiki/Bus_stop
+    - text: ", or through use of level boarding"
+    - link "bus rapid transit":
+      - /url: /wiki/Bus_rapid_transit
+    - text: stations or tram stops.
+    - superscript:
+      - link "[41]":
+        - /url: "#cite_note-41"
+    - text: The combination of access from a kerb was the technological development of the 1990s, as step-free interior layouts for buses had existed in some cases for decades, with entrance steps being introduced as chassis designs and overall height regulations changed.
+  - paragraph:
+    - text: Low-floor buses may also be designed with special height adjustment controls that permit a stationary bus to temporarily lower itself to ground level, permitting wheelchair access. This is referred to as a
+    - link "kneeling bus":
+      - /url: /wiki/Kneeling_bus
+    - text: .
+  - paragraph:
+    - text: At
+    - link "rapid transit":
+      - /url: /wiki/Rapid_transit
+    - text: systems, vehicles generally have floors in the same height as the platforms but the stations are often underground or elevated, so accessibility there is not a question of providing low-floor vehicles, but providing a step-free access from street level to the platforms (generally by
+    - link "elevators":
+      - /url: /wiki/Elevator
+    - text: ", which may be restricted to disabled passengers only, so that the step-free access is not obstructed by non-disabled people taking advantage)."
+    - superscript:
+      - text: "["
+      - link "citation needed":
+        - /url: /wiki/Wikipedia:Citation_needed
+      - text: "]"
+  - heading "Accessibility planning for transportation in the United Kingdom" [level=3]
+  - text: "["
+  - link "edit":
+    - /url: /w/index.php?title=Accessibility&action=edit&section=9
+  - text: "]"
+  - figure "Harrington Hump, Harrington station":
+    - link:
+      - /url: /wiki/File:Harrington_railway_station,_Cumbria_(geograph_3564245).jpg
+      - img
+    - link "Harrington Hump":
+      - /url: /wiki/Harrington_Hump
+    - text: ","
+    - link "Harrington station":
+      - /url: /wiki/Harrington_station
+  - paragraph:
+    - text: In the
+    - link "United Kingdom":
+      - /url: /wiki/United_Kingdom
+    - text: ", local transport authorities are responsible for checking that all people who live within their area can access essential opportunities and services, and where gaps in provision are identified the local authorities are responsible for organizing changes to make new connections. These requirements are defined in the UK Community Planning Acts legislation"
+    - superscript:
+      - link "[42]":
+        - /url: "#cite_note-42"
+    - text: and more detailed guidance has been issued by the
+    - link "Department for Transport":
+      - /url: /wiki/Department_for_Transport
+    - text: for each
+    - link "local authority":
+      - /url: /wiki/Local_authority#England
+    - text: . This includes the requirement to produce an Accessibility Plan under Community Planning legislation and to incorporate this within their
+    - link "Local Transport Plan":
+      - /url: /wiki/Local_Transport_Plan
+    - text: .
+    - superscript:
+      - link "[43]":
+        - /url: "#cite_note-43"
+    - text: An Accessibility Plan sets out how each local authority plans to improve access to employment, learning, health care, food shops and other services of local importance, particularly for disadvantaged groups and areas. Accessibility targets are defined in the accessibility plans, these are often the distance or time to access services by different modes of transport including walking, cycling and public transport.
+  - paragraph:
+    - text: "Accessibility Planning was introduced as a result of the report \"Making the Connections: Final Report on Transport and Social Exclusion\"."
+    - superscript:
+      - link "[44]":
+        - /url: "#cite_note-44"
+    - text: This report was the result of research carried out by the
+    - link "Social Exclusion":
+      - /url: /wiki/Social_exclusion
+    - text: "Unit. The United Kingdom also has a \"code of practice\" for making train and stations accessible: \"Accessible Train and Station Design for Disabled People: A Code of Practice\"."
+    - superscript:
+      - link "[45]":
+        - /url: "#cite_note-45"
+    - text: This code of practice was first published in 2002 with the objective of compliance to Section 71B of the Railways Act 1993,
+    - superscript:
+      - link "[46]":
+        - /url: "#cite_note-46"
+    - text: and revised after a public consultation period in 2008.
+  - paragraph:
+    - text: Some transport companies have since improved the accessibility of their services, such as incorporating
+    - link "low-floor buses":
+      - /url: /wiki/Low-floor_bus
+    - text: into their stock as standard.
+    - superscript:
+      - link "[47]":
+        - /url: "#cite_note-47"
+    - text: In August 2021,
+    - link "South Western Railway":
+      - /url: /wiki/South_Western_Railway_(train_operating_company)
+    - text: announced the streamlining of their accessibility services, allowing passengers requiring assistance to inform the company with as little as 10 minutes' notice at all 189 stations on its network, replacing an older scheme wherein assisted journeys had to be booked six hours to a day in advance. The system will utilise clear signage at stations and
+    - link "QR codes":
+      - /url: /wiki/QR_code
+    - text: ", allowing customers to send details of the assistance they require and their planned journey to staff remotely."
+    - superscript:
+      - link "[48]":
+        - /url: "#cite_note-48"
+  - paragraph:
+    - text: Making public services fully accessible to the public has led to some technological innovations.
+    - link "Public announcement":
+      - /url: /wiki/Public_announcement
+    - text: systems using
+    - link "audio induction loop":
+      - /url: /wiki/Audio_induction_loop
+    - text: technology can broadcast announcements directly into the hearing aid of anyone with a hearing impairment, making them useful in such public places as auditoriums and train stations.
+  - heading "Public space" [level=2]
+  - text: "["
+  - link "edit":
+    - /url: /w/index.php?title=Accessibility&action=edit&section=10
+  - text: "]"
+  - paragraph:
+    - text: The
+    - link "UN Convention on the Rights of Persons with Disabilities":
+      - /url: /wiki/Convention_on_the_Rights_of_Persons_with_Disabilities
+    - text: (2006) requires 'appropriate measures' to ensure people with disabilities are able to 'access, on an equal basis with others','the physical environment', 'transportation' and 'other facilities and services open or provided to the public'. This requirement also applies to 'roads' and 'transportation' as well as 'buildings, and other indoor and outdoor facilities'.
+    - superscript:
+      - link "[49]":
+        - /url: "#cite_note-49"
+  - paragraph:
+    - text: At the same time, promotion of
+    - link "active travel":
+      - /url: /wiki/Active_mobility
+    - text: ", or 'shared space' initiatives to pedestrianise city centres can introduce unintended barriers, especially for pedestrians who are visually impaired and who can find these environments confusing or even dangerous."
+    - superscript:
+      - link "[50]":
+        - /url: "#cite_note-:0-50"
+    - text: It is important to have effective mechanisms to ensure that urban spaces are designed to be inclusive of pedestrians with disabilities. These can include early consultation with disabled persons or their representative organisations, and appropriate regulation of city planning.
+    - superscript:
+      - link "[50]":
+        - /url: "#cite_note-:0-50"
+  - heading "Housing" [level=2]
+  - text: "["
+  - link "edit":
+    - /url: /w/index.php?title=Accessibility&action=edit&section=11
+  - text: "]"
+  - note:
+    - text: "Further information:"
+    - link "Accessible housing":
+      - /url: /wiki/Accessible_housing
+  - figure "Accessibly designed modification for a high-step entrance":
+    - link "An entrance with ramps and guardrails":
+      - /url: /wiki/File:-118wiki.jpg
+      - img "An entrance with ramps and guardrails"
+    - text: Accessibly designed modification for a high-step entrance
+  - paragraph:
+    - text: Most existing and new housing, even in the wealthiest nations, lack basic accessibility features unless the designated, immediate occupant of a home currently has a disability. However, there are some initiatives to change typical residential practices so that new homes incorporate basic access features such as zero-step entries and door widths adequate for wheelchairs to pass through.
+    - link "Occupational Therapists":
+      - /url: /wiki/Occupational_Therapist
+    - text: are a professional group skilled in the assessment and making of recommendations to improve access to homes.
+    - superscript:
+      - link "[51]":
+        - /url: "#cite_note-51"
+    - text: They are involved in both the adaptation of existing housing to improve accessibility,
+    - superscript:
+      - link "[52]":
+        - /url: "#cite_note-52"
+    - text: and in the design of future housing.
+    - superscript:
+      - link "[53]":
+        - /url: "#cite_note-53"
+  - paragraph:
+    - text: The broad concept of
+    - link "Universal design":
+      - /url: /wiki/Universal_design
+    - text: is relevant to housing, as it is to all aspects of the built environment. Furthermore, a
+    - link "Visitability":
+      - /url: /wiki/Visitability
+    - text: movement
+    - superscript:
+      - link "[54]":
+        - /url: "#cite_note-54"
+    - text: begun by grass roots disability advocates in the 1980s focuses specifically on changing construction practices in new housing. This movement, a network of interested people working in their locales, works on educating, passing laws, and spurring voluntary home access initiatives with the intention that basic access become a routine part of new home construction.
+  - heading "Accessibility and \"ageing in place\"" [level=3]
+  - text: "["
+  - link "edit":
+    - /url: /w/index.php?title=Accessibility&action=edit&section=12
+  - text: "]"
+  - paragraph:
+    - text: Accessibility in the design of housing and household devices has become more prominent in recent decades due to a rapidly ageing population in developed countries.
+    - superscript:
+      - link "[55]":
+        - /url: "#cite_note-55"
+    - text: Ageing seniors may wish to continue living independently, but the ageing process naturally increases the disabilities that a senior citizen will experience. A growing trend is the desire for many senior citizens to 'age in place', living as independently as possible for as long as possible. Accessibility modifications that allow ageing in place are becoming more common. Housing may even be designed to incorporate accessibility modifications that can be made throughout the life cycle of the residents.
+  - paragraph:
+    - text: The English Housing Survey for 2018/19 found only 9% of homes in England have key features, such as a toilet at entrance level and sufficiently wide doorways, to deem them accessible. This was an improvement from 5% in 2005. More than 400,000 wheelchair users in England were living in homes which are neither adapted nor accessible.
+    - superscript:
+      - link "[56]":
+        - /url: "#cite_note-56"
+  - heading "Voting" [level=2]
+  - text: "["
+  - link "edit":
+    - /url: /w/index.php?title=Accessibility&action=edit&section=13
+  - text: "]"
+  - paragraph:
+    - text: Under the
+    - link "Convention on the Rights of Persons with Disabilities":
+      - /url: /wiki/Convention_on_the_Rights_of_Persons_with_Disabilities
+    - text: ", states parties are bound to assure accessible"
+    - link "elections":
+      - /url: /wiki/Election
+    - text: ","
+    - link "voting":
+      - /url: /wiki/Voting
+    - text: ", and voting procedures. In 2018, the United Nations"
+    - link "Committee on the Rights of Persons with Disabilities":
+      - /url: /wiki/Committee_on_the_Rights_of_Persons_with_Disabilities
+    - text: issued an opinion that all polling stations should be fully accessible. At the
+    - link "European Court of Human Rights":
+      - /url: /wiki/European_Court_of_Human_Rights
+    - text: ", there are currently two ongoing cases about the accessibility of polling places and voting procedures. They were brought against"
+    - link "Slovenia":
+      - /url: /wiki/Slovenia
+    - text: by two voters and the
+    - link "Slovenian Disability Rights Association":
+      - /url: /wiki/Slovenian_Disability_Rights_Association
+    - text: .
+    - superscript:
+      - link "[57]":
+        - /url: "#cite_note-57"
+    - text: As of January 2020, the case, called
+    - link "Toplak and Mrak v. Slovenia":
+      - /url: /wiki/Toplak_and_Mrak_v._Slovenia
+    - text: ", was ongoing."
+    - superscript:
+      - link "[58]":
+        - /url: "#cite_note-58"
+    - text: The aim of the court procedure is to make accessible all polling places in Europe.
+    - superscript:
+      - link "[59]":
+        - /url: "#cite_note-59"
+  - heading "Disability, information technology (IT) and telecommunications" [level=2]
+  - text: "["
+  - link "edit":
+    - /url: /w/index.php?title=Accessibility&action=edit&section=14
+  - text: "]"
+  - note:
+    - text: "Main article:"
+    - link "Design for All (in ICT)":
+      - /url: /wiki/Design_for_All_(in_ICT)
+  - note:
+    - text: "See also:"
+    - link "Data access":
+      - /url: /wiki/Data_access
+    - text: and
+    - link "Assistive technology":
+      - /url: /wiki/Assistive_technology
+  - text: This section's
+  - link "factual accuracy":
+    - /url: /wiki/Wikipedia:Accuracy_dispute
+  - text: may be compromised due to out-of-date information. Please help update this article to reflect recent events or newly available information. (November 2012)
+  - paragraph:
+    - text: Advances in information technology and telecommunications have represented a leap forward for accessibility. Access to the technology is restricted to those who can afford it, but it has become more widespread in Western countries in recent years. For those who use it, it provides the ability to access information and services by minimizing the barriers of distance and cost as well as the accessibility and usability of the interface. In many countries this has led to initiatives, laws and/or regulations that aim toward providing universal access to the internet and to phone systems at reasonable cost to citizens.
+    - superscript:
+      - link "[60]":
+        - /url: "#cite_note-60"
+  - paragraph:
+    - text: A major advantage of advanced technology is its flexibility. Some technologies can be used at home, in the workplace, and in school, expanding the ability of the user to participate in various spheres of daily life.
+    - link "Augmentative and alternative communication":
+      - /url: /wiki/Augmentative_and_alternative_communication
+    - text: technology is one such area of IT progress. It includes inventions such as
+    - link "speech-generating devices":
+      - /url: /wiki/Speech-generating_device
+    - text: ","
+    - link "teletypewriter":
+      - /url: /wiki/Teletypewriter
+    - text: devices, adaptive pointing devices to replace computer mouse devices, and many others. Mobile telecommunications devices and computer applications are also equipped with accessibility features.
+    - superscript:
+      - link "[61]":
+        - /url: "#cite_note-61"
+    - superscript:
+      - link "[62]":
+        - /url: "#cite_note-62"
+    - superscript:
+      - link "[63]":
+        - /url: "#cite_note-63"
+    - text: They can be adapted to create accessibility to a range of tasks, and may be suitable for different kinds of disability.
+  - paragraph: "The following impairments are some of the disabilities that affect communications and technology access, as well as many other life activities:"
+  - list:
+    - listitem:
+      - link "Communication disorders":
+        - /url: /wiki/Communication_disorder
+      - text: ;
+      - superscript:
+        - link "[64]":
+          - /url: "#cite_note-64"
+    - listitem:
+      - link "Hearing impairments":
+        - /url: /wiki/Hearing_impairment
+      - text: ;
+      - superscript:
+        - link "[65]":
+          - /url: "#cite_note-65"
+    - listitem:
+      - link "Visual impairments":
+        - /url: /wiki/Visual_impairment
+      - text: ;
+      - superscript:
+        - link "[66]":
+          - /url: "#cite_note-66"
+    - listitem:
+      - link "Mobility impairments":
+        - /url: /wiki/Mobility_impairment
+      - text: ;
+    - listitem:
+      - text: A
+      - link "learning disability":
+        - /url: /wiki/Learning_disability
+      - text: or impairment in mental functioning.
+  - paragraph: Each kind of disability requires a different kind of accommodation, and this may require analysis by a medical specialist, an educational specialist or a job analysis when the impairment requires accommodation.
+  - list:
+    - listitem:
+      - link "Job analysis":
+        - /url: /wiki/Job_analysis
+      - superscript:
+        - link "[67]":
+          - /url: "#cite_note-67"
+  - heading "Examples of common assistive technologies" [level=3]
+  - text: "["
+  - link "edit":
+    - /url: /w/index.php?title=Accessibility&action=edit&section=15
+  - text: "]"
+  - table:
+    - rowgroup:
+      - row "Impairment Assistive technology":
+        - columnheader "Impairment"
+        - columnheader "Assistive technology"
+      - row "Communication impairment Blissymbols board or similar device; electronic speech synthesizer":
+        - cell "Communication impairment"
+        - cell "Blissymbols board or similar device; electronic speech synthesizer":
+          - link "Blissymbols":
+            - /url: /wiki/Blissymbols
+          - text: board or similar device;
+          - link "electronic speech synthesizer":
+            - /url: /wiki/Speech_synthesis
+      - row "Hearing impairment hearing aids, earphones, headphones, headsets; real-time closed captioning; teletypewriter; sign language avatars":
+        - cell "Hearing impairment"
+        - cell "hearing aids, earphones, headphones, headsets; real-time closed captioning; teletypewriter; sign language avatars":
+          - link "hearing aids":
+            - /url: /wiki/Hearing_aid
+          - text: ","
+          - link "earphones":
+            - /url: /wiki/Earphone
+          - text: ","
+          - link "headphones":
+            - /url: /wiki/Headphone
+          - text: ","
+          - link "headsets":
+            - /url: /wiki/Headset_(audio)
+          - text: ;
+          - link "real-time closed captioning":
+            - /url: /wiki/Closed_captioning
+          - text: ;
+          - link "teletypewriter":
+            - /url: /wiki/Teletypewriter
+          - text: ; sign language
+          - link "avatars":
+            - /url: /wiki/Avatar_(computing)
+      - row "Mobility impairment Page-turning device; adaptive keyboards and computer mice (pointing devices such as trackballs, vertical mouse, foot mouse, or programmable pedal)":
+        - cell "Mobility impairment"
+        - cell "Page-turning device; adaptive keyboards and computer mice (pointing devices such as trackballs, vertical mouse, foot mouse, or programmable pedal)"
+      - row "Physical or mental impairment, learning disability Voice recognition software, refreshable braille display, screen reader":
+        - cell "Physical or mental impairment, learning disability"
+        - cell "Voice recognition software, refreshable braille display, screen reader":
+          - link "Voice recognition software":
+            - /url: /wiki/Voice_recognition_software
+          - text: ","
+          - link "refreshable braille display":
+            - /url: /wiki/Refreshable_braille_display
+          - text: ","
+          - link "screen reader":
+            - /url: /wiki/Screen_reader
+      - row "Perceptual disability, learning disability Talking textbooks, virtual keyboard":
+        - cell "Perceptual disability, learning disability"
+        - cell "Talking textbooks, virtual keyboard":
+          - link "Talking textbooks":
+            - /url: /wiki/Audiobook
+          - text: ","
+          - link "virtual keyboard":
+            - /url: /wiki/Virtual_keyboard
+      - row "Visual impairment, learning disability Modified monitor interface, magnification devices; reading service, e-text":
+        - cell "Visual impairment, learning disability"
+        - cell "Modified monitor interface, magnification devices; reading service, e-text":
+          - text: Modified monitor interface, magnification devices;
+          - link "reading service":
+            - /url: /wiki/Reading_service
+          - text: ","
+          - link "e-text":
+            - /url: /wiki/E-text
+      - row "Visual impairment, learning disability Braille note-taker; Braille printer; screen magnifiers; optical scanner":
+        - cell "Visual impairment, learning disability"
+        - cell "Braille note-taker; Braille printer; screen magnifiers; optical scanner":
+          - link "Braille note-taker":
+            - /url: /wiki/Braille_note-taker
+          - text: ;
+          - link "Braille printer":
+            - /url: /wiki/Braille_printer
+          - text: ;
+          - link "screen magnifiers":
+            - /url: /wiki/Screen_magnifier
+          - text: ;
+          - link "optical scanner":
+            - /url: /wiki/Optical_scanner
+      - row "Visual impairment Screen readers; notable examples include NonVisual Desktop Access (NVDA) and VoiceOver":
+        - cell "Visual impairment"
+        - cell "Screen readers; notable examples include NonVisual Desktop Access (NVDA) and VoiceOver":
+          - link "Screen readers":
+            - /url: /wiki/Screen_reader
+          - text: ; notable examples include
+          - link "NonVisual Desktop Access":
+            - /url: /wiki/NonVisual_Desktop_Access
+          - text: (NVDA) and
+          - link "VoiceOver":
+            - /url: /wiki/VoiceOver
+      - row "Cognitive impairment reminder systems and prompting technology":
+        - cell "Cognitive impairment"
+        - cell "reminder systems and prompting technology"
+  - heading "Mobility impairments" [level=4]
+  - text: "["
+  - link "edit":
+    - /url: /w/index.php?title=Accessibility&action=edit&section=16
+  - text: "]"
+  - paragraph:
+    - text: One of the first areas where information technology improved the quality of life for disabled individuals is the voice operated wheelchair. Quadriplegics have the most profound disability, and the voice operated wheelchair technology was first developed in 1977 to provide increased mobility. The original version replaced the joystick system with a module that recognized 8 commands. Many other technology accommodation improvements have evolved from this initial development.
+    - superscript:
+      - link "[68]":
+        - /url: "#cite_note-68"
+  - paragraph:
+    - text: Missing arms or fingers may make the use of a keyboard and mouse difficult or impossible. Technological improvements such as
+    - link "speech recognition":
+      - /url: /wiki/Speech_recognition
+    - text: devices and software can improve access.
+  - heading "Communication (including speech) impairments" [level=4]
+  - text: "["
+  - link "edit":
+    - /url: /w/index.php?title=Accessibility&action=edit&section=17
+  - text: "]"
+  - paragraph: A communication disorder interferes with the ability to produce clearly understandable speech. There can be many different causes, such as nerve degeneration, muscle degeneration, stroke, and vocal cord injury. The modern method to deal with speaking disabilities has been to provide a text interface for a speech synthesizer for complete vocal disability. This can be a great improvement for people that have been limited to the use of a throat vibrator to produce speech since the 1960s.
+  - heading "Hearing impairment" [level=4]
+  - text: "["
+  - link "edit":
+    - /url: /w/index.php?title=Accessibility&action=edit&section=18
+  - text: "]"
+  - paragraph:
+    - text: An individual satisfies the definition of hearing disabled when hearing loss is about 30 dB for a single frequency, but this is not always perceptible as a disability.
+    - superscript:
+      - link "[69]":
+        - /url: "#cite_note-69"
+    - text: For example, loss of sensitivity in one ear interferes with
+    - link "sound localization":
+      - /url: /wiki/Sound_localization
+    - text: (directional hearing), which can interfere with communication in a crowd. This is often recognized when certain words are confused during normal conversation. This can interfere with voice-only interfaces, like automated customer service telephone systems, because it is sometimes difficult to increase the volume and repeat the message.
+  - paragraph: Mild to moderate hearing loss may be accommodated with a hearing aid that amplifies ambient sounds. Portable devices with speed recognition that can produce text can reduce problems associated with understanding conversation. This kind of hearing loss is relatively common, and this often grows worse with age.
+  - paragraph:
+    - text: The modern method to deal with profound hearing disability is the Internet using email or word processing applications. The
+    - link "telecommunications device for the deaf":
+      - /url: /wiki/Telecommunications_device_for_the_deaf
+    - text: (TDD) became available in the form of the
+    - link "teletype":
+      - /url: /wiki/Teleprinter
+    - text: (TTY) during the 1960s. These devices consist of a keyboard, display and modem that connects two or more of these devices using a dedicated wire or plain old telephone service.
+  - paragraph:
+    - text: Modern
+    - link "computer animation":
+      - /url: /wiki/Computer_animation
+    - text: allows for
+    - link "sign language":
+      - /url: /wiki/Sign_language
+    - text: avatars to be integrated into public areas. This technology could potentially make train station announcements, news broadcasts, etc. accessible when a human interpreter is not available.
+    - superscript:
+      - link "[70]":
+        - /url: "#cite_note-70"
+    - superscript:
+      - link "[71]":
+        - /url: "#cite_note-71"
+    - text: Sign language can also be incorporated into film; for example, all movies shown in Brazilian movie theaters must have a
+    - link "Brazilian Sign Language":
+      - /url: /wiki/Brazilian_Sign_Language
+    - text: video track available to play alongside the film via a
+    - link "second screen":
+      - /url: /wiki/Second_screen
+    - text: .
+    - superscript:
+      - link "[72]":
+        - /url: "#cite_note-72"
+    - superscript:
+      - link "[73]":
+        - /url: "#cite_note-73"
+  - heading "Visual impairments" [level=4]
+  - text: "["
+  - link "edit":
+    - /url: /w/index.php?title=Accessibility&action=edit&section=19
+  - text: "]"
+  - paragraph: A wide array of technology products is available to assist with visual impairment. These include screen magnification for monitors, screen-reading software for computers and mobile devices, mouse-over speech synthesis for browsing, braille displays, braille printers, braille cameras, and voice-activated phones and tablets.
+  - paragraph: One emerging product that will make ordinary computer displays available for the blind is the refreshable tactile display, which is very different from a conventional braille display. This provides a raised surface corresponding to the bright and dim spots on a conventional display. An example is the Touch Sight Camera for the Blind.
+  - paragraph:
+    - link "Speech Synthesis Markup Language":
+      - /url: /wiki/Speech_Synthesis_Markup_Language
+    - superscript:
+      - link "[74]":
+        - /url: "#cite_note-74"
+    - text: and
+    - link "Speech Recognition Grammar Specification":
+      - /url: /wiki/Speech_Recognition_Grammar_Specification
+    - superscript:
+      - link "[75]":
+        - /url: "#cite_note-75"
+    - text: ) are relatively recent technologies intended to standardize communication interfaces using Augmented
+    - link "BNF":
+      - /url: /wiki/Backus%E2%80%93Naur_form
+    - text: Form and
+    - link "XML":
+      - /url: /wiki/XML
+    - text: Form. These technologies assist visual impairments and physical impairment by providing interactive access to web content without the need to visually observe the content. While these technologies provides access for visually impaired individuals, the primary benefactor has been automated systems that replace live human customer service representatives that handle telephone calls.
+  - heading "Cognitive impairments" [level=4]
+  - text: "["
+  - link "edit":
+    - /url: /w/index.php?title=Accessibility&action=edit&section=20
+  - text: "]"
+  - paragraph:
+    - text: Cognitive accessibility refers to a system or application being suitable for use by individuals with developmental disabilities (DD)
+    - superscript:
+      - link "[76]":
+        - /url: "#cite_note-76"
+    - text: or intellectual disabilities (ID).
+    - superscript:
+      - link "[77]":
+        - /url: "#cite_note-77"
+    - text: Generally, this also includes neurotypical users. Systems specifically designed for users with ID are often referred to as adapted (aka assistive technology), and such systems may not be helpful for neurotypical persons.
+    - superscript:
+      - link "[78]":
+        - /url: "#cite_note-78"
+    - text: Systems that are usable for persons with ID are often referred to as adaptable. Adapted systems may include simplified interfaces and internal logic. One such system is the '
+    - link "Simple Wikipedia":
+      - /url: /wiki/Simple_Wikipedia
+    - text: .' A system that is adaptable may include travel ticket dispensers and user interfaces with dual modes (standard and expert). Design for cognitive accessibility is often bounded by defining users with abilities above certain levels.
+  - paragraph:
+    - text: Most of the supporting work for design for cognitive accessibility is for adapted systems, a subset of assistive technology. There have been some attempts to support adaptable systems,
+    - superscript:
+      - link "[79]":
+        - /url: "#cite_note-79"
+    - text: but not much progress has been made
+  - paragraph: "Problem framing: One of the most daunting problems with any sort of project involving access by cognitively disabled persons is understanding the end users. Also, in many instances, systems for this group of end-users also involve a secondary group of caregivers. Both groups need to have their needs and wants carefully considered."
+  - paragraph:
+    - text: "Standards There are several frameworks and standards to guide developers for adapted systems. Most notable are the ISO group and Resna. Examples of these standards: RESNA - ANSI/RESNA CA-1:2016"
+    - superscript:
+      - link "[80]":
+        - /url: "#cite_note-80"
+    - text: ISO - ISO-TC173-WG10_N238_ISO 21801-1 2020
+    - superscript:
+      - link "[81]":
+        - /url: "#cite_note-81"
+    - text: As well as parts of the World Wide Web Consortium's WAI-IG,
+    - superscript:
+      - link "[82]":
+        - /url: "#cite_note-82"
+    - text: and WebAIM's Cognitive accessibility design considerations.
+    - superscript:
+      - link "[83]":
+        - /url: "#cite_note-83"
+    - text: Microsoft
+    - superscript:
+      - link "[84]":
+        - /url: "#cite_note-84"
+    - text: and other design frameworks and tools have also published sets of guidelines.
+  - heading "Web accessibility" [level=3]
+  - text: "["
+  - link "edit":
+    - /url: /w/index.php?title=Accessibility&action=edit&section=21
+  - text: "]"
+  - note:
+    - text: "Main article:"
+    - link "Web accessibility":
+      - /url: /wiki/Web_accessibility
+  - heading "International standards and guidelines" [level=4]
+  - text: "["
+  - link "edit":
+    - /url: /w/index.php?title=Accessibility&action=edit&section=22
+  - text: "]"
+  - paragraph:
+    - text: There have been a few major movements to coordinate a set of guidelines for accessibility for the
+    - link "web":
+      - /url: /wiki/World_Wide_Web
+    - text: . The first and most well known is The
+    - link "Web Accessibility Initiative":
+      - /url: /wiki/Web_Accessibility_Initiative
+    - text: (WAI), which is part of the World Wide Web Consortium (
+    - link "W3C":
+      - /url: /wiki/W3C
+    - text: ). This organization developed the
+    - link "Web Content Accessibility Guidelines":
+      - /url: /wiki/Web_Content_Accessibility_Guidelines
+    - text: (WCAG) 1.0 and 2.0 which explain how to make Web content accessible to everyone, including people with disabilities. Web "content" generally refers to the information in a Web page or Web application, including text, images, forms, and sounds. (More specific definitions are available in the WCAG documents.)
+    - superscript:
+      - link "[85]":
+        - /url: "#cite_note-85"
+  - paragraph:
+    - text: The WCAG is separated into three levels of compliance, A, AA and AAA. Each level requires a stricter set of conformance guidelines, such as different versions of
+    - link "HTML":
+      - /url: /wiki/HTML
+    - text: (Transitional vs Strict) and other techniques that need to be incorporated into coding before accomplishing validation. Online tools allow users to submit their website and automatically run it through the WCAG guidelines and produce a report, stating whether or not they conform to each level of compliance.
+    - link "Adobe Dreamweaver":
+      - /url: /wiki/Adobe_Dreamweaver
+    - text: also offers plugins which allow web developers to test these guidelines on their work from within the program.
+  - paragraph:
+    - text: The
+    - link "ISO/IEC JTC1 SC36 WG7":
+      - /url: /wiki/ISO/IEC_JTC_1/SC_36#WG_7_Culture.2C_Language.2C_and_Human_Functioning_Activities
+    - text: "24751 Individualized Adaptability and Accessibility in e-learning, education and training series is freely available and made of 3 parts: Individualized Adaptability and Accessibility in e-learning, education and training, Standards inventory and Guidance on user needs mapping."
+  - paragraph:
+    - text: Another source of web accessibility guidance comes from the
+    - link "US government":
+      - /url: /wiki/US_government
+    - text: . In response to
+    - link "Section 508 of the US Rehabilitation Act":
+      - /url: /wiki/Rehabilitation_Act_of_1973#Section_508
+    - text: ", the Access Board developed standards to which U.S. federal agencies must comply in order to make their sites accessible. The U.S. General Services Administration has developed a website where one can take online training courses for free to learn about these rules."
+    - superscript:
+      - link "[86]":
+        - /url: "#cite_note-86"
+  - heading "Web accessibility features" [level=4]
+  - text: "["
+  - link "edit":
+    - /url: /w/index.php?title=Accessibility&action=edit&section=23
+  - text: "]"
+  - paragraph: "Examples of accessibility features include:"
+  - list:
+    - listitem:
+      - link "WAI":
+        - /url: /wiki/Web_Accessibility_Initiative
+      - text: "-AA compliance with the"
+      - link "WAI's WCAG":
+        - /url: /wiki/Web_Content_Accessibility_Guidelines
+    - listitem:
+      - link "Semantic":
+        - /url: /wiki/Semantic_HTML
+      - text: Web markup
+    - listitem: (X)HTML Validation from the W3C for the page's content
+    - listitem: CSS Validation from the W3C for the page's layout
+    - listitem: Compliance with all guidelines from Section 508 of the US Rehabilitation Act
+    - listitem: A high contrast version of the site for individuals with low vision, and a low contrast (yellow or blue) version of the site for individuals with dyslexia
+    - listitem: Alternative media for any multimedia used on the site (video, flash, audio, etc.)
+    - listitem: Simple and consistent navigation
+    - listitem: Device independent
+    - listitem: Reducing Cognitive load for decision making
+  - paragraph:
+    - text: While WCAG provides much technical information for use by web designers, coders and editors, BS 8878:2010 Web accessibility – Code of Practice
+    - superscript:
+      - link "[87]":
+        - /url: "#cite_note-87"
+    - text: has been introduced, initially in the UK, to help site owners and product managers to understand the importance of accessibility. It includes advice on the business case behind accessibility, and how organisations might usefully update their policies and production processes to embed accessibility in their business-as-usual. On 28 May 2019, BS 8878 was superseded by ISO 30071-1,
+    - superscript:
+      - link "[88]":
+        - /url: "#cite_note-88"
+    - text: the international Standard that built on BS 8878 and expanded it for international use.
+  - paragraph:
+    - text: Another useful idea is for websites to include a web accessibility statement on the site. Initially introduced in PAS 78,
+    - superscript:
+      - link "[89]":
+        - /url: "#cite_note-89"
+    - text: the best practice for web accessibility statements has been updated in BS 8878
+    - superscript:
+      - link "[90]":
+        - /url: "#cite_note-90"
+    - text: "to emphasise the inclusion of: information on how disabled and elderly people could get a better experience of using the website by using assistive technologies or accessibility settings of browsers and operating systems (linking to \"BBC My Web My Way\""
+    - superscript:
+      - link "[91]":
+        - /url: "#cite_note-91"
+    - text: can be useful here); information on what accessibility features the site's creators have included, and if there are any user needs which the site does not currently support (for example, descriptive video to allow blind people to access the information in videos more easily); and contact details for disabled people to be able to use to let the site creators know if they have any problems in using the site. While validations against WCAG, and other accessibility badges can also be included, they should be put lower down the statement, as most disabled people still do not understand these technical terms.
+    - superscript:
+      - link "[92]":
+        - /url: "#cite_note-92"
+  - heading "Education and accessibility for students" [level=2]
+  - text: "["
+  - link "edit":
+    - /url: /w/index.php?title=Accessibility&action=edit&section=24
+  - text: "]"
+  - figure "A teacher helps her student in an orphanage in central Vietnam. The orphanage caters to many abandoned and disabled children who, through education and communication programs, are able to have a life that would otherwise not be possible.":
+    - link "A woman is helping a young boy to stand up in a classroom with other students":
+      - /url: /wiki/File:Vietnam_phusical_therapy_school_orphanage.jpg
+      - img "A woman is helping a young boy to stand up in a classroom with other students"
+    - text: A teacher helps her student in an orphanage in central
+    - link "Vietnam":
+      - /url: /wiki/Vietnam
+    - text: . The orphanage caters to many abandoned and disabled children who, through education and communication programs, are able to have a life that would otherwise not be possible.
+  - figure "Construction of a ramp for a school latrine in Ukunda, Kenya, to make the school building more accessible to students with disabilities":
+    - link "People constructing a ramp for an accessible bathroom":
+      - /url: /wiki/File:Latrine_ramp_school.jpg
+      - img "People constructing a ramp for an accessible bathroom"
+    - text: Construction of a ramp for a school latrine in
+    - link "Ukunda":
+      - /url: /wiki/Ukunda
+    - text: ", Kenya, to make the school building more accessible to students with disabilities"
+  - paragraph:
+    - text: Equal access to education for students with disabilities is supported in some countries by legislation. It is still challenging for some students with disabilities to fully participate in mainstream education settings, but many adaptive technologies and assistive programs are making improvements. In India, the
+    - link "Medical Council of India":
+      - /url: /wiki/Medical_Council_of_India
+    - text: has now passed the directives to all the medical institutions to make them accessible to persons with disabilities. This happened due to a petition by Satendra Singh founder of
+    - link "Infinite Ability":
+      - /url: /wiki/Infinite_Ability
+    - text: .
+    - superscript:
+      - link "[93]":
+        - /url: "#cite_note-93"
+  - paragraph: Students with a physical or mental impairment or learning disability may require note-taking assistance, which may be provided by a business offering such services, as with tutoring services. Talking books in the form of talking textbooks are available in Canadian secondary and post-secondary schools. Also, students may require adaptive technology to access computers and the Internet. These may be tax-exempt expenses in some jurisdictions with a medical prescription.
+  - heading "Accessibility of assessments" [level=3]
+  - text: "["
+  - link "edit":
+    - /url: /w/index.php?title=Accessibility&action=edit&section=25
+  - text: "]"
+  - paragraph:
+    - text: It is important to ensure that the accessibility in education includes assessments.
+    - superscript:
+      - link "[94]":
+        - /url: "#cite_note-94"
+    - text: Accessibility in testing or assessments entails the extent to which a test and its constituent item set eliminates barriers and permits the test-taker to demonstrate their knowledge of the tested content.
+    - superscript:
+      - link "[95]":
+        - /url: "#cite_note-95"
+  - paragraph:
+    - text: With the passage of the
+    - link "No Child Left Behind Act":
+      - /url: /wiki/No_Child_Left_Behind_Act
+    - text: of 2001 in the United States,
+    - superscript:
+      - link "[96]":
+        - /url: "#cite_note-96"
+    - text: student accountability in essential content areas such as reading, mathematics, and science has become a major area of focus in educational reform.
+    - superscript:
+      - link "[97]":
+        - /url: "#cite_note-97"
+    - text: As a result, test developers have needed to create tests to ensure all students, including those with special needs (e.g., students identified with disabilities), are given the opportunity to demonstrate the extent to which they have mastered the content measured on state assessments. Currently, states are permitted to develop two different types of tests in addition to the standard grade-level assessments to target students with special needs. First, the alternate assessment may be used to report proficiency for up to 1% of students in a state. Second, new regulations permit the use of alternate assessments based on modified academic achievement standards to report proficiency for up to 2% of students in a state.
+  - paragraph:
+    - text: To ensure that these new tests generate results that allow valid inferences to be made about student performance, they must be accessible to as many people as possible. The Test Accessibility and Modification Inventory (TAMI)
+    - superscript:
+      - link "[98]":
+        - /url: "#cite_note-98"
+    - text: and its companion evaluation tool, the Accessibility Rating Matrix (ARM), were designed to facilitate the evaluation of tests and test items with a focus on enhancing their accessibility. Both instruments incorporate the principles of accessibility theory and were guided by research on universal design, assessment accessibility, cognitive load theory, and research on item writing and test development. The TAMI is a non-commercial instrument that has been made available to all state assessment directors and testing companies. Assessment researchers have used the ARM to conduct accessibility reviews of state assessment items for several state departments of education.
+  - heading "See also" [level=2]
+  - text: "["
+  - link "edit":
+    - /url: /w/index.php?title=Accessibility&action=edit&section=26
+  - text: "]"
+  - list:
+    - listitem:
+      - link "Accessible toilet":
+        - /url: /wiki/Accessible_toilet
+    - listitem:
+      - link "Accessible tourism":
+        - /url: /wiki/Accessible_tourism
+    - listitem:
+      - link "CEN/CENELEC Guide 6":
+        - /url: /wiki/CEN/CENELEC_Guide_6
+    - listitem:
+      - link "Computer accessibility":
+        - /url: /wiki/Computer_accessibility
+    - listitem:
+      - link "Convenience":
+        - /url: /wiki/Convenience
+    - listitem:
+      - link "Curb cut effect":
+        - /url: /wiki/Curb_cut_effect
+    - listitem:
+      - link "Design for All (in ICT)":
+        - /url: /wiki/Design_for_All_(in_ICT)
+    - listitem:
+      - link "Disability flag":
+        - /url: /wiki/Disability_flag
+    - listitem:
+      - link "Game accessibility":
+        - /url: /wiki/Game_accessibility
+    - listitem:
+      - link "Human factors and ergonomics":
+        - /url: /wiki/Human_factors_and_ergonomics
+    - listitem:
+      - link "Inclusive design":
+        - /url: /wiki/Inclusive_design
+    - listitem:
+      - link "Knowbility":
+        - /url: /wiki/Knowbility
+    - listitem:
+      - link "National Federation of the Blind v. Target Corporation":
+        - /url: /wiki/National_Federation_of_the_Blind_v._Target_Corporation
+    - listitem:
+      - link "Principles of Intelligent Urbanism":
+        - /url: /wiki/Principles_of_Intelligent_Urbanism
+    - listitem:
+      - link "Public transport accessibility level":
+        - /url: /wiki/Public_transport_accessibility_level
+    - listitem:
+      - link "Section 504 of the Rehabilitation Act":
+        - /url: /wiki/Section_504_of_the_Rehabilitation_Act
+    - listitem:
+      - link "Section 508 Amendment to the Rehabilitation Act of 1973":
+        - /url: /wiki/Section_508_Amendment_to_the_Rehabilitation_Act_of_1973
+    - listitem:
+      - link "Timeline of disability rights in the United States":
+        - /url: /wiki/Timeline_of_disability_rights_in_the_United_States
+    - listitem:
+      - link "Timeline of disability rights outside the United States":
+        - /url: /wiki/Timeline_of_disability_rights_outside_the_United_States
+    - listitem:
+      - link "Transgenerational design":
+        - /url: /wiki/Transgenerational_design
+    - listitem:
+      - link "Transport divide":
+        - /url: /wiki/Transport_divide
+    - listitem:
+      - link "Universal design for instruction":
+        - /url: /wiki/Universal_design_for_instruction
+    - listitem:
+      - link "Walkability":
+        - /url: /wiki/Walkability
+    - listitem:
+      - link "Walking audit":
+        - /url: /wiki/Walking_audit
+    - listitem:
+      - link "Walter Harris Callow":
+        - /url: /wiki/Walter_Harris_Callow
+      - text: ", inventor of wheelchair accessible bus"
+    - listitem:
+      - link "Wheelchair accessible van":
+        - /url: /wiki/Wheelchair_accessible_van
+  - heading "References" [level=2]
+  - text: "["
+  - link "edit":
+    - /url: /w/index.php?title=Accessibility&action=edit&section=27
+  - text: "]"
+  - list:
+    - listitem:
+      - link "Jump up":
+        - /url: "#cite_ref-1"
+        - text: ^
+      - text: Henry, Shawn Lawton; Abou-Zahra, Shadi; Brewer, Judy (2014).
+      - link "The Role of Accessibility in a Universal Web":
+        - /url: http://dl.acm.org/citation.cfm?doid=2596695.2596719
+      - text: . Proceeding W4A '14 Proceedings of the 11th Web for All Conference Article No. 17.
+      - link "ISBN":
+        - /url: /wiki/ISBN_(identifier)
+      - link "978-1-4503-2651-3":
+        - /url: /wiki/Special:BookSources/978-1-4503-2651-3
+      - text: . Retrieved 2014-12-17.
+    - listitem:
+      - link "Jump up":
+        - /url: "#cite_ref-2"
+        - text: ^
+      - link "\"What is assistive technology?\"":
+        - /url: https://web.archive.org/web/20190119142215/http://www.washington.edu/accessit/print.html?ID=1109
+      - text: . washington.edu. Archived from
+      - link "the original":
+        - /url: http://www.washington.edu/accessit/print.html?ID=1109
+      - text: on 2019-01-19. Retrieved 2018-07-02.
+    - listitem:
+      - link "Jump up":
+        - /url: "#cite_ref-3"
+        - text: ^
+      - link "\"Federal Communications Commission\"":
+        - /url: https://transition.fcc.gov/Bureaus/Common_Carrier/Orders/1999/fcc99181.txt
+      - text: . FCC on Telecommunications Accessibility for the Disabled. 1999.
+    - listitem:
+      - link "Jump up":
+        - /url: "#cite_ref-4"
+        - text: ^
+      - text: Goldberg, L. (1996).
+      - 'link "\"Electronic Curbcuts: Equitable Access to the Future\""':
+        - /url: https://web.archive.org/web/19990427111220/http://www.ahip.getty.edu/cyberpub/goldberg.html
+      - text: ". Getty Center for the History of Art and the Humanities and the Getty Art History Information Program, Cyberspace/Public Space: The Role of Arts and Culture in Defining a Virtual Public Sphere. Archived from"
+      - link "the original":
+        - /url: http://www.ahip.getty.edu/cyberpub/goldberg.html
+      - text: on April 27, 1999.
+    - listitem:
+      - link "Jump up":
+        - /url: "#cite_ref-5"
+        - text: ^
+      - text: Jacobs, S. (1999).
+      - 'link "\"Section 255 of the Telecommunications Act of 1996: Fueling the Creation of New Electronic Curbcuts\""':
+        - /url: http://www.accessiblesociety.org/topics/technology/eleccurbcut.htm
+      - text: .
+    - listitem:
+      - link "Jump up":
+        - /url: "#cite_ref-6"
+        - text: ^
+      - text: Valdes, L. (2003).
+      - link "\"Accessibility on the Internet\"":
+        - /url: https://www.un.org/esa/socdev/enable/disacc00.htm
+      - text: .
+    - listitem:
+      - link "Jump up":
+        - /url: "#cite_ref-7"
+        - text: ^
+      - text: "Brewer, J. (2001). \"Access to the World Wide Web: Technical and Policy Aspects\". In Preiser, W.; Ostroff, E. (eds.). Universal Design Handbook (1st ed.). New York: McGraw-Hill."
+    - listitem:
+      - link "Jump up":
+        - /url: "#cite_ref-8"
+        - text: ^
+      - link "\"Accessibility, Usability, and Inclusion\"":
+        - /url: https://www.w3.org/WAI/fundamentals/accessibility-usability-inclusion/
+      - text: . Web Accessibility Initiative. Retrieved 2020-07-05.
+    - listitem:
+      - link "Jump up":
+        - /url: "#cite_ref-9"
+        - text: ^
+      - link "\"The Concept of Universal Design\"":
+        - /url: https://web.archive.org/web/20180704095800/http://www.udeworld.com/dissemination/publications/56-reprints-short-articles-and-papers/110-the-concept-of-universal-design.html
+      - text: . udeworld.com. Archived from the original on 2018-07-04. Retrieved 2018-07-02.
+    - listitem:
+      - link "Jump up":
+        - /url: "#cite_ref-10"
+        - text: ^
+      - text: "Lisney, Eleanor; Bowen, Jonathan P.; Hearn, Kirsten; Zedda, Maria (2013). \"Museums and Technology: Being Inclusive Helps Accessibility for All\". Curator: The Museum Journal. 56 (3): 353."
+      - link "doi":
+        - /url: /wiki/Doi_(identifier)
+      - text: ":"
+      - link "10.1111/cura.12034":
+        - /url: https://doi.org/10.1111%2Fcura.12034
+      - text: .
+    - listitem:
+      - link "Jump up":
+        - /url: "#cite_ref-11"
+        - text: ^
+      - text: Norberto Rocha, Jessica; Massarani, Luisa; de Abreu, Willian; Inacio, Gustavo; Molenzani, Aline (2020).
+      - link "\"Investigating accessibility in Latin American science museums and centers\"":
+        - /url: https://doi.org/10.1590%2F0001-3765202020191156
+      - text: . Annals of the Brazilian Academy of Sciences. 92 (1) e20191156.
+      - link "doi":
+        - /url: /wiki/Doi_(identifier)
+      - text: ":"
+      - link "10.1590/0001-3765202020191156":
+        - /url: https://doi.org/10.1590%2F0001-3765202020191156
+      - text: .
+      - link "PMID":
+        - /url: /wiki/PMID_(identifier)
+      - link "32321029":
+        - /url: https://pubmed.ncbi.nlm.nih.gov/32321029
+      - text: .
+    - listitem:
+      - link "Jump up":
+        - /url: "#cite_ref-12"
+        - text: ^
+      - link "\"Convention on the Rights of Persons with Disabilities (CRPD) | United Nations Enable\"":
+        - /url: https://www.un.org/development/desa/disabilities/convention-on-the-rights-of-persons-with-disabilities.html
+      - text: . un.org. 14 May 2015. Retrieved 2018-07-02.
+    - listitem:
+      - link "Jump up":
+        - /url: "#cite_ref-13"
+        - text: ^
+      - 'link "\"Accessibility Tools: When is a facility considered accessible?\""':
+        - /url: https://www.fs.fed.us/eng/toolbox/acc/acc12.htm
+      - text: . fs.fed.us. Retrieved 2018-07-02.
+    - listitem:
+      - link "Jump up":
+        - /url: "#cite_ref-14"
+        - text: ^
+      - link "\"Section508.gov | GSA Government-wide IT Accessibility Program\"":
+        - /url: https://www.section508.gov/
+      - text: . section508.gov. Retrieved 2018-07-02.
+    - listitem:
+      - link "Jump up":
+        - /url: "#cite_ref-15"
+        - text: ^
+      - link "\"An Overview of the Americans With Disabilities Act | ADA National Network\"":
+        - /url: https://adata.org/factsheet/ADA-overview
+      - text: . adata.org. Retrieved 2018-07-02.
+    - listitem:
+      - link "Jump up":
+        - /url: "#cite_ref-16"
+        - text: ^
+      - link "\"Home – United States Access Board\"":
+        - /url: https://www.access-board.gov/
+      - text: . access-board.gov. Retrieved 2018-07-02.
+    - listitem:
+      - link "Jump up":
+        - /url: "#cite_ref-17"
+        - text: ^
+      - link "\"JAN – Job Accommodation Network\"":
+        - /url: https://askjan.org/
+      - text: . askjan.org. Retrieved 2018-07-02.
+    - listitem:
+      - link "Jump up":
+        - /url: "#cite_ref-18"
+        - text: ^
+      - text: AG (July 2016).
+      - link "\"Disability Discrimination Act 1992\"":
+        - /url: https://www.legislation.gov.au/Details/C2016C00763
+      - text: . legislation.gov.au. Retrieved 2018-07-02.
+    - listitem:
+      - link "Jump up":
+        - /url: "#cite_ref-19"
+        - text: ^
+      - link "\"South Africa. Promotion of Equality and Prevention of Unfair Discrimination Act, 2000\"":
+        - /url: http://www.ilo.org/dyn/natlex/docs/WEBTEXT/56231/65195/E00ZAF01.htm
+      - text: . ilo.org. Retrieved 2018-07-02.
+    - listitem:
+      - link "Jump up":
+        - /url: "#cite_ref-20"
+        - text: ^
+      - 'link "\"Equality Act 2010: guidance\""':
+        - /url: https://www.gov.uk/guidance/equality-act-2010-guidance
+      - text: . GOV.UK. Retrieved 2018-07-02.
+    - listitem:
+      - link "Jump up":
+        - /url: "#cite_ref-21"
+        - text: ^
+      - text: Ockersz, Lynn (8 November 2009).
+      - link "\"Landmark Supreme Court ruling – A fillip for accessibility rights of disabled\"":
+        - /url: http://www.island.lk/2009/11/08/news-17.jpg
+      - text: . Upali Newspapers – The Sunday Island. p. 17. Retrieved 2010-01-26.
+    - listitem:
+      - link "Jump up":
+        - /url: "#cite_ref-22"
+        - text: ^
+      - link "\"Ikke tilgjengelig:Lov om forbud mot diskriminering på grunn av nedsatt funksjonsevne (diskriminerings- og tilgjengelighetsloven) – Lovdata\"":
+        - /url: https://lovdata.no/dokument/NL/lov/2013-06-21-61
+      - text: . lovdata.no.
+    - listitem:
+      - link "Jump up":
+        - /url: "#cite_ref-23"
+        - text: ^
+      - link "\"Lei Brasileira de Inclusão da Pessoa com Deficiência (Estatuto da Pessoa com Deficiência)\"":
+        - /url: http://www.planalto.gov.br/ccivil_03/_ato2015-2018/2015/lei/l13146.htm
+      - text: . planalto.gov.br.
+    - listitem:
+      - link "Jump up":
+        - /url: "#cite_ref-24"
+        - text: ^
+      - link "\"Canada's first federal accessibility legislation receives Royal Assent\"":
+        - /url: https://www.canada.ca/en/employment-social-development/news/2019/06/canadas-first-federal-accessibility-legislation-receives-royal-assent.html
+      - text: . Employment and Social Development Canada. 21 June 2019. Retrieved 18 September 2019.
+    - listitem:
+      - link "Jump up":
+        - /url: "#cite_ref-25"
+        - text: ^
+      - link "\"About the AODA – Accessibility Ontario\"":
+        - /url: https://accessontario.com/aoda/
+      - text: . accessontario.com. Retrieved 2018-07-02.
+    - listitem:
+      - link "Jump up":
+        - /url: "#cite_ref-26"
+        - text: ^
+      - 'link "\"EU disability strategy 2010–20: access and rights\""':
+        - /url: http://ec.europa.eu/news/justice/101115_en.htm
+      - text: . European Commission. Retrieved November 12, 2012.
+    - listitem:
+      - link "Jump up":
+        - /url: "#cite_ref-27"
+        - text: ^
+      - 'link "\"European Accessibility Act: legislative initiative to improve accessibility of goods and services in the Internal Market\""':
+        - /url: http://ec.europa.eu/smart-regulation/impact/planned_ia/docs/2012_just_025_european_accessibiliy_act_en.pdf
+      - text: (PDF).
+      - link "European Commission":
+        - /url: /wiki/European_Commission
+      - text: . September 2012. Retrieved 13 June 2014.
+    - listitem:
+      - link "Jump up":
+        - /url: "#cite_ref-28"
+        - text: ^
+      - link "\"European Accessibility Act proposed for 2012\"":
+        - /url: http://www.eurocities.eu/eurocities/news/European-Accessibility-Act-proposed-for-2012-WSPO-8SMHJQ
+      - text: .
+      - link "Eurocities":
+        - /url: /wiki/Eurocities
+      - text: . Retrieved November 12, 2012.
+    - listitem:
+      - link "Jump up":
+        - /url: "#cite_ref-29"
+        - text: ^
+      - link "\"What is Adaptive Technology? // ACT Center\"":
+        - /url: https://actcenter.missouri.edu/about-the-act-center/what-is-adaptive-technology/
+      - text: . actcenter.missouri.edu. Retrieved 2018-07-02.
+    - listitem:
+      - link "Jump up":
+        - /url: "#cite_ref-30"
+        - text: ^
+      - link "\"HTML input autocomplete Attribute\"":
+        - /url: https://www.w3schools.com/tags/att_input_autocomplete.asp
+      - text: . w3schools.com. Retrieved 2018-07-02.
+    - listitem:
+      - link "Jump up":
+        - /url: "#cite_ref-31"
+        - text: ^
+      - text: "Lancioni, G. E. (2020). \"A new tablet-based program to support leisure and video calls in people with intellectual and motor disabilities\". Technology & Disability. 32 (2): 111–121."
+      - link "doi":
+        - /url: /wiki/Doi_(identifier)
+      - text: ":"
+      - link "10.3233/TAD-200268":
+        - /url: https://doi.org/10.3233%2FTAD-200268
+      - text: .
+    - listitem:
+      - link "Jump up":
+        - /url: "#cite_ref-32"
+        - text: ^
+      - link "\"What is Occupational Therapy?\"":
+        - /url: https://www.aota.org/Conference-Events/OTMonth/what-is-OT.aspx
+      - text: . aota.org. Retrieved 2018-07-02.
+    - listitem:
+      - link "Jump up":
+        - /url: "#cite_ref-33"
+        - text: ^
+      - link "\"Disability Employment Resources by Topic\"":
+        - /url: https://www.dol.gov/agencies/odep
+      - text: . U.S. Department of Labor – Office of Disability Employment Policy. Retrieved November 30, 2012.
+    - listitem:
+      - link "Jump up":
+        - /url: "#cite_ref-34"
+        - text: ^
+      - link "\"Workers with a Disability Less Likely to be Employed, More Likely to Hold Jobs with Lower Earnings, Census Bureau Reports\"":
+        - /url: https://www.census.gov/newsroom/releases/archives/american_community_survey_acs/cb13-47.html
+      - text: . United States Census Bureau Newsroom. Retrieved 30 April 2014.
+    - listitem:
+      - text: ^
+      - 'link "Jump up to: a"':
+        - /url: "#cite_ref-dsq-sds_35-0"
+        - text: "Jump up to:"
+        - superscript: a
+      - link "b":
+        - /url: "#cite_ref-dsq-sds_35-1"
+        - superscript: b
+      - text: Kumar, Arun; Sonpal, Deepa; Hiranandani, Vanmala (2012).
+      - 'link "\"Trapped Between Ableism And Neoliberalism: Critical Reflections On Disability And Employment In India\""':
+        - /url: http://dsq-sds.org/article/view/3235/3109
+      - text: ". Disability Studies Quarterly. 32 (3): n.p."
+      - link "doi":
+        - /url: /wiki/Doi_(identifier)
+      - text: ":"
+      - link "10.18061/dsq.v32i3.3235":
+        - /url: https://doi.org/10.18061%2Fdsq.v32i3.3235
+      - text: . Retrieved November 30, 2012.
+    - listitem:
+      - link "Jump up":
+        - /url: "#cite_ref-36"
+        - text: ^
+      - link "\"Nearly two-thirds of global workforce in the 'informal' economy – UN study\"":
+        - /url: https://news.un.org/en/story/2018/04/1008562
+      - text: . UN News. 2018-04-30. Retrieved 2018-07-02.
+    - listitem:
+      - text: ^
+      - 'link "Jump up to: a"':
+        - /url: "#cite_ref-Geisen165_37-0"
+        - text: "Jump up to:"
+        - superscript: a
+      - link "b":
+        - /url: "#cite_ref-Geisen165_37-1"
+        - superscript: b
+      - text: "Geisen, Thomas; Henry George Harder (2011). Disability Management and Workplace Integration: International Research Findings. Gower Publishing. p. 165."
+      - link "ISBN":
+        - /url: /wiki/ISBN_(identifier)
+      - link "978-1-4094-1888-7":
+        - /url: /wiki/Special:BookSources/978-1-4094-1888-7
+      - text: .
+    - listitem:
+      - link "Jump up":
+        - /url: "#cite_ref-38"
+        - text: ^
+      - text: Dimond, Bridget C. (2009).
+      - link "Legal Aspects of Physiotherapy":
+        - /url: https://archive.org/details/legalaspectsofph0000dimo/page/263
+      - text: . John Wiley & Sons. pp.
+      - link "263":
+        - /url: https://archive.org/details/legalaspectsofph0000dimo/page/263
+      - text: .
+      - link "ISBN":
+        - /url: /wiki/ISBN_(identifier)
+      - link "978-1-4051-7615-6":
+        - /url: /wiki/Special:BookSources/978-1-4051-7615-6
+      - text: .
+    - listitem:
+      - link "Jump up":
+        - /url: "#cite_ref-39"
+        - text: ^
+      - text: Dimond, Bridget C. (2011). Legal Aspects of Occupational Therapy. John Wiley & Sons. pp. n.p.
+      - link "ISBN":
+        - /url: /wiki/ISBN_(identifier)
+      - link "978-1-4443-4816-3":
+        - /url: /wiki/Special:BookSources/978-1-4443-4816-3
+      - text: .
+    - listitem:
+      - link "Jump up":
+        - /url: "#cite_ref-40"
+        - text: ^
+      - text: "Disability Discrimination Act 1995: Code of Practice; Employment and Occupation. Disability Rights Commission. 2004. p. 5."
+      - link "ISBN":
+        - /url: /wiki/ISBN_(identifier)
+      - link "978-0-11-703419-8":
+        - /url: /wiki/Special:BookSources/978-0-11-703419-8
+      - text: .
+    - listitem:
+      - link "Jump up":
+        - /url: "#cite_ref-41"
+        - text: ^
+      - link "\"What is BRT? – Institute for Transportation and Development Policy\"":
+        - /url: https://www.itdp.org/library/standards-and-guides/the-bus-rapid-transit-standard/what-is-brt/
+      - text: . Institute for Transportation and Development Policy. Retrieved 2018-07-02.
+    - listitem:
+      - link "Jump up":
+        - /url: "#cite_ref-42"
+        - text: ^
+      - link "\"Community planning in the devolved UK\"":
+        - /url: https://theknowledgeexchangeblog.com/2017/01/25/community-planning-in-the-devolved-uk/
+      - text: . The Knowledge Exchange Blog. 2017-01-25. Retrieved 2018-07-02.
+    - listitem:
+      - link "Jump up":
+        - /url: "#cite_ref-43"
+        - text: ^
+      - link "\"Local Transport Plan | PLYMOUTH.GOV.UK\"":
+        - /url: https://web.archive.org/web/20180702175727/https://www.plymouth.gov.uk/parkingandtravel/transportplansandprojects/localtransportplan
+      - text: . plymouth.gov.uk. Archived from
+      - link "the original":
+        - /url: https://www.plymouth.gov.uk/parkingandtravel/transportplansandprojects/localtransportplan
+      - text: on 2018-07-02. Retrieved 2018-07-02.
+    - listitem:
+      - link "Jump up":
+        - /url: "#cite_ref-44"
+        - text: ^
+      - text: "Office of the Deputy Prime Minister – Social Exclusion Unit: \""
+      - 'link "Making the Connections: Final Report on Transport and Social Exclusion"':
+        - /url: http://www.cabinetoffice.gov.uk/media/cabinetoffice/social_exclusion_task_force/assets/publications_1997_to_2006/making_transport_2003.pdf
+      - link "Archived":
+        - /url: http://webarchive.nationalarchives.gov.uk/20100907154242/http://www.cabinetoffice.gov.uk/media/cabinetoffice/social_exclusion_task_force/assets/publications_1997_to_2006/making_transport_2003.pdf
+      - text: 2010-09-07 at the
+      - link "UK Government Web Archive":
+        - /url: /wiki/UK_Government_Web_Archive
+      - text: "\". February 2003."
+    - listitem:
+      - link "Jump up":
+        - /url: "#cite_ref-45"
+        - text: ^
+      - text: "Department of Transport & Transport Scotland: \""
+      - 'link "Accessible Train and Station Design for Disabled People: A Code of Practice"':
+        - /url: http://www.dft.gov.uk/transportforyou/access/rail/railstations/accessiblestationdesigns/cop.pdf
+      - text: "\". July 2008."
+    - listitem:
+      - link "Jump up":
+        - /url: "#cite_ref-46"
+        - text: ^
+      - link "\"Railways Act 1993\"":
+        - /url: https://www.legislation.gov.uk/ukpga/1993/43/section/71B
+      - text: . legislation.gov.uk. Expert Participation. Retrieved 2018-07-02.
+    - listitem:
+      - link "Jump up":
+        - /url: "#cite_ref-47"
+        - text: ^
+      - link "\"Transport Committee Written evidence from Transport for London (TfL) (DAT 67)\"":
+        - /url: https://publications.parliament.uk/pa/cm201314/cmselect/cmtran/116/116we20.htm
+      - text: . Parliment.uk. Retrieved 17 January 2026.
+    - listitem:
+      - link "Jump up":
+        - /url: "#cite_ref-48"
+        - text: ^
+      - text: Topham, Gwyn (5 August 2021).
+      - link "\"South Western Railway launches 10 minutes' notice assistance scheme\"":
+        - /url: https://www.theguardian.com/business/2021/aug/05/south-western-railway-launches-10-minutes-notice-assistance-scheme
+      - text: .
+      - link "The Guardian":
+        - /url: /wiki/The_Guardian
+      - text: .
+      - link "Archived":
+        - /url: https://archive.today/20210805114212/https://www.theguardian.com/business/2021/aug/05/south-western-railway-launches-10-minutes-notice-assistance-scheme
+      - text: from the original on 5 August 2021. Retrieved 5 August 2021.
+    - listitem:
+      - link "Jump up":
+        - /url: "#cite_ref-49"
+        - text: ^
+      - link "\"Convention on the Rights of Persons with Disabilities\"":
+        - /url: https://www.ohchr.org/en/instruments-mechanisms/instruments/convention-rights-persons-disabilities
+      - text: . Office of the High Commissioner for Human Rights (OHCHR). 12 December 2006. Retrieved 30 October 2024.
+    - listitem:
+      - text: ^
+      - 'link "Jump up to: a"':
+        - /url: "#cite_ref-:0_50-0"
+        - text: "Jump up to:"
+        - superscript: a
+      - link "b":
+        - /url: "#cite_ref-:0_50-1"
+        - superscript: b
+      - text: Lawson, Anna; Eskytė, Ieva; Orchard, Maria; Houtzager, Dick; De Vos, Edwin Luitzen (2022-06-26).
+      - 'link "\"Pedestrians with Disabilities and Town and City Streets: From Shared to Inclusive Space?\""':
+        - /url: https://www.journalpublicspace.org/index.php/jps/article/view/1603
+      - text: ". The Journal of Public Space. 7 (2): 41–62."
+      - link "doi":
+        - /url: /wiki/Doi_(identifier)
+      - text: ":"
+      - link "10.32891/jps.v7i2.1603":
+        - /url: https://doi.org/10.32891%2Fjps.v7i2.1603
+      - text: .
+      - link "ISSN":
+        - /url: /wiki/ISSN_(identifier)
+      - link "2206-9658":
+        - /url: https://search.worldcat.org/issn/2206-9658
+      - text: .
+    - listitem:
+      - link "Jump up":
+        - /url: "#cite_ref-51"
+        - text: ^
+      - text: "Occupational therapy research on assistive technology and physical environmental issues: A literature review, Fange et al. (2006), Canadian Journal of Occupational Therapy"
+    - listitem:
+      - link "Jump up":
+        - /url: "#cite_ref-52"
+        - text: ^
+      - text: "Changes in accessibility and usability in housing: an exploration of the housing adaptation process (2005), Fange and Iwarsson, Occupational Therapy International"
+    - listitem:
+      - link "Jump up":
+        - /url: "#cite_ref-53"
+        - text: ^
+      - text: "Accessibility and usability in housing: construct validity and implications for research and practice (2003), Fange and Iwarsson, Disability and Rehabilitation"
+    - listitem:
+      - link "Jump up":
+        - /url: "#cite_ref-54"
+        - text: ^
+      - link "\"Visitability | WBDG Whole Building Design Guide\"":
+        - /url: https://www.wbdg.org/resources/visitability
+      - text: . wbdg.org. Retrieved 2018-07-02.
+    - listitem:
+      - link "Jump up":
+        - /url: "#cite_ref-55"
+        - text: ^
+      - 'link "\"Accessible Home Design: Information & Ideas\""':
+        - /url: https://www.disabled-world.com/disability/accessibility/homes/
+      - text: . Disabled World. Retrieved 2018-07-02.
+    - listitem:
+      - link "Jump up":
+        - /url: "#cite_ref-56"
+        - text: ^
+      - link "\"Government data reveals 'accessible homes crisis' for disabled people\"":
+        - /url: https://www.homecareinsight.co.uk/government-data-reveals-accessible-homes-crisis-for-disabled-people/
+      - text: . Home Care Insight. 13 July 2020. Retrieved 30 August 2020.
+    - listitem:
+      - link "Jump up":
+        - /url: "#cite_ref-57"
+        - text: ^
+      - 'link "\"STA: Disabled take Slovenia to Human Rights Court over polling stations accessibility\""':
+        - /url: https://english.sta.si/2717030/disabled-take-slovenia-to-human-rights-court-over-polling-stations-accessibility
+      - text: . english.sta.si. Retrieved 2020-01-14.
+    - listitem:
+      - link "Jump up":
+        - /url: "#cite_ref-58"
+        - text: ^
+      - link "\"HUDOC – European Court of Human Rights\"":
+        - /url: https://hudoc.echr.coe.int/eng?i=001-200412
+      - text: . hudoc.echr.coe.int. Retrieved 2020-01-14.
+    - listitem:
+      - link "Jump up":
+        - /url: "#cite_ref-59"
+        - text: ^
+      - link "\"Top European Court to Rule on Making All Polling Stations Accessible in Europe\"":
+        - /url: https://pushliving.com/top-european-court-to-rule-on-making-all-polling-stations-accessible-in-europe/
+      - text: . Wheelchair Accessible Lifestyle. 2020-03-10. Retrieved 2020-03-15.
+    - listitem:
+      - link "Jump up":
+        - /url: "#cite_ref-60"
+        - text: ^
+      - 'link "\"Better Web Browsing: Tips for Customizing Your Computer\""':
+        - /url: http://www.w3.org/WAI/users/browsing.html
+      - text: . World Wide Web Consortium.
+    - listitem:
+      - link "Jump up":
+        - /url: "#cite_ref-61"
+        - text: ^
+      - link "\"Accessibility\"":
+        - /url: https://www.apple.com/accessibility/
+      - text: . Apple. Retrieved 2020-08-31.
+    - listitem:
+      - link "Jump up":
+        - /url: "#cite_ref-62"
+        - text: ^
+      - link "\"Android accessibility overview – Android Accessibility Help\"":
+        - /url: https://support.google.com/accessibility/android/answer/6006564
+      - text: . support.google.com. Retrieved 2020-08-31.
+    - listitem:
+      - link "Jump up":
+        - /url: "#cite_ref-63"
+        - text: ^
+      - link "\"Accessibility Technology & Tools\"":
+        - /url: https://www.microsoft.com/en-us/accessibility
+      - text: . Accessibility. Retrieved 2020-08-31.
+    - listitem:
+      - link "Jump up":
+        - /url: "#cite_ref-64"
+        - text: ^
+      - link "\"Speech and Communication Disorders\"":
+        - /url: https://web.archive.org/web/20080921112430/http://health.nih.gov/topic/SpeechCommunicationDisorders
+      - text: . National Institutes of Health. Archived from
+      - link "the original":
+        - /url: http://health.nih.gov/topic/SpeechCommunicationDisorders
+      - text: on September 21, 2008.
+    - listitem:
+      - link "Jump up":
+        - /url: "#cite_ref-65"
+        - text: ^
+      - link "\"Hearing Disorders and Deafness\"":
+        - /url: https://www.medlineplus.gov/hearingdisordersanddeafness.html
+      - text: . National Library of Medicine.
+    - listitem:
+      - link "Jump up":
+        - /url: "#cite_ref-66"
+        - text: ^
+      - link "\"Visual Impairment and Blindness\"":
+        - /url: https://www.medlineplus.gov/visionimpairmentandblindness.html
+      - text: . National Library of Medicine.
+    - listitem:
+      - link "Jump up":
+        - /url: "#cite_ref-67"
+        - text: ^
+      - text: Forssman, S (1955).
+      - link "\"Pre-employment and periodical health examinations, job analysis and placement of workers\"":
+        - /url: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2538128
+      - text: ". Bulletin of the World Health Organization. 13 (4): 495–503."
+      - link "PMC":
+        - /url: /wiki/PMC_(identifier)
+      - link "2538128":
+        - /url: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2538128
+      - text: .
+      - link "PMID":
+        - /url: /wiki/PMID_(identifier)
+      - link "13276805":
+        - /url: https://pubmed.ncbi.nlm.nih.gov/13276805
+      - text: .
+    - listitem:
+      - link "Jump up":
+        - /url: "#cite_ref-68"
+        - text: ^
+      - text: "Clark, J. A.; Roemer, R. B. (April 1977). \"Voice Operated Wheelchair\". Arch Phys Med Rehabil. 58 (4): 169–75."
+      - link "PMID":
+        - /url: /wiki/PMID_(identifier)
+      - link "849131":
+        - /url: https://pubmed.ncbi.nlm.nih.gov/849131
+      - text: .
+    - listitem:
+      - link "Jump up":
+        - /url: "#cite_ref-69"
+        - text: ^
+      - link "\"Definition of hearing loss – Mild, Moderate, Severe & Profound - hear-it.org\"":
+        - /url: https://www.hear-it.org/Defining-hearing-loss
+      - text: . Retrieved 2018-07-02.
+    - listitem:
+      - link "Jump up":
+        - /url: "#cite_ref-70"
+        - text: ^
+      - text: "Kipp, Michael; Nguyen, Quan; Heloir, Alexis; Matthes, Silke (October 2011). \"The proceedings of the 13th international ACM SIGACCESS conference on Computers and accessibility – ASSETS '11\". Proceedings of the 13th International ACM SIGACCESS Conference on Computers and Accessibility (ASSETS-11). 13th ACM Sigaccess Conference on Computers and Accessibility. Dundee, Scotland:"
+      - link "Association for Computing Machinery":
+        - /url: /wiki/Association_for_Computing_Machinery
+      - text: . pp. 107–114.
+      - link "doi":
+        - /url: /wiki/Doi_(identifier)
+      - text: ":"
+      - link "10.1145/2049536.2049557":
+        - /url: https://doi.org/10.1145%2F2049536.2049557
+      - text: .
+      - link "ISBN":
+        - /url: /wiki/ISBN_(identifier)
+      - link "978-1-4503-0920-2":
+        - /url: /wiki/Special:BookSources/978-1-4503-0920-2
+      - text: .
+    - listitem:
+      - link "Jump up":
+        - /url: "#cite_ref-71"
+        - text: ^
+      - link "World Federation of the Deaf":
+        - /url: /wiki/World_Federation_of_the_Deaf
+      - text: ;
+      - link "World Association of Sign Language Interpreters":
+        - /url: /wiki/World_Association_of_Sign_Language_Interpreters
+      - text: (14 March 2018).
+      - link "WFD and WASLI Statement on Use of Signing Avatars":
+        - /url: https://wfdeaf.org/news/resources/wfd-wasli-statement-use-signing-avatars/
+      - text: (Report). p. 2. Retrieved 22 September 2020.
+    - listitem:
+      - link "Jump up":
+        - /url: "#cite_ref-72"
+        - text: ^
+      - link "\"Deluxe Launches First Brazilian Sign Language (LIBRAS) Localization Service Outside Brazil\"":
+        - /url: https://www.prnewswire.com/news-releases/deluxe-launches-first-brazilian-sign-language-libras-localization-service-outside-brazil-300521137.html
+      - text: . Cision PR Newswire. Deluxe Entertainment Services Group Inc. through Cision PR Newswire. 18 Sep 2017. Retrieved 14 Nov 2023.
+    - listitem:
+      - link "Jump up":
+        - /url: "#cite_ref-73"
+        - text: ^
+      - link "\"Accessibility & The Audio Track File\"":
+        - /url: https://cinepedia.com/accessibility/accessibility-the-audio-track-file/
+      - text: . Cinepedia. Retrieved 14 November 2023.
+    - listitem:
+      - link "Jump up":
+        - /url: "#cite_ref-74"
+        - text: ^
+      - link "\"Speech Synthesis Markup Language (SSML) Version 1.0\"":
+        - /url: https://www.w3.org/TR/2004/REC-speech-synthesis-20040907/
+      - text: . w3.org.
+    - listitem:
+      - link "Jump up":
+        - /url: "#cite_ref-75"
+        - text: ^
+      - link "\"Speech Recognition Grammar Specification Version 1.0\"":
+        - /url: https://www.w3.org/TR/speech-grammar/
+      - text: . w3.org.
+    - listitem:
+      - link "Jump up":
+        - /url: "#cite_ref-76"
+        - text: ^
+      - link "\"About Intellectual and Developmental Disabilities (IDDs)\"":
+        - /url: https://www.nichd.nih.gov/health/topics/idds/conditioninfo
+      - text: . About Intellectual and Developmental Disabilities (IDDs). U.S. Department of Health and Human Services, National Institutes of Health. Retrieved 24 September 2025.
+    - listitem:
+      - link "Jump up":
+        - /url: "#cite_ref-77"
+        - text: ^
+      - text: "Diagnostic and Statistical Manual of Mental Disorders (5th ed.) (Intellectual Disability is classified under Neurodevelopmental Disorders, characterized by deficits in intellectual and adaptive functioning with varying levels of severity. ed.). American Psychiatric Association Arlington, VA: American Psychiatric Publishing."
+    - listitem:
+      - link "Jump up":
+        - /url: "#cite_ref-78"
+        - text: ^
+      - text: "\"Assistive Technology Act of 2004\". Pub. L. No. 108-364, 118 Stat. 1707 (2004)."
+    - listitem:
+      - link "Jump up":
+        - /url: "#cite_ref-79"
+        - text: ^
+      - link "\"Raising the Floor Project\"":
+        - /url: http://raisingthefloor.org
+      - text: . Gregg Vanderheiden.
+    - listitem:
+      - link "Jump up":
+        - /url: "#cite_ref-80"
+        - text: ^
+      - link "\"ANSI/RESNA CA-1:2016\"":
+        - /url: https://webstore.ansi.org/standards/resna/ansiresnaca2018
+      - text: . Resna/ANSI.
+    - listitem:
+      - link "Jump up":
+        - /url: "#cite_ref-81"
+        - text: ^
+      - link "\"ISO-TC173-WG10_N238_ISO 21801-1 2020\"":
+        - /url: https://www.iso.org/standard/71711.html
+      - text: .
+    - listitem:
+      - link "Jump up":
+        - /url: "#cite_ref-82"
+        - text: ^
+      - link "\"WICAG\"":
+        - /url: https://www.w3.org/WAI/about/groups/agwg/#wcag-2
+      - text: . World Wide Web Consortium. Retrieved 1 October 2025.
+    - listitem:
+      - link "Jump up":
+        - /url: "#cite_ref-83"
+        - text: ^
+      - link "\"Cognitive accessibility design considerations\"":
+        - /url: https://webaim.org/articles/cognitive/design
+      - text: . WebAIM.
+    - listitem:
+      - link "Jump up":
+        - /url: "#cite_ref-84"
+        - text: ^
+      - link "\"Microsoft Inclusive Design Cognitive Exclusion\"":
+        - /url: https://inclusive.microsoft.design/tools-and-activities/InclusiveDesignForCognitionGuidebook.pdf
+      - text: (PDF). Retrieved 6 November 2025.
+    - listitem:
+      - link "Jump up":
+        - /url: "#cite_ref-85"
+        - text: ^
+      - link "\"WAI Resources on Introducing Web Accessibility\"":
+        - /url: http://www.w3.org/WAI/gettingstarted/Overview.html
+      - text: .
+      - link "Web Accessibility Initiative":
+        - /url: /wiki/Web_Accessibility_Initiative
+      - text: .
+      - link "W3C":
+        - /url: /wiki/W3C
+      - text: . Retrieved 18 June 2014.
+    - listitem:
+      - link "Jump up":
+        - /url: "#cite_ref-86"
+        - text: ^
+      - text: "Section 508:"
+      - link "508 Training":
+        - /url: https://www.section508.gov/index.cfm?FuseAction=Content&ID=5
+      - text: .
+    - listitem:
+      - link "Jump up":
+        - /url: "#cite_ref-87"
+        - text: ^
+      - link "BS 8878:2010 Web accessibility – Code of Practice":
+        - /url: http://www.hassellinclusion.com/bs8878/
+      - text: .
+    - listitem:
+      - link "Jump up":
+        - /url: "#cite_ref-88"
+        - text: ^
+      - link "ISO 30071-1":
+        - /url: https://www.hassellinclusion.com/iso-30071-1/
+      - text: .
+    - listitem:
+      - link "Jump up":
+        - /url: "#cite_ref-89"
+        - text: ^
+      - link "PAS 78":
+        - /url: http://www.equalityhumanrights.com/footer/accessibility-statement/general-web-accessibility-guidance/
+      - link "Archived":
+        - /url: https://web.archive.org/web/20150703160227/http://www.equalityhumanrights.com/footer/accessibility-statement/general-web-accessibility-guidance/
+      - text: 2015-07-03 at the
+      - link "Wayback Machine":
+        - /url: /wiki/Wayback_Machine
+      - text: .
+    - listitem:
+      - link "Jump up":
+        - /url: "#cite_ref-90"
+        - text: ^
+      - link "BS 8878":
+        - /url: http://www.hassellinclusion.com/bs8878/
+      - text: .
+    - listitem:
+      - link "Jump up":
+        - /url: "#cite_ref-91"
+        - text: ^
+      - link "BBC My Web My Way":
+        - /url: https://www.bbc.co.uk/accessibility
+      - text: ","
+      - link "BBC":
+        - /url: /wiki/BBC
+      - text: ", UK."
+    - listitem:
+      - link "Jump up":
+        - /url: "#cite_ref-92"
+        - text: ^
+      - link "Example of an accessibility statement written by the lead-author of BS 8878":
+        - /url: http://www.hassellinclusion.com/accessibility/
+      - text: .
+    - listitem:
+      - link "Jump up":
+        - /url: "#cite_ref-93"
+        - text: ^
+      - link "\"MCI asks all medical institutions to be 'accessible'\"":
+        - /url: http://www.thehindu.com/todays-paper/tp-national/tp-newdelhi/mci-asks-all-medical-institutions-to-be-accessible/article4628862.ece
+      - text: . The Hindu. 18 April 2013. Retrieved 21 April 2013.
+    - listitem:
+      - link "Jump up":
+        - /url: "#cite_ref-94"
+        - text: ^
+      - link "\"Making assessments accessible\"":
+        - /url: https://www.jisc.ac.uk/guides/making-assessments-accessible
+      - text: . Jisc. Retrieved 2020-08-17. Accessibility must be considered from the outset when designing assessments, otherwise disabled learners could be unintentionally disadvantaged.
+    - listitem:
+      - link "Jump up":
+        - /url: "#cite_ref-95"
+        - text: ^
+      - text: "Roelofs, Erik (2019), Veldkamp, Bernard P.; Sluijter, Cor (eds.), \"A Framework for Improving the Accessibility of Assessment Tasks\", Theoretical and Practical Advances in Computer-based Educational Measurement, Methodology of Educational Measurement and Assessment, Cham: Springer International Publishing, pp. 21–45,"
+      - link "doi":
+        - /url: /wiki/Doi_(identifier)
+      - text: ":"
+      - link "10.1007/978-3-030-18480-3_2":
+        - /url: https://doi.org/10.1007%2F978-3-030-18480-3_2
+      - text: ","
+      - link "ISBN":
+        - /url: /wiki/ISBN_(identifier)
+      - link "978-3-030-18480-3":
+        - /url: /wiki/Special:BookSources/978-3-030-18480-3
+    - listitem:
+      - link "Jump up":
+        - /url: "#cite_ref-96"
+        - text: ^
+      - text: Klein, Alyson.
+      - 'link "\"No Child Left Behind Overview: Definitions, Requirements, Criticisms, and More\""':
+        - /url: https://web.archive.org/web/20220826002830/https://www.edweek.org/policy-politics/no-child-left-behind-an-overview/2015/04
+      - text: ". Education Week. Bethesda MD: Editorial Projects in Education."
+      - link "ISSN":
+        - /url: /wiki/ISSN_(identifier)
+      - link "0277-4232":
+        - /url: https://search.worldcat.org/issn/0277-4232
+      - text: .
+      - link "OCLC":
+        - /url: /wiki/OCLC_(identifier)
+      - link "07579948":
+        - /url: https://search.worldcat.org/oclc/07579948
+      - text: . Archived from
+      - link "the original":
+        - /url: https://www.edweek.org/ew/section/multimedia/no-child-left-behind-overview-definition-summary.html
+      - text: on 2022-08-26. Retrieved 2018-07-02.
+    - listitem:
+      - link "Jump up":
+        - /url: "#cite_ref-97"
+        - text: ^
+      - link "\"Executive Summary of the No Child Left Behind Act of 2001\"":
+        - /url: https://www2.ed.gov/nclb/overview/intro/execsumm.html
+      - text: . www2.ed.gov. 2007-11-20. Retrieved 2018-07-02.
+    - listitem:
+      - link "Jump up":
+        - /url: "#cite_ref-98"
+        - text: ^
+      - link "\"Peabody College of Education and Human Development | Vanderbilt University\"":
+        - /url: https://web.archive.org/web/20110927114520/http://peabody.vanderbilt.edu/tami.xml
+      - text: . Peabody.vanderbilt.edu. 2012-07-30. Archived from
+      - link "the original":
+        - /url: http://peabody.vanderbilt.edu/tami.xml
+      - text: on 2011-09-27. Retrieved 2012-08-13.
+  - heading "External links" [level=2]
+  - text: "["
+  - link "edit":
+    - /url: /w/index.php?title=Accessibility&action=edit&section=28
+  - text: "]"
+  - link:
+    - /url: /wiki/File:Commons-logo.svg
+  - text: Wikimedia Commons has media related to
+  - link "Accessibility":
+    - /url: https://commons.wikimedia.org/wiki/Category:Accessibility
+  - text: .
+  - navigation "Disability":
+    - table:
+      - rowgroup:
+        - row "[show] v · t · e Disability":
+          - columnheader "[show] v · t · e Disability":
+            - button "[show]"
+            - list:
+              - listitem:
+                - link "v":
+                  - /url: /wiki/Template:Disability_navbox
+                - text: ·
+              - listitem:
+                - link "t":
+                  - /url: /wiki/Template_talk:Disability_navbox
+                - text: ·
+              - listitem:
+                - link "e":
+                  - /url: /wiki/Special:EditPage/Template:Disability_navbox
+            - link "Disability":
+              - /url: /wiki/Disability
+        - row
+        - row
+        - row
+        - row
+        - row
+        - row
+        - row
+        - row
+  - navigation "Authority control databases Edit this at Wikidata":
+    - table:
+      - rowgroup:
+        - row "[show] Authority control databases Edit this at Wikidata":
+          - columnheader "[show] Authority control databases Edit this at Wikidata":
+            - button "[show]"
+            - link "Authority control databases":
+              - /url: /wiki/Help:Authority_control
+            - link "Edit this at Wikidata":
+              - /url: https://www.wikidata.org/wiki/Q555097#identifiers
+              - img "Edit this at Wikidata"
+        - row
+        - row
+  - link "Categories":
+    - /url: /wiki/Help:Category
+  - text: ":"
+  - list:
+    - listitem:
+      - link "Accessibility":
+        - /url: /wiki/Category:Accessibility
+    - listitem:
+      - link "Disability":
+        - /url: /wiki/Category:Disability
+    - listitem:
+      - link "Ergonomics":
+        - /url: /wiki/Category:Ergonomics
+    - listitem:
+      - link "Transportation planning":
+        - /url: /wiki/Category:Transportation_planning
+    - listitem:
+      - link "Urban studies and planning terminology":
+        - /url: /wiki/Category:Urban_studies_and_planning_terminology
+    - listitem:
+      - link "Urban design":
+        - /url: /wiki/Category:Urban_design
+- contentinfo:
+  - list:
+    - listitem: This page was last edited on 6 February 2026, at 06:00 (UTC).
+    - listitem:
+      - text: Text is available under the
+      - link "Creative Commons Attribution-ShareAlike 4.0 License":
+        - /url: /wiki/Wikipedia:Text_of_the_Creative_Commons_Attribution-ShareAlike_4.0_International_License
+      - text: ; additional terms may apply. By using this site, you agree to the
+      - link "Terms of Use":
+        - /url: https://foundation.wikimedia.org/wiki/Special:MyLanguage/Policy:Terms_of_Use
+      - text: and
+      - link "Privacy Policy":
+        - /url: https://foundation.wikimedia.org/wiki/Special:MyLanguage/Policy:Privacy_policy
+      - text: . Wikipedia® is a registered trademark of the
+      - link "Wikimedia Foundation, Inc.":
+        - /url: https://wikimediafoundation.org/
+      - text: ", a non-profit organization."
+  - list:
+    - listitem:
+      - link "Privacy policy":
+        - /url: https://foundation.wikimedia.org/wiki/Special:MyLanguage/Policy:Privacy_policy
+    - listitem:
+      - link "About Wikipedia":
+        - /url: /wiki/Wikipedia:About
+    - listitem:
+      - link "Disclaimers":
+        - /url: /wiki/Wikipedia:General_disclaimer
+    - listitem:
+      - link "Contact Wikipedia":
+        - /url: //en.wikipedia.org/wiki/Wikipedia:Contact_us
+    - listitem:
+      - link "Legal & safety contacts":
+        - /url: https://foundation.wikimedia.org/wiki/Special:MyLanguage/Legal:Wikimedia_Foundation_Legal_and_Safety_Contact_Information
+    - listitem:
+      - link "Code of Conduct":
+        - /url: https://foundation.wikimedia.org/wiki/Special:MyLanguage/Policy:Universal_Code_of_Conduct
+    - listitem:
+      - link "Developers":
+        - /url: https://developer.wikimedia.org
+    - listitem:
+      - link "Statistics":
+        - /url: https://stats.wikimedia.org/#/en.wikipedia.org
+    - listitem:
+      - link "Cookie statement":
+        - /url: https://foundation.wikimedia.org/wiki/Special:MyLanguage/Policy:Cookie_statement
+    - listitem:
+      - link "Mobile view":
+        - /url: //en.wikipedia.org/w/index.php?title=Accessibility&mobileaction=toggle_view_mobile
+  - list:
+    - listitem:
+      - link "Wikimedia Foundation":
+        - /url: https://www.wikimedia.org/
+        - img "Wikimedia Foundation"
+    - listitem:
+      - link "Powered by MediaWiki":
+        - /url: https://www.mediawiki.org/
+        - img "Powered by MediaWiki"
+- list

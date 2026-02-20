@@ -1,0 +1,134 @@
+- WebArea "Amazon.com: Apple iPhone 16 Pro Max":
+  - banner [ref=e1]:
+    - navigation [ref=e2]:
+      - link "Amazon" [ref=e3]:
+        - /url: /
+      - combobox "Search in" [ref=e4]:
+        - option "All Departments" [selected]
+        - option "Electronics"
+        - option "Books"
+      - searchbox "Search Amazon" [ref=e5]
+      - button "Go" [ref=e6]
+      - link "Hello, Sign in Account & Lists" [ref=e7]:
+        - /url: /ap/signin
+      - link "Returns & Orders" [ref=e8]:
+        - /url: /gp/your-account/order-history
+      - link "Cart 3 items" [ref=e9]:
+        - /url: /cart
+  - navigation "Breadcrumb" [ref=e10]:
+    - list:
+      - listitem:
+        - link "Electronics" [ref=e11]:
+          - /url: /electronics
+      - listitem:
+        - link "Cell Phones" [ref=e12]:
+          - /url: /cell-phones
+      - listitem:
+        - text: iPhone 16 Pro Max
+  - main [ref=e13]:
+    - region "Product images" [ref=e14]:
+      - img "Apple iPhone 16 Pro Max front view"
+      - img "Apple iPhone 16 Pro Max side view"
+      - img "Apple iPhone 16 Pro Max back camera"
+      - button "Show image 1 of 7" [ref=e15]
+      - button "Show image 2 of 7" [ref=e16]
+      - button "Show image 3 of 7" [ref=e17]
+      - button "Show image 4 of 7" [ref=e18]
+      - button "Show image 5 of 7" [ref=e19]
+      - button "Show image 6 of 7" [ref=e20]
+      - button "Show image 7 of 7" [ref=e21]
+    - heading "Apple iPhone 16 Pro Max, 256GB, Desert Titanium - Unlocked" [level=1]
+    - link "Visit the Apple Store" [ref=e22]:
+      - /url: /stores/Apple
+    - link "4.6 out of 5 stars" [ref=e23]:
+      - /url: #reviews
+    - link "12,847 ratings" [ref=e24]:
+      - /url: #reviews
+    - text: -8%
+    - text: $1,099.00
+    - text: "Typical price: $1,199.00"
+    - text: "Color: Desert Titanium"
+    - radiogroup "Color" [ref=e25]:
+      - radio "Black Titanium" [ref=e26]
+      - radio "Desert Titanium" [ref=e27] [checked]
+      - radio "Natural Titanium" [ref=e28]
+      - radio "White Titanium" [ref=e29]
+    - text: "Size:"
+    - radiogroup "Size" [ref=e30]:
+      - radio "256GB - From $1,099.00" [ref=e31] [checked]
+      - radio "512GB - From $1,299.00" [ref=e32]
+      - radio "1TB - From $1,499.00" [ref=e33]
+    - heading "About this item" [level=2]
+    - list:
+      - listitem:
+        - text: STUNNING TITANIUM DESIGN — iPhone 16 Pro Max has a strong and light titanium design with a larger 6.9-inch Super Retina XDR display.
+      - listitem:
+        - text: A18 PRO CHIP — The fastest chip ever in a smartphone powers Apple Intelligence with a faster Neural Engine.
+      - listitem:
+        - text: 48MP FUSION CAMERA — The 48MP Fusion camera is more powerful than ever with a faster quad-pixel sensor.
+      - listitem:
+        - text: CAMERA CONTROL — Camera Control gives you an easier way to quickly access camera tools.
+    - separator
+    - text: In Stock
+    - text: FREE delivery Monday, February 23
+    - link "Deliver to Amr - Austin 78701" [ref=e34]:
+      - /url: #address
+    - text: "Quantity:"
+    - combobox "Quantity" [ref=e35]:
+      - option "1" [selected]
+      - option "2"
+      - option "3"
+      - option "4"
+      - option "5"
+    - button "Add to Cart" [ref=e36]
+    - button "Buy Now" [ref=e37]
+    - text: "Ships from: Amazon.com"
+    - text: "Sold by: Amazon.com"
+    - link "30-day refund/replacement" [ref=e38]:
+      - /url: /returns
+    - button "Add to List" [ref=e39]
+    - button "Add to Registry" [ref=e40]
+    - complementary [ref=e41]:
+      - heading "Customers also viewed" [level=2]
+      - button "Previous" [ref=e42] [disabled]
+      - list:
+        - listitem:
+          - link "Samsung Galaxy S25 Ultra" [ref=e43]:
+            - /url: /dp/B0DQWHATEVER
+          - text: $1,299.99
+          - text: 4.5 out of 5 stars
+        - listitem:
+          - link "Google Pixel 9 Pro" [ref=e44]:
+            - /url: /dp/B0DPIXEL
+          - text: $999.00
+          - text: 4.4 out of 5 stars
+        - listitem:
+          - link "iPhone 16 Pro" [ref=e45]:
+            - /url: /dp/B0DIPHONE
+          - text: $999.00
+          - text: 4.6 out of 5 stars
+      - button "Next" [ref=e46]
+    - region "Customer reviews" [ref=e47]:
+      - heading "Customer reviews" [level=2]
+      - text: 4.6 out of 5
+      - text: 12,847 global ratings
+      - link "5 star 68%" [ref=e48]:
+        - /url: #5star
+      - link "4 star 18%" [ref=e49]:
+        - /url: #4star
+      - link "3 star 8%" [ref=e50]:
+        - /url: #3star
+      - link "2 star 3%" [ref=e51]:
+        - /url: #2star
+      - link "1 star 3%" [ref=e52]:
+        - /url: #1star
+      - link "See all reviews" [ref=e53]:
+        - /url: #reviews
+  - contentinfo [ref=e54]:
+    - link "Back to top" [ref=e55]:
+      - /url: #top
+    - navigation "Footer" [ref=e56]:
+      - link "Conditions of Use" [ref=e57]
+      - link "Privacy Notice" [ref=e58]
+      - link "Help" [ref=e59]
+      - text: © 1996-2026, Amazon.com, Inc.

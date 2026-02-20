@@ -1,0 +1,883 @@
+- table:
+  - rowgroup:
+    - row "Hacker Newsnew | past | comments | ask | show | jobs | submit login":
+      - cell "Hacker Newsnew | past | comments | ask | show | jobs | submit login":
+        - table:
+          - rowgroup:
+            - row "Hacker Newsnew | past | comments | ask | show | jobs | submit login":
+              - cell:
+                - link:
+                  - /url: https://news.ycombinator.com
+                  - img
+              - cell "Hacker Newsnew | past | comments | ask | show | jobs | submit":
+                - link "Hacker News":
+                  - /url: news
+                - link "new":
+                  - /url: newest
+                - text: "|"
+                - link "past":
+                  - /url: front
+                - text: "|"
+                - link "comments":
+                  - /url: newcomments
+                - text: "|"
+                - link "ask":
+                  - /url: ask
+                - text: "|"
+                - link "show":
+                  - /url: show
+                - text: "|"
+                - link "jobs":
+                  - /url: jobs
+                - text: "|"
+                - link "submit":
+                  - /url: submit
+              - cell "login":
+                - link "login":
+                  - /url: login?goto=news
+    - row
+    - row:
+      - cell:
+        - table:
+          - rowgroup:
+            - row "1. upvote Ggml.ai joins Hugging Face to ensure the long-term progress of Local AI (github.com/ggml-org)":
+              - cell "1."
+              - cell "upvote":
+                - link "upvote":
+                  - /url: vote?id=47088037&how=up&goto=news
+              - cell "Ggml.ai joins Hugging Face to ensure the long-term progress of Local AI (github.com/ggml-org)":
+                - link "Ggml.ai joins Hugging Face to ensure the long-term progress of Local AI":
+                  - /url: https://github.com/ggml-org/llama.cpp/discussions/19759
+                - text: (
+                - link "github.com/ggml-org":
+                  - /url: from?site=github.com/ggml-org
+                - text: )
+            - row "283 points by lairv 2 hours ago | hide | 62 comments":
+              - cell
+              - cell "283 points by lairv 2 hours ago | hide | 62 comments":
+                - text: 283 points by
+                - link "lairv":
+                  - /url: user?id=lairv
+                - link "2 hours ago":
+                  - /url: item?id=47088037
+                - text: "|"
+                - link "hide":
+                  - /url: hide?id=47088037&goto=news
+                - text: "|"
+                - link "62 comments":
+                  - /url: item?id=47088037
+            - row
+            - row "2. upvote I found a useful Git one liner buried in leaked CIA developer docs (spencer.wtf)":
+              - cell "2."
+              - cell "upvote":
+                - link "upvote":
+                  - /url: vote?id=47088181&how=up&goto=news
+              - cell "I found a useful Git one liner buried in leaked CIA developer docs (spencer.wtf)":
+                - link "I found a useful Git one liner buried in leaked CIA developer docs":
+                  - /url: https://spencer.wtf/2026/02/20/cleaning-up-merged-git-branches-a-one-liner-from-the-cias-leaked-dev-docs.html
+                - text: (
+                - link "spencer.wtf":
+                  - /url: from?site=spencer.wtf
+                - text: )
+            - row "218 points by spencerldixon 2 hours ago | hide | 109 comments":
+              - cell
+              - cell "218 points by spencerldixon 2 hours ago | hide | 109 comments":
+                - text: 218 points by
+                - link "spencerldixon":
+                  - /url: user?id=spencerldixon
+                - link "2 hours ago":
+                  - /url: item?id=47088181
+                - text: "|"
+                - link "hide":
+                  - /url: hide?id=47088181&goto=news
+                - text: "|"
+                - link "109 comments":
+                  - /url: item?id=47088181
+            - row
+            - 'row "3. upvote Child''s Play: Tech''s new generation and the end of thinking (harpers.org)"':
+              - cell "3."
+              - cell "upvote":
+                - link "upvote":
+                  - /url: vote?id=47088685&how=up&goto=news
+              - 'cell "Child''s Play: Tech''s new generation and the end of thinking (harpers.org)"':
+                - 'link "Child''s Play: Tech''s new generation and the end of thinking"':
+                  - /url: https://harpers.org/archive/2026/03/childs-play-sam-kriss-ai-startup-roy-lee/
+                - text: (
+                - link "harpers.org":
+                  - /url: from?site=harpers.org
+                - text: )
+            - row "56 points by ramimac 1 hour ago | hide | 34 comments":
+              - cell
+              - cell "56 points by ramimac 1 hour ago | hide | 34 comments":
+                - text: 56 points by
+                - link "ramimac":
+                  - /url: user?id=ramimac
+                - link "1 hour ago":
+                  - /url: item?id=47088685
+                - text: "|"
+                - link "hide":
+                  - /url: hide?id=47088685&goto=news
+                - text: "|"
+                - link "34 comments":
+                  - /url: item?id=47088685
+            - row
+            - row "4. upvote Trump's global tariffs struck down by US Supreme Court (bbc.com)":
+              - cell "4."
+              - cell "upvote":
+                - link "upvote":
+                  - /url: vote?id=47089213&how=up&goto=news
+              - cell "Trump's global tariffs struck down by US Supreme Court (bbc.com)":
+                - link "Trump's global tariffs struck down by US Supreme Court":
+                  - /url: https://www.bbc.com/news/live/c0l9r67drg7t
+                - text: (
+                - link "bbc.com":
+                  - /url: from?site=bbc.com
+                - text: )
+            - row "293 points by blackguardx 54 minutes ago | hide | 184 comments":
+              - cell
+              - cell "293 points by blackguardx 54 minutes ago | hide | 184 comments":
+                - text: 293 points by
+                - link "blackguardx":
+                  - /url: user?id=blackguardx
+                - link "54 minutes ago":
+                  - /url: item?id=47089213
+                - text: "|"
+                - link "hide":
+                  - /url: hide?id=47089213&goto=news
+                - text: "|"
+                - link "184 comments":
+                  - /url: item?id=47089213
+            - row
+            - row "5. upvote The path to ubiquitous AI (17k tokens/sec) (taalas.com)":
+              - cell "5."
+              - cell "upvote":
+                - link "upvote":
+                  - /url: vote?id=47086181&how=up&goto=news
+              - cell "The path to ubiquitous AI (17k tokens/sec) (taalas.com)":
+                - link "The path to ubiquitous AI (17k tokens/sec)":
+                  - /url: https://taalas.com/the-path-to-ubiquitous-ai/
+                - text: (
+                - link "taalas.com":
+                  - /url: from?site=taalas.com
+                - text: )
+            - row "436 points by sidnarsipur 5 hours ago | hide | 280 comments":
+              - cell
+              - cell "436 points by sidnarsipur 5 hours ago | hide | 280 comments":
+                - text: 436 points by
+                - link "sidnarsipur":
+                  - /url: user?id=sidnarsipur
+                - link "5 hours ago":
+                  - /url: item?id=47086181
+                - text: "|"
+                - link "hide":
+                  - /url: hide?id=47086181&goto=news
+                - text: "|"
+                - link "280 comments":
+                  - /url: item?id=47086181
+            - row
+            - row "6. upvote No Skill. No Taste (kinglycrow.com)":
+              - cell "6."
+              - cell "upvote":
+                - link "upvote":
+                  - /url: vote?id=47089907&how=up&goto=news
+              - cell "No Skill. No Taste (kinglycrow.com)":
+                - link "No Skill. No Taste":
+                  - /url: https://blog.kinglycrow.com/no-skill-no-taste/
+                - text: (
+                - link "kinglycrow.com":
+                  - /url: from?site=kinglycrow.com
+                - text: )
+            - row "6 points by ianbutler 8 minutes ago | hide | 1 comment":
+              - cell
+              - cell "6 points by ianbutler 8 minutes ago | hide | 1 comment":
+                - text: 6 points by
+                - link "ianbutler":
+                  - /url: user?id=ianbutler
+                - link "8 minutes ago":
+                  - /url: item?id=47089907
+                - text: "|"
+                - link "hide":
+                  - /url: hide?id=47089907&goto=news
+                - text: "|"
+                - link "1 comment":
+                  - /url: item?id=47089907
+            - row
+            - 'row "7. upvote Show HN: A native macOS client for Hacker News, built with SwiftUI (github.com/ironsidexxvi)"':
+              - cell "7."
+              - cell "upvote":
+                - link "upvote":
+                  - /url: vote?id=47088166&how=up&goto=news
+              - 'cell "Show HN: A native macOS client for Hacker News, built with SwiftUI (github.com/ironsidexxvi)"':
+                - 'link "Show HN: A native macOS client for Hacker News, built with SwiftUI"':
+                  - /url: https://github.com/IronsideXXVI/Hacker-News
+                - text: (
+                - link "github.com/ironsidexxvi":
+                  - /url: from?site=github.com/ironsidexxvi
+                - text: )
+            - row "84 points by IronsideXXVI 2 hours ago | hide | 45 comments":
+              - cell
+              - cell "84 points by IronsideXXVI 2 hours ago | hide | 45 comments":
+                - text: 84 points by
+                - link "IronsideXXVI":
+                  - /url: user?id=IronsideXXVI
+                - link "2 hours ago":
+                  - /url: item?id=47088166
+                - text: "|"
+                - link "hide":
+                  - /url: hide?id=47088166&goto=news
+                - text: "|"
+                - link "45 comments":
+                  - /url: item?id=47088166
+            - row
+            - 'row "8. upvote Untapped Way to Learn a Codebase: Build a Visualizer (jimmyhmiller.com)"':
+              - cell "8."
+              - cell "upvote":
+                - link "upvote":
+                  - /url: vote?id=47085425&how=up&goto=news
+              - 'cell "Untapped Way to Learn a Codebase: Build a Visualizer (jimmyhmiller.com)"':
+                - 'link "Untapped Way to Learn a Codebase: Build a Visualizer"':
+                  - /url: https://jimmyhmiller.com/learn-codebase-visualizer
+                - text: (
+                - link "jimmyhmiller.com":
+                  - /url: from?site=jimmyhmiller.com
+                - text: )
+            - row "119 points by andreabergia 7 hours ago | hide | 19 comments":
+              - cell
+              - cell "119 points by andreabergia 7 hours ago | hide | 19 comments":
+                - text: 119 points by
+                - link "andreabergia":
+                  - /url: user?id=andreabergia
+                - link "7 hours ago":
+                  - /url: item?id=47085425
+                - text: "|"
+                - link "hide":
+                  - /url: hide?id=47085425&goto=news
+                - text: "|"
+                - link "19 comments":
+                  - /url: item?id=47085425
+            - row
+            - row "9. upvote PayPal discloses data breach that exposed user info for 6 months (bleepingcomputer.com)":
+              - cell "9."
+              - cell "upvote":
+                - link "upvote":
+                  - /url: vote?id=47087719&how=up&goto=news
+              - cell "PayPal discloses data breach that exposed user info for 6 months (bleepingcomputer.com)":
+                - link "PayPal discloses data breach that exposed user info for 6 months":
+                  - /url: https://www.bleepingcomputer.com/news/security/paypal-discloses-data-breach-exposing-users-personal-information/
+                - text: (
+                - link "bleepingcomputer.com":
+                  - /url: from?site=bleepingcomputer.com
+                - text: )
+            - row "98 points by el_duderino 2 hours ago | hide | 19 comments":
+              - cell
+              - cell "98 points by el_duderino 2 hours ago | hide | 19 comments":
+                - text: 98 points by
+                - link "el_duderino":
+                  - /url: user?id=el_duderino
+                - link "2 hours ago":
+                  - /url: item?id=47087719
+                - text: "|"
+                - link "hide":
+                  - /url: hide?id=47087719&goto=news
+                - text: "|"
+                - link "19 comments":
+                  - /url: item?id=47087719
+            - row
+            - row "10. upvote Minions – Stripe's Coding Agents Part 2 (stripe.dev)":
+              - cell "10."
+              - cell "upvote":
+                - link "upvote":
+                  - /url: vote?id=47086557&how=up&goto=news
+              - cell "Minions – Stripe's Coding Agents Part 2 (stripe.dev)":
+                - link "Minions – Stripe's Coding Agents Part 2":
+                  - /url: https://stripe.dev/blog/minions-stripes-one-shot-end-to-end-coding-agents-part-2
+                - text: (
+                - link "stripe.dev":
+                  - /url: from?site=stripe.dev
+                - text: )
+            - row "85 points by ludovicianul 5 hours ago | hide | 42 comments":
+              - cell
+              - cell "85 points by ludovicianul 5 hours ago | hide | 42 comments":
+                - text: 85 points by
+                - link "ludovicianul":
+                  - /url: user?id=ludovicianul
+                - link "5 hours ago":
+                  - /url: item?id=47086557
+                - text: "|"
+                - link "hide":
+                  - /url: hide?id=47086557&goto=news
+                - text: "|"
+                - link "42 comments":
+                  - /url: item?id=47086557
+            - row
+            - row "11. Mothers (YC X26) Is Hiring (ashbyhq.com)":
+              - cell "11."
+              - cell:
+                - img
+              - cell "Mothers (YC X26) Is Hiring (ashbyhq.com)":
+                - link "Mothers (YC X26) Is Hiring":
+                  - /url: https://jobs.ashbyhq.com/9-mothers?utm_source=x8pZ4B3P3Q
+                - text: (
+                - link "ashbyhq.com":
+                  - /url: from?site=ashbyhq.com
+                - text: )
+            - row "2 hours ago | hide":
+              - cell
+              - cell "2 hours ago | hide":
+                - link "2 hours ago":
+                  - /url: item?id=47087954
+                - text: "|"
+                - link "hide":
+                  - /url: hide?id=47087954&goto=news
+            - row
+            - 'row "12. upvote Web Components: The Framework-Free Renaissance (caimito.net)"':
+              - cell "12."
+              - cell "upvote":
+                - link "upvote":
+                  - /url: vote?id=47085370&how=up&goto=news
+              - 'cell "Web Components: The Framework-Free Renaissance (caimito.net)"':
+                - 'link "Web Components: The Framework-Free Renaissance"':
+                  - /url: https://www.caimito.net/en/blog/2026/02/17/web-components-the-framework-free-renaissance.html
+                - text: (
+                - link "caimito.net":
+                  - /url: from?site=caimito.net
+                - text: )
+            - row "116 points by mpweiher 7 hours ago | hide | 74 comments":
+              - cell
+              - cell "116 points by mpweiher 7 hours ago | hide | 74 comments":
+                - text: 116 points by
+                - link "mpweiher":
+                  - /url: user?id=mpweiher
+                - link "7 hours ago":
+                  - /url: item?id=47085370
+                - text: "|"
+                - link "hide":
+                  - /url: hide?id=47085370&goto=news
+                - text: "|"
+                - link "74 comments":
+                  - /url: item?id=47085370
+            - row
+            - row "13. upvote The Rediscovery of 103 Hokusai Lost Sketches (2021) (japan-forward.com)":
+              - cell "13."
+              - cell "upvote":
+                - link "upvote":
+                  - /url: vote?id=47030387&how=up&goto=news
+              - cell "The Rediscovery of 103 Hokusai Lost Sketches (2021) (japan-forward.com)":
+                - link "The Rediscovery of 103 Hokusai Lost Sketches (2021)":
+                  - /url: https://japan-forward.com/eternal-hokusai-the-rediscovery-of-103-hokusai-lost-sketches/
+                - text: (
+                - link "japan-forward.com":
+                  - /url: from?site=japan-forward.com
+                - text: )
+            - row "30 points by debo_ 5 hours ago | hide | 2 comments":
+              - cell
+              - cell "30 points by debo_ 5 hours ago | hide | 2 comments":
+                - text: 30 points by
+                - link "debo_":
+                  - /url: user?id=debo_
+                - link "5 hours ago":
+                  - /url: item?id=47030387
+                - text: "|"
+                - link "hide":
+                  - /url: hide?id=47030387&goto=news
+                - text: "|"
+                - link "2 comments":
+                  - /url: item?id=47030387
+            - row
+            - 'row "14. upvote Consistency diffusion language models: Up to 14x faster, no quality loss (together.ai)"':
+              - cell "14."
+              - cell "upvote":
+                - link "upvote":
+                  - /url: vote?id=47083648&how=up&goto=news
+              - 'cell "Consistency diffusion language models: Up to 14x faster, no quality loss (together.ai)"':
+                - 'link "Consistency diffusion language models: Up to 14x faster, no quality loss"':
+                  - /url: https://www.together.ai/blog/consistency-diffusion-language-models
+                - text: (
+                - link "together.ai":
+                  - /url: from?site=together.ai
+                - text: )
+            - row "170 points by zagwdt 12 hours ago | hide | 63 comments":
+              - cell
+              - cell "170 points by zagwdt 12 hours ago | hide | 63 comments":
+                - text: 170 points by
+                - link "zagwdt":
+                  - /url: user?id=zagwdt
+                - link "12 hours ago":
+                  - /url: item?id=47083648
+                - text: "|"
+                - link "hide":
+                  - /url: hide?id=47083648&goto=news
+                - text: "|"
+                - link "63 comments":
+                  - /url: item?id=47083648
+            - row
+            - row "15. upvote Raspberry Pi Pico 2 at 873.5MHz with 3.05V Core Abuse (pimoroni.com)":
+              - cell "15."
+              - cell "upvote":
+                - link "upvote":
+                  - /url: vote?id=47085387&how=up&goto=news
+              - cell "Raspberry Pi Pico 2 at 873.5MHz with 3.05V Core Abuse (pimoroni.com)":
+                - link "Raspberry Pi Pico 2 at 873.5MHz with 3.05V Core Abuse":
+                  - /url: https://learn.pimoroni.com/article/overclocking-the-pico-2
+                - text: (
+                - link "pimoroni.com":
+                  - /url: from?site=pimoroni.com
+                - text: )
+            - row "85 points by Lwrless 7 hours ago | hide | 19 comments":
+              - cell
+              - cell "85 points by Lwrless 7 hours ago | hide | 19 comments":
+                - text: 85 points by
+                - link "Lwrless":
+                  - /url: user?id=Lwrless
+                - link "7 hours ago":
+                  - /url: item?id=47085387
+                - text: "|"
+                - link "hide":
+                  - /url: hide?id=47085387&goto=news
+                - text: "|"
+                - link "19 comments":
+                  - /url: item?id=47085387
+            - row
+            - row "16. upvote The Popper Principle (theamericanscholar.org)":
+              - cell "16."
+              - cell "upvote":
+                - link "upvote":
+                  - /url: vote?id=47072849&how=up&goto=news
+              - cell "The Popper Principle (theamericanscholar.org)":
+                - link "The Popper Principle":
+                  - /url: https://theamericanscholar.org/the-popper-principle/
+                - text: (
+                - link "theamericanscholar.org":
+                  - /url: from?site=theamericanscholar.org
+                - text: )
+            - row "12 points by lermontov 2 hours ago | hide | 3 comments":
+              - cell
+              - cell "12 points by lermontov 2 hours ago | hide | 3 comments":
+                - text: 12 points by
+                - link "lermontov":
+                  - /url: user?id=lermontov
+                - link "2 hours ago":
+                  - /url: item?id=47072849
+                - text: "|"
+                - link "hide":
+                  - /url: hide?id=47072849&goto=news
+                - text: "|"
+                - link "3 comments":
+                  - /url: item?id=47072849
+            - row
+            - row "17. upvote AI is not a coworker, it's an exoskeleton (kasava.dev)":
+              - cell "17."
+              - cell "upvote":
+                - link "upvote":
+                  - /url: vote?id=47078324&how=up&goto=news
+              - cell "AI is not a coworker, it's an exoskeleton (kasava.dev)":
+                - link "AI is not a coworker, it's an exoskeleton":
+                  - /url: https://www.kasava.dev/blog/ai-as-exoskeleton
+                - text: (
+                - link "kasava.dev":
+                  - /url: from?site=kasava.dev
+                - text: )
+            - row "395 points by benbeingbin 20 hours ago | hide | 402 comments":
+              - cell
+              - cell "395 points by benbeingbin 20 hours ago | hide | 402 comments":
+                - text: 395 points by
+                - link "benbeingbin":
+                  - /url: user?id=benbeingbin
+                - link "20 hours ago":
+                  - /url: item?id=47078324
+                - text: "|"
+                - link "hide":
+                  - /url: hide?id=47078324&goto=news
+                - text: "|"
+                - link "402 comments":
+                  - /url: item?id=47078324
+            - row
+            - row "18. upvote Infrastructure decisions I endorse or regret after 4 years at a startup (2024) (cep.dev)":
+              - cell "18."
+              - cell "upvote":
+                - link "upvote":
+                  - /url: vote?id=47043345&how=up&goto=news
+              - cell "Infrastructure decisions I endorse or regret after 4 years at a startup (2024) (cep.dev)":
+                - link "Infrastructure decisions I endorse or regret after 4 years at a startup (2024)":
+                  - /url: https://cep.dev/posts/every-infrastructure-decision-i-endorse-or-regret-after-4-years-running-infrastructure-at-a-startup/
+                - text: (
+                - link "cep.dev":
+                  - /url: from?site=cep.dev
+                - text: )
+            - row "382 points by Meetvelde 17 hours ago | hide | 167 comments":
+              - cell
+              - cell "382 points by Meetvelde 17 hours ago | hide | 167 comments":
+                - text: 382 points by
+                - link "Meetvelde":
+                  - /url: user?id=Meetvelde
+                - link "17 hours ago":
+                  - /url: item?id=47043345
+                - text: "|"
+                - link "hide":
+                  - /url: hide?id=47043345&goto=news
+                - text: "|"
+                - link "167 comments":
+                  - /url: item?id=47043345
+            - row
+            - row "19. upvote Reading the undocumented MEMS accelerometer on Apple Silicon MacBooks via iokit (github.com/olvvier)":
+              - cell "19."
+              - cell "upvote":
+                - link "upvote":
+                  - /url: vote?id=47084000&how=up&goto=news
+              - cell "Reading the undocumented MEMS accelerometer on Apple Silicon MacBooks via iokit (github.com/olvvier)":
+                - link "Reading the undocumented MEMS accelerometer on Apple Silicon MacBooks via iokit":
+                  - /url: https://github.com/olvvier/apple-silicon-accelerometer
+                - text: (
+                - link "github.com/olvvier":
+                  - /url: from?site=github.com/olvvier
+                - text: )
+            - row "107 points by todsacerdoti 11 hours ago | hide | 52 comments":
+              - cell
+              - cell "107 points by todsacerdoti 11 hours ago | hide | 52 comments":
+                - text: 107 points by
+                - link "todsacerdoti":
+                  - /url: user?id=todsacerdoti
+                - link "11 hours ago":
+                  - /url: item?id=47084000
+                - text: "|"
+                - link "hide":
+                  - /url: hide?id=47084000&goto=news
+                - text: "|"
+                - link "52 comments":
+                  - /url: item?id=47084000
+            - row
+            - row "20. upvote Notes on Clarifying Man Pages (jvns.ca)":
+              - cell "20."
+              - cell "upvote":
+                - link "upvote":
+                  - /url: vote?id=47065972&how=up&goto=news
+              - cell "Notes on Clarifying Man Pages (jvns.ca)":
+                - link "Notes on Clarifying Man Pages":
+                  - /url: https://jvns.ca/blog/2026/02/18/man-pages/
+                - text: (
+                - link "jvns.ca":
+                  - /url: from?site=jvns.ca
+                - text: )
+            - row "37 points by surprisetalk 6 hours ago | hide | 21 comments":
+              - cell
+              - cell "37 points by surprisetalk 6 hours ago | hide | 21 comments":
+                - text: 37 points by
+                - link "surprisetalk":
+                  - /url: user?id=surprisetalk
+                - link "6 hours ago":
+                  - /url: item?id=47065972
+                - text: "|"
+                - link "hide":
+                  - /url: hide?id=47065972&goto=news
+                - text: "|"
+                - link "21 comments":
+                  - /url: item?id=47065972
+            - row
+            - row "21. upvote Nvidia and OpenAI abandon unfinished $100B deal in favour of $30B investment (ft.com)":
+              - cell "21."
+              - cell "upvote":
+                - link "upvote":
+                  - /url: vote?id=47086980&how=up&goto=news
+              - cell "Nvidia and OpenAI abandon unfinished $100B deal in favour of $30B investment (ft.com)":
+                - link "Nvidia and OpenAI abandon unfinished $100B deal in favour of $30B investment":
+                  - /url: https://www.ft.com/content/dea24046-0a73-40b2-8246-5ac7b7a54323
+                - text: (
+                - link "ft.com":
+                  - /url: from?site=ft.com
+                - text: )
+            - row "226 points by zerosizedweasle 4 hours ago | hide | 192 comments":
+              - cell
+              - cell "226 points by zerosizedweasle 4 hours ago | hide | 192 comments":
+                - text: 226 points by
+                - link "zerosizedweasle":
+                  - /url: user?id=zerosizedweasle
+                - link "4 hours ago":
+                  - /url: item?id=47086980
+                - text: "|"
+                - link "hide":
+                  - /url: hide?id=47086980&goto=news
+                - text: "|"
+                - link "192 comments":
+                  - /url: item?id=47086980
+            - row
+            - 'row "22. upvote Show HN: Micasa – track your house from the terminal (micasa.dev)"':
+              - cell "22."
+              - cell "upvote":
+                - link "upvote":
+                  - /url: vote?id=47075124&how=up&goto=news
+              - 'cell "Show HN: Micasa – track your house from the terminal (micasa.dev)"':
+                - 'link "Show HN: Micasa – track your house from the terminal"':
+                  - /url: https://micasa.dev
+                - text: (
+                - link "micasa.dev":
+                  - /url: from?site=micasa.dev
+                - text: )
+            - row "601 points by cpcloud 1 day ago | hide | 191 comments":
+              - cell
+              - cell "601 points by cpcloud 1 day ago | hide | 191 comments":
+                - text: 601 points by
+                - link "cpcloud":
+                  - /url: user?id=cpcloud
+                - link "1 day ago":
+                  - /url: item?id=47075124
+                - text: "|"
+                - link "hide":
+                  - /url: hide?id=47075124&goto=news
+                - text: "|"
+                - link "191 comments":
+                  - /url: item?id=47075124
+            - row
+            - row "23. upvote US plans online portal to bypass content bans in Europe and elsewhere (reuters.com)":
+              - cell "23."
+              - cell "upvote":
+                - link "upvote":
+                  - /url: vote?id=47067270&how=up&goto=news
+              - cell "US plans online portal to bypass content bans in Europe and elsewhere (reuters.com)":
+                - link "US plans online portal to bypass content bans in Europe and elsewhere":
+                  - /url: https://www.reuters.com/world/us-plans-online-portal-bypass-content-bans-europe-elsewhere-2026-02-18/
+                - text: (
+                - link "reuters.com":
+                  - /url: from?site=reuters.com
+                - text: )
+            - row "401 points by c420 1 day ago | hide | 774 comments":
+              - cell
+              - cell "401 points by c420 1 day ago | hide | 774 comments":
+                - text: 401 points by
+                - link "c420":
+                  - /url: user?id=c420
+                - link "1 day ago":
+                  - /url: item?id=47067270
+                - text: "|"
+                - link "hide":
+                  - /url: hide?id=47067270&goto=news
+                - text: "|"
+                - link "774 comments":
+                  - /url: item?id=47067270
+            - row
+            - row "24. upvote FreeCAD (freecad.org)":
+              - cell "24."
+              - cell "upvote":
+                - link "upvote":
+                  - /url: vote?id=47047010&how=up&goto=news
+              - cell "FreeCAD (freecad.org)":
+                - link "FreeCAD":
+                  - /url: https://www.freecad.org/index.php
+                - text: (
+                - link "freecad.org":
+                  - /url: from?site=freecad.org
+                - text: )
+            - row "311 points by doener 11 hours ago | hide | 124 comments":
+              - cell
+              - cell "311 points by doener 11 hours ago | hide | 124 comments":
+                - text: 311 points by
+                - link "doener":
+                  - /url: user?id=doener
+                - link "11 hours ago":
+                  - /url: item?id=47047010
+                - text: "|"
+                - link "hide":
+                  - /url: hide?id=47047010&goto=news
+                - text: "|"
+                - link "124 comments":
+                  - /url: item?id=47047010
+            - row
+            - row "25. upvote I tried building my startup entirely on European infrastructure (coinerella.com)":
+              - cell "25."
+              - cell "upvote":
+                - link "upvote":
+                  - /url: vote?id=47085483&how=up&goto=news
+              - cell "I tried building my startup entirely on European infrastructure (coinerella.com)":
+                - link "I tried building my startup entirely on European infrastructure":
+                  - /url: https://www.coinerella.com/made-in-eu-it-was-harder-than-i-thought/
+                - text: (
+                - link "coinerella.com":
+                  - /url: from?site=coinerella.com
+                - text: )
+            - row "566 points by willy__ 7 hours ago | hide | 300 comments":
+              - cell
+              - cell "566 points by willy__ 7 hours ago | hide | 300 comments":
+                - text: 566 points by
+                - link "willy__":
+                  - /url: user?id=willy__
+                - link "7 hours ago":
+                  - /url: item?id=47085483
+                - text: "|"
+                - link "hide":
+                  - /url: hide?id=47085483&goto=news
+                - text: "|"
+                - link "300 comments":
+                  - /url: item?id=47085483
+            - row
+            - row "26. upvote Silicon Valley engineers were indicted for allegedly sending secrets to Iran (cnbc.com)":
+              - cell "26."
+              - cell "upvote":
+                - link "upvote":
+                  - /url: vote?id=47086319&how=up&goto=news
+              - cell "Silicon Valley engineers were indicted for allegedly sending secrets to Iran (cnbc.com)":
+                - link "Silicon Valley engineers were indicted for allegedly sending secrets to Iran":
+                  - /url: https://www.cnbc.com/2026/02/20/three-engineers-charged-stealing-google-trade-secrets-data-iran-soc-snapdragon.html
+                - text: (
+                - link "cnbc.com":
+                  - /url: from?site=cnbc.com
+                - text: )
+            - row "83 points by giuliomagnifico 5 hours ago | hide | 49 comments":
+              - cell
+              - cell "83 points by giuliomagnifico 5 hours ago | hide | 49 comments":
+                - text: 83 points by
+                - link "giuliomagnifico":
+                  - /url: user?id=giuliomagnifico
+                - link "5 hours ago":
+                  - /url: item?id=47086319
+                - text: "|"
+                - link "hide":
+                  - /url: hide?id=47086319&goto=news
+                - text: "|"
+                - link "49 comments":
+                  - /url: item?id=47086319
+            - row
+            - row "27. upvote The Gay Tech Mafia (wired.com)":
+              - cell "27."
+              - cell "upvote":
+                - link "upvote":
+                  - /url: vote?id=47089469&how=up&goto=news
+              - cell "The Gay Tech Mafia (wired.com)":
+                - link "The Gay Tech Mafia":
+                  - /url: https://www.wired.com/story/inside-the-gay-tech-mafia/
+                - text: (
+                - link "wired.com":
+                  - /url: from?site=wired.com
+                - text: )
+            - row "10 points by ksec 37 minutes ago | hide | 1 comment":
+              - cell
+              - cell "10 points by ksec 37 minutes ago | hide | 1 comment":
+                - text: 10 points by
+                - link "ksec":
+                  - /url: user?id=ksec
+                - link "37 minutes ago":
+                  - /url: item?id=47089469
+                - text: "|"
+                - link "hide":
+                  - /url: hide?id=47089469&goto=news
+                - text: "|"
+                - link "1 comment":
+                  - /url: item?id=47089469
+            - row
+            - row "28. upvote A beginner's guide to split keyboards (justinmklam.com)":
+              - cell "28."
+              - cell "upvote":
+                - link "upvote":
+                  - /url: vote?id=47029368&how=up&goto=news
+              - cell "A beginner's guide to split keyboards (justinmklam.com)":
+                - link "A beginner's guide to split keyboards":
+                  - /url: https://www.justinmklam.com/posts/2026/02/beginners-guide-split-keyboards/
+                - text: (
+                - link "justinmklam.com":
+                  - /url: from?site=justinmklam.com
+                - text: )
+            - row "197 points by thehaikuza 19 hours ago | hide | 211 comments":
+              - cell
+              - cell "197 points by thehaikuza 19 hours ago | hide | 211 comments":
+                - text: 197 points by
+                - link "thehaikuza":
+                  - /url: user?id=thehaikuza
+                - link "19 hours ago":
+                  - /url: item?id=47029368
+                - text: "|"
+                - link "hide":
+                  - /url: hide?id=47029368&goto=news
+                - text: "|"
+                - link "211 comments":
+                  - /url: item?id=47029368
+            - row
+            - row "29. upvote Gemini 3.1 Pro (blog.google)":
+              - cell "29."
+              - cell "upvote":
+                - link "upvote":
+                  - /url: vote?id=47074735&how=up&goto=news
+              - cell "Gemini 3.1 Pro (blog.google)":
+                - link "Gemini 3.1 Pro":
+                  - /url: https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-1-pro/
+                - text: (
+                - link "blog.google":
+                  - /url: from?site=blog.google
+                - text: )
+            - row "888 points by MallocVoidstar 1 day ago | hide | 863 comments":
+              - cell
+              - cell "888 points by MallocVoidstar 1 day ago | hide | 863 comments":
+                - text: 888 points by
+                - link "MallocVoidstar":
+                  - /url: user?id=MallocVoidstar
+                - link "1 day ago":
+                  - /url: item?id=47074735
+                - text: "|"
+                - link "hide":
+                  - /url: hide?id=47074735&goto=news
+                - text: "|"
+                - link "863 comments":
+                  - /url: item?id=47074735
+            - row
+            - row "30. upvote Fast KV Compaction via Attention Matching (arxiv.org)":
+              - cell "30."
+              - cell "upvote":
+                - link "upvote":
+                  - /url: vote?id=47083882&how=up&goto=news
+              - cell "Fast KV Compaction via Attention Matching (arxiv.org)":
+                - link "Fast KV Compaction via Attention Matching":
+                  - /url: https://arxiv.org/abs/2602.16284
+                - text: (
+                - link "arxiv.org":
+                  - /url: from?site=arxiv.org
+                - text: )
+            - row "56 points by cbracketdash 11 hours ago | hide | 11 comments":
+              - cell
+              - cell "56 points by cbracketdash 11 hours ago | hide | 11 comments":
+                - text: 56 points by
+                - link "cbracketdash":
+                  - /url: user?id=cbracketdash
+                - link "11 hours ago":
+                  - /url: item?id=47083882
+                - text: "|"
+                - link "hide":
+                  - /url: hide?id=47083882&goto=news
+                - text: "|"
+                - link "11 comments":
+                  - /url: item?id=47083882
+            - row
+            - row
+            - row "More":
+              - cell
+              - cell "More":
+                - link "More":
+                  - /url: "?p=2"
+    - row "Guidelines | FAQ | Lists | API | Security | Legal | Apply to YC | Contact Search:":
+      - cell "Guidelines | FAQ | Lists | API | Security | Legal | Apply to YC | Contact Search:":
+        - img
+        - table:
+          - rowgroup:
+            - row:
+              - cell
+        - link "Guidelines":
+          - /url: newsguidelines.html
+        - text: "|"
+        - link "FAQ":
+          - /url: newsfaq.html
+        - text: "|"
+        - link "Lists":
+          - /url: lists
+        - text: "|"
+        - link "API":
+          - /url: https://github.com/HackerNews/API
+        - text: "|"
+        - link "Security":
+          - /url: security.html
+        - text: "|"
+        - link "Legal":
+          - /url: https://www.ycombinator.com/legal/
+        - text: "|"
+        - link "Apply to YC":
+          - /url: https://www.ycombinator.com/apply/
+        - text: "|"
+        - link "Contact":
+          - /url: mailto:hn@ycombinator.com
+        - text: "Search:"
+        - textbox

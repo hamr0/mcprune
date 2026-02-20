@@ -1,0 +1,147 @@
+- region "Cookies on GOV.UK":
+  - paragraph:
+    - text: You have accepted additional cookies. You can
+    - link "change your cookie settings":
+      - /url: /help/cookies
+    - text: at any time.
+  - button "Hide cookie message"
+- link "Skip to main content":
+  - /url: "#content"
+- banner:
+  - navigation "Navigation menu":
+    - link "Go to the GOV.UK homepage":
+      - /url: /
+      - img "GOV.UK"
+    - heading "Navigation menu" [level=2]
+    - button "Show navigation menu": Menu
+    - button "Show search menu": Search GOV.UK
+- main:
+  - text: Check benefits and financial support you can get
+  - group "Where do you live?":
+    - heading "Where do you live?" [level=1]
+    - radio "England"
+    - text: England
+    - radio "Wales"
+    - text: Wales
+    - radio "Scotland"
+    - text: Scotland
+    - radio "Northern Ireland"
+    - text: Northern Ireland
+  - button "Continue"
+- heading "Is this page useful?" [level=2]
+- list:
+  - listitem:
+    - button "Yes this page is useful"
+  - listitem:
+    - button "No this page is not useful"
+- button "Report a problem with this page"
+- contentinfo:
+  - heading "Services and information" [level=2]
+  - list:
+    - listitem:
+      - link "Benefits":
+        - /url: /browse/benefits
+    - listitem:
+      - link "Births, death, marriages and care":
+        - /url: /browse/births-deaths-marriages
+    - listitem:
+      - link "Business and self-employed":
+        - /url: /browse/business
+    - listitem:
+      - link "Childcare and parenting":
+        - /url: /browse/childcare-parenting
+    - listitem:
+      - link "Citizenship and living in the UK":
+        - /url: /browse/citizenship
+    - listitem:
+      - link "Crime, justice and the law":
+        - /url: /browse/justice
+    - listitem:
+      - link "Disabled people":
+        - /url: /browse/disabilities
+    - listitem:
+      - link "Driving and transport":
+        - /url: /browse/driving
+    - listitem:
+      - link "Education and learning":
+        - /url: /browse/education
+    - listitem:
+      - link "Employing people":
+        - /url: /browse/employing-people
+    - listitem:
+      - link "Environment and countryside":
+        - /url: /browse/environment-countryside
+    - listitem:
+      - link "Housing and local services":
+        - /url: /browse/housing-local-services
+    - listitem:
+      - link "Money and tax":
+        - /url: /browse/tax
+    - listitem:
+      - link "Passports, travel and living abroad":
+        - /url: /browse/abroad
+    - listitem:
+      - link "Visas and immigration":
+        - /url: /browse/visas-immigration
+    - listitem:
+      - link "Working, jobs and pensions":
+        - /url: /browse/working
+  - heading "Government activity" [level=2]
+  - list:
+    - listitem:
+      - link "Departments":
+        - /url: /government/organisations
+    - listitem:
+      - link "News":
+        - /url: /search/news-and-communications
+    - listitem:
+      - link "Guidance and regulation":
+        - /url: /search/guidance-and-regulation
+    - listitem:
+      - link "Research and statistics":
+        - /url: /search/research-and-statistics
+    - listitem:
+      - link "Policy papers and consultations":
+        - /url: /search/policy-papers-and-consultations
+    - listitem:
+      - link "Transparency":
+        - /url: /search/transparency-and-freedom-of-information-releases
+    - listitem:
+      - link "How government works":
+        - /url: /government/how-government-works
+    - listitem:
+      - link "Get involved":
+        - /url: /government/get-involved
+  - separator
+  - heading "Support links" [level=2]
+  - list:
+    - listitem:
+      - link "Help":
+        - /url: /help
+    - listitem:
+      - link "Privacy":
+        - /url: /help/privacy-notice
+    - listitem:
+      - link "Cookies":
+        - /url: /help/cookies
+    - listitem:
+      - link "Accessibility statement":
+        - /url: /help/accessibility-statement
+    - listitem:
+      - link "Contact":
+        - /url: /contact
+    - listitem:
+      - link "Terms and conditions":
+        - /url: /help/terms-conditions
+    - listitem:
+      - link "Rhestr o Wasanaethau Cymraeg":
+        - /url: /cymraeg
+    - listitem:
+      - link "Government Digital Service":
+        - /url: /government/organisations/government-digital-service
+  - text: All content is available under the
+  - link "Open Government Licence v3.0":
+    - /url: https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/
+  - text: ", except where otherwise stated"
+  - link "© Crown copyright":
+    - /url: https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/
