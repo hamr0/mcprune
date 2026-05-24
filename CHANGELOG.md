@@ -39,6 +39,10 @@ pipeline. No public API changes.
   JSON parse failures from processing errors: a parse failure forwards the line
   verbatim, and a pruning error forwards the original unpruned response instead
   of dropping it and re-buffering into a wedge. (`mcp-server.js`)
+- **Output forwarding can no longer be wedged by a chain rejection.** The async
+  stdout drain is re-armed with `.catch`, so an unexpected failure (e.g. `EPIPE`)
+  can't leave the promise chain rejected and silently halt all forwarding.
+  (`mcp-server.js`)
 
 ### Changed
 - Added a `files` whitelist to `package.json` so published tarballs ship only
