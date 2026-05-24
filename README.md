@@ -48,7 +48,7 @@ That's it. The agent gets all Playwright browser tools (`browser_navigate`, `bro
 
 Options:
 - `--headless` — run browser without visible window
-- `--mode act|browse|navigate|full` — pruning mode (default: `act`)
+- `--mode auto|act|browse|navigate|full` — pruning mode (default: `auto`, which picks `act` or `browse` per page from the URL and snapshot content)
 
 ### As a library
 
@@ -99,6 +99,7 @@ The mode controls **only how mcprune prunes** the snapshot. Playwright MCP execu
 
 | Mode | Regions kept | Pipeline | Use case |
 |------|-------------|----------|----------|
+| `auto` (default) | per detection | picks `act` or `browse` per page | Mixed browsing — let mcprune choose |
 | `act` | `main` only | All 9 steps | Shopping, forms, taking actions |
 | `browse` | `main` only | Steps 1-4 + 9 (skip e-commerce noise removal) | Docs, articles, reading content |
 | `navigate` | `main` + `banner` + `nav` + `search` | All 9 steps | Site exploration |
@@ -133,7 +134,7 @@ npx playwright install chromium
 ## Test
 
 ```bash
-npm test  # 121 tests
+npm test  # 148 tests
 ```
 
 ## Project structure
@@ -150,7 +151,7 @@ mcprune/
   test/
     parse.test.js      8 parser tests
     prune.test.js      12 prune + summarize tests
-    proxy.test.js      24 proxy utility tests
+    proxy.test.js      51 proxy utility + auto-detection tests
     edge-cases.test.js 77 edge case + browse mode + regression tests
     fixtures/          9 real-world page snapshots (e-commerce, docs, forums, gov)
   scripts/             Dev tools for capturing live snapshots
@@ -166,6 +167,16 @@ mcprune/
 4. Intercepts **all** tool responses (not just `browser_snapshot` — Playwright embeds snapshots in `browser_click`, `browser_type`, etc.)
 5. Detects snapshots via regex, runs `prune()` + `summarize()`
 6. Prepends a stats header: `[mcprune: 85.8% reduction, ~100K → ~14K tokens | page summary]`
+
+## Robustness & security
+
+mcprune processes whatever the open web hands back through Playwright, so the pipeline is built to fail safe:
+
+- **Zero runtime dependencies** beyond `@playwright/mcp` — `npm audit` is clean.
+- **Bounded tree depth** — pathological/malicious nesting can't crash the pruner (depth is capped; no refs are lost).
+- **Fail-open proxy** — if a snapshot can't be parsed or pruned, the original response is forwarded unchanged rather than dropped, so the agent never wedges.
+- **Injection-safe stats header** — page-derived text (titles, labels) is sanitized so it can't break out of the `[mcprune: …]` frame.
+- **Domain-anchored mode detection** — look-alike hosts (e.g. `wikipedia.org.attacker.net`) can't spoof a pruning mode.
 
 ## License
 

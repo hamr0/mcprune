@@ -67,108 +67,111 @@ child.on('exit', (code) => {
 let childBuffer = '';
 let parentBuffer = '';
 
-// Forward stdin (from LLM client) → Playwright MCP child, with interception
+// Track which request IDs may carry snapshots in their response.
+const pendingSnapshots = new Set();
+
+// Forward stdin (from LLM client) → Playwright MCP child, with interception.
 process.stdin.setEncoding('utf8');
 process.stdin.on('data', (chunk) => {
   parentBuffer += chunk;
-  processBuffer(parentBuffer, (line) => {
-    parentBuffer = parentBuffer.slice(parentBuffer.indexOf(line) + line.length);
-    // Remove any leading newlines
-    parentBuffer = parentBuffer.replace(/^\n+/, '');
-
-    try {
-      const msg = JSON.parse(line);
-      if (msg.method === 'tools/call') {
-        // ALL tool responses can contain snapshots — intercept them all
-        pendingSnapshots.add(msg.id);
-
-        // Track context from user actions for relevance pruning
-        const ctx = extractContext(msg);
-        if (ctx) {
-          lastContext = ctx;
-          process.stderr.write(`[mcprune] Context updated: "${lastContext}"\n`);
-        }
-
-        // Track URL for auto mode detection
-        if (params.name === 'browser_navigate' && params.arguments?.url) {
-          lastUrl = params.arguments.url;
-        }
-      }
-      // Forward to child as-is
-      child.stdin.write(line + '\n');
-    } catch {
-      // Not valid JSON yet, put it back
-      parentBuffer = line + parentBuffer;
-    }
-  });
-});
-
-// Track which request IDs are browser_snapshot calls
-const pendingSnapshots = new Set();
-
-// Forward stdout from Playwright MCP child → LLM client, intercepting snapshot responses
-child.stdout.setEncoding('utf8');
-child.stdout.on('data', (chunk) => {
-  childBuffer += chunk;
-  processLines(childBuffer, async (line, rest) => {
-    childBuffer = rest;
-
-    try {
-      const msg = JSON.parse(line);
-
-      // Check if this is a response to a tracked tool call
-      if (msg.id !== undefined && pendingSnapshots.has(msg.id)) {
-        pendingSnapshots.delete(msg.id);
-
-        // Scan ALL text content for embedded snapshots (browser_type, browser_click, etc. all embed them)
-        if (msg.result?.content) {
-          for (const item of msg.result.content) {
-            if (item.type === 'text' && item.text && looksLikeSnapshot(item.text)) {
-              await loadPrune();
-              const raw = item.text;
-              item.text = processSnapshot(raw, { prune, summarize, mode: pruneMode, context: lastContext, url: lastUrl });
-
-              process.stderr.write(`[mcprune] Snapshot pruned\n`);
-            }
-          }
-        }
-      }
-
-      process.stdout.write(JSON.stringify(msg) + '\n');
-    } catch {
-      // Not valid JSON, buffer it
-      childBuffer = line + (rest || '');
-    }
-  });
+  let idx;
+  while ((idx = parentBuffer.indexOf('\n')) !== -1) {
+    const line = parentBuffer.slice(0, idx).trim();
+    parentBuffer = parentBuffer.slice(idx + 1);
+    if (line) handleClientLine(line);
+  }
 });
 
 /**
- * Process complete newline-delimited lines from a buffer.
+ * Handle one complete client message and forward it to the child. Interception
+ * must never lose a message: a JSON parse failure forwards the line verbatim,
+ * and any error in our own tracking logic is logged but the original request is
+ * still forwarded.
  */
-function processBuffer(buffer, fn) {
+function handleClientLine(line) {
+  let msg;
+  try {
+    msg = JSON.parse(line);
+  } catch {
+    child.stdin.write(line + '\n'); // not JSON we understand — pass through
+    return;
+  }
+  try {
+    if (msg.method === 'tools/call') {
+      const params = msg.params || {};
+      // ALL tool responses can contain snapshots — intercept them all.
+      pendingSnapshots.add(msg.id);
+
+      // Track context from user actions for relevance pruning.
+      const ctx = extractContext(msg);
+      if (ctx) {
+        lastContext = ctx;
+        process.stderr.write(`[mcprune] Context updated: "${lastContext}"\n`);
+      }
+
+      // Track URL for auto mode detection.
+      if (params.name === 'browser_navigate' && params.arguments?.url) {
+        lastUrl = params.arguments.url;
+      }
+    }
+  } catch (err) {
+    process.stderr.write(`[mcprune] interception error (forwarding request anyway): ${err.message}\n`);
+  }
+  child.stdin.write(line + '\n');
+}
+
+// Forward stdout from child → LLM client, pruning snapshots. Pruning is async
+// (lazy import), so serialize through a promise chain to preserve message order.
+child.stdout.setEncoding('utf8');
+let childChain = Promise.resolve();
+child.stdout.on('data', (chunk) => {
+  childBuffer += chunk;
+  childChain = childChain.then(drainChildBuffer);
+});
+
+async function drainChildBuffer() {
   let idx;
-  while ((idx = buffer.indexOf('\n')) !== -1) {
-    const line = buffer.slice(0, idx).trim();
-    buffer = buffer.slice(idx + 1);
-    if (line) fn(line);
+  while ((idx = childBuffer.indexOf('\n')) !== -1) {
+    const line = childBuffer.slice(0, idx).trim();
+    childBuffer = childBuffer.slice(idx + 1);
+    if (line) await handleChildLine(line);
   }
 }
 
 /**
- * Process lines async (for responses that need pruning).
+ * Handle one response line from the child. A parse failure passes through
+ * verbatim; a pruning failure forwards the ORIGINAL (unpruned) response rather
+ * than dropping it, so a malformed or pathological snapshot can never wedge the
+ * proxy.
  */
-async function processLines(buffer, fn) {
-  let idx;
-  while ((idx = buffer.indexOf('\n')) !== -1) {
-    const line = buffer.slice(0, idx).trim();
-    const rest = buffer.slice(idx + 1);
-    if (line) {
-      await fn(line, rest);
-      return; // After async processing, re-check buffer state
-    }
-    buffer = rest;
+async function handleChildLine(line) {
+  let msg;
+  try {
+    msg = JSON.parse(line);
+  } catch {
+    process.stdout.write(line + '\n');
+    return;
   }
-  childBuffer = buffer;
+  try {
+    if (msg.id !== undefined && pendingSnapshots.has(msg.id)) {
+      pendingSnapshots.delete(msg.id);
+      // Scan ALL text content for embedded snapshots (browser_type, browser_click, etc.).
+      if (msg.result?.content) {
+        for (const item of msg.result.content) {
+          if (item.type === 'text' && item.text && looksLikeSnapshot(item.text)) {
+            await loadPrune();
+            item.text = processSnapshot(item.text, { prune, summarize, mode: pruneMode, context: lastContext, url: lastUrl });
+            process.stderr.write(`[mcprune] Snapshot pruned\n`);
+          }
+        }
+      }
+    }
+  } catch (err) {
+    process.stderr.write(`[mcprune] prune error (forwarding raw snapshot): ${err.message}\n`);
+    process.stdout.write(line + '\n'); // forward the untouched original
+    return;
+  }
+  process.stdout.write(JSON.stringify(msg) + '\n');
 }
 
 // Clean shutdown
