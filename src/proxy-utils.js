@@ -58,15 +58,14 @@ export function extractContext(msg) {
  * @returns {{ mode: string, reason: string }}
  */
 export function detectMode(text, url = '') {
-  // 1. URL-based detection (fast, high confidence)
-  if (url) {
-    const lc = url.toLowerCase();
-    if (BROWSE_URL_PATTERNS.some(p => p.test(lc))) {
-      return { mode: 'browse', reason: 'url' };
-    }
-    if (ACT_URL_PATTERNS.some(p => p.test(lc))) {
-      return { mode: 'act', reason: 'url' };
-    }
+  // 1. URL-based detection (fast, high confidence). Match against the parsed
+  //    hostname/pathname — never the raw URL string — so a domain can't be
+  //    smuggled via scheme/query/fragment, and host patterns are anchored to a
+  //    domain boundary to reject look-alikes like "wikipedia.org.attacker.net".
+  const target = parseTarget(url);
+  if (target) {
+    if (isBrowseUrl(target)) return { mode: 'browse', reason: 'url' };
+    if (isActUrl(target)) return { mode: 'act', reason: 'url' };
   }
 
   // 2. Content-based detection (scan raw snapshot)
@@ -106,25 +105,70 @@ export function detectMode(text, url = '') {
   return { mode: 'act', reason: 'default' };
 }
 
-const BROWSE_URL_PATTERNS = [
-  /docs\./, /\.readthedocs\./, /developer\.mozilla/, /devdocs\./,
-  /stackoverflow\.com\/questions/, /stackexchange\.com/,
-  /github\.com\/[^/]+\/[^/]+\/(issues|pull|discussions|wiki)/,
-  /wikipedia\.org/, /medium\.com\//, /dev\.to\//,
-  /python\.org\/.*\/(docs|tutorial|library|reference)/,
-  /nodejs\.org\/.*\/docs/, /ruby-doc\.org/,
-  /npmjs\.com\/package\//, /pypi\.org\/project\//,
-  /man7\.org/, /linux\.die\.net/,
-  /learn\.microsoft\.com/, /cloud\.google\.com\/.*\/docs/,
-];
+/**
+ * Parse a URL into lowercased hostname + pathname, or null if unparseable.
+ * @param {string} url
+ * @returns {{ host: string, path: string }|null}
+ */
+function parseTarget(url) {
+  if (!url) return null;
+  try {
+    const u = new URL(url);
+    return { host: u.hostname.toLowerCase(), path: u.pathname.toLowerCase() };
+  } catch {
+    return null;
+  }
+}
 
-const ACT_URL_PATTERNS = [
-  /amazon\./, /ebay\./, /\.shop\//, /shopify\./,
-  /booking\.com/, /airbnb\./, /hotels\.com/,
-  /walmart\.com/, /target\.com/, /bestbuy\.com/,
-  /etsy\.com/, /aliexpress\.com/, /zalando\./,
-  /bol\.com/, /coolblue\./,
-];
+/** Suffix match anchored to a domain boundary: `host` is `domain` or a sub-domain
+ *  of it. Rejects look-alikes — "wikipedia.org.evil.net" does NOT match "wikipedia.org". */
+function hostEndsWith(host, domain) {
+  return host === domain || host.endsWith('.' + domain);
+}
+
+/** Label match: `label` appears as a whole dot-delimited label of `host`
+ *  (e.g. "docs" in docs.python.org, "amazon" in www.amazon.nl). */
+function hostHasLabel(host, label) {
+  return host === label
+    || host.startsWith(label + '.')
+    || host.endsWith('.' + label)
+    || host.includes('.' + label + '.');
+}
+
+/** Documentation / reference / article destinations → browse mode. */
+function isBrowseUrl({ host, path }) {
+  // Documentation / article hosts (suffix-anchored).
+  for (const d of ['developer.mozilla.org', 'stackexchange.com', 'wikipedia.org',
+    'medium.com', 'dev.to', 'ruby-doc.org', 'man7.org', 'linux.die.net',
+    'learn.microsoft.com']) {
+    if (hostEndsWith(host, d)) return true;
+  }
+  // Documentation sub-domains (docs.*, *.readthedocs.*, devdocs.*).
+  if (hostHasLabel(host, 'docs') || hostHasLabel(host, 'readthedocs') || hostHasLabel(host, 'devdocs')) return true;
+  // Host + path rules.
+  if (hostEndsWith(host, 'stackoverflow.com') && path.startsWith('/questions')) return true;
+  if (hostEndsWith(host, 'github.com') && /^\/[^/]+\/[^/]+\/(issues|pull|discussions|wiki)/.test(path)) return true;
+  if (hostEndsWith(host, 'python.org') && /\/(docs|tutorial|library|reference)/.test(path)) return true;
+  if (hostEndsWith(host, 'nodejs.org') && path.includes('/docs')) return true;
+  if (hostEndsWith(host, 'npmjs.com') && path.startsWith('/package/')) return true;
+  if (hostEndsWith(host, 'pypi.org') && path.startsWith('/project/')) return true;
+  if (hostEndsWith(host, 'cloud.google.com') && path.includes('/docs')) return true;
+  return false;
+}
+
+/** E-commerce / booking destinations → act mode. Intentionally permissive:
+ *  a false match here only yields 'act', which is also the default. */
+function isActUrl({ host }) {
+  for (const d of ['booking.com', 'hotels.com', 'walmart.com', 'target.com',
+    'bestbuy.com', 'etsy.com', 'aliexpress.com', 'bol.com']) {
+    if (hostEndsWith(host, d)) return true;
+  }
+  for (const b of ['amazon', 'ebay', 'shopify', 'airbnb', 'zalando', 'coolblue']) {
+    if (hostHasLabel(host, b)) return true;
+  }
+  if (host.endsWith('.shop')) return true;
+  return false;
+}
 
 /**
  * Process a snapshot text: prune + summarize + prepend stats header.
@@ -159,5 +203,10 @@ export function processSnapshot(text, { prune, summarize, mode = 'act', context 
     ? `mode=${effectiveMode} (auto:${autoReason})`
     : `mode=${effectiveMode}`;
 
-  return `[mcprune: ${reduction}% reduction, ~${rawTokens} → ~${prunedTokens} tokens, ${modeLabel} | ${summary}]\n\n${pruned}`;
+  // The summary is built from page-controlled text (titles, button labels). Strip
+  // characters that would let a crafted page break out of the [mcprune: ...] frame
+  // and masquerade as trusted middleware output to the LLM (prompt-injection laundering).
+  const safeSummary = String(summary).replace(/[\[\]\r\n]+/g, ' ').trim();
+
+  return `[mcprune: ${reduction}% reduction, ~${rawTokens} → ~${prunedTokens} tokens, ${modeLabel} | ${safeSummary}]\n\n${pruned}`;
 }

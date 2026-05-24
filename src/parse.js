@@ -27,6 +27,13 @@
 //   or:  "- text: some content"
 //   or:  "- /url: about:blank"
 const LINE_RE = /^(\s*)-\s+(.+)$/;
+
+// Maximum tree depth. Real pages nest <~15 levels; this guards against
+// pathological/malicious snapshots whose nesting would overflow the recursive
+// prune/serialize/flatten passes (V8 throws RangeError around ~2000 deep).
+// Nodes deeper than the cap flatten onto the ancestor at the cap instead of
+// being dropped, so no [ref=eN] markers are lost.
+const MAX_DEPTH = 1000;
 const ROLE_RE = /^(\w+)(?:\s+"((?:[^"\\]|\\.)*)")?(.*)$/;
 const STATE_RE = /\[(\w+)(?:=([^\]]+))?\]/g;
 const PROP_RE = /^\/(\w+):\s*(.*)$/;
@@ -157,7 +164,12 @@ function attachNode(node, indent, stack, roots) {
     stack[stack.length - 1].node.children.push(node);
   }
 
-  stack.push({ node, indent });
+  // Cap stack growth: beyond MAX_DEPTH, deeper nodes attach to the capped
+  // ancestor (flattening the tail) rather than nesting further. Keeps the tree
+  // depth bounded so the recursive passes downstream cannot blow the stack.
+  if (stack.length < MAX_DEPTH) {
+    stack.push({ node, indent });
+  }
 }
 
 /**

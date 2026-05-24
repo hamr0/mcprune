@@ -1,12 +1,17 @@
 {
   "name": "mcprune",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "MCP middleware that prunes Playwright accessibility snapshots for LLM agents. Zero ML, 75-95% token reduction, all refs preserved.",
   "type": "module",
   "main": "src/prune.js",
   "exports": {
     ".": "./src/prune.js"
   },
+  "files": [
+    "src",
+    "mcp-server.js",
+    "README.md"
+  ],
   "scripts": {
     "test": "node --test test/*.test.js"
   },
@@ -25,7 +30,6 @@
     "playwright": "^1.58.2"
   },
   "dependencies": {
-    "@modelcontextprotocol/sdk": "^1.26.0",
     "@playwright/mcp": "^0.0.68"
   }
 }

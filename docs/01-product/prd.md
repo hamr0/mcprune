@@ -73,15 +73,26 @@ LLM agents using Playwright MCP receive raw accessibility snapshots of 100K-400K
 | Drop orphaned headings (not followed by interactive content) | Done |
 | Trim combobox/listbox to selected value only | Done |
 
-### Auto mode detection (P2 — next)
+### Auto mode detection (P2)
 
 | Requirement | Status |
 |---|---|
-| Per-snapshot content analysis (paragraph/interactive ratio) | Not started |
-| URL pattern matching for known site types | Not started |
-| Price pattern detection for act mode | Not started |
-| Include detected mode in stats header | Not started |
-| Fallback to act mode when uncertain | Not started |
+| Per-snapshot content analysis (paragraph/interactive ratio) | Done |
+| URL pattern matching for known site types | Done |
+| Price pattern detection for act mode | Done |
+| Include detected mode in stats header | Done |
+| Fallback to act mode when uncertain | Done |
+| Domain-boundary anchoring so look-alike hosts can't spoof a mode | Done |
+
+### Robustness & security (P0)
+
+| Requirement | Status |
+|---|---|
+| Zero runtime dependencies beyond `@playwright/mcp` (clean `npm audit`) | Done |
+| Bounded tree depth — pathological nesting cannot crash the pipeline | Done |
+| Fail-open proxy — parse/prune errors forward the message, never wedge | Done |
+| Stats header is injection-safe (page text can't break the frame) | Done |
+| Published tarball ships only runtime files (`files` whitelist) | Done |
 
 ### Agent validation (P2 — next)
 
