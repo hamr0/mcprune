@@ -126,7 +126,11 @@ child.stdout.setEncoding('utf8');
 let childChain = Promise.resolve();
 child.stdout.on('data', (chunk) => {
   childBuffer += chunk;
-  childChain = childChain.then(drainChildBuffer);
+  // Re-arm with .catch so an unexpected drain failure can't leave the chain in a
+  // rejected state — that would silently stop all further output forwarding.
+  childChain = childChain.then(drainChildBuffer).catch((err) => {
+    process.stderr.write(`[mcprune] output drain error: ${err.message}\n`);
+  });
 });
 
 async function drainChildBuffer() {
