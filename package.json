@@ -3,6 +3,14 @@
   "version": "0.1.1",
   "description": "MCP middleware that prunes Playwright accessibility snapshots for LLM agents. Zero ML, 75-95% token reduction, all refs preserved.",
   "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hamr0/mcprune.git"
+  },
+  "homepage": "https://github.com/hamr0/mcprune#readme",
+  "bugs": {
+    "url": "https://github.com/hamr0/mcprune/issues"
+  },
   "main": "src/prune.js",
   "exports": {
     ".": "./src/prune.js"

@@ -48,6 +48,8 @@ pipeline. No public API changes.
 - Added a `files` whitelist to `package.json` so published tarballs ship only
   `src/`, `mcp-server.js`, and `README.md` (previously also shipped `scripts/`,
   `docs/`, and `blueprint.md`).
+- Added `repository`, `homepage`, and `bugs` metadata to `package.json` —
+  required for npm provenance (`--provenance`) to validate the source repo.
 
 ## [0.1.0]
 
