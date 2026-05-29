@@ -4,6 +4,11 @@ All notable changes are documented here. Format follows
 [Keep a Changelog](https://keepachangelog.com/); the project adheres to
 [Semantic Versioning](https://semver.org/).
 
+## [Unreleased]
+
+### Changed
+- **`publish.yml` is now manual-only (`workflow_dispatch`) — npm OIDC trusted publishing with provenance, idempotent, and verifies the registry end-state.**
+
 ## [0.1.1] — 2026-05-24
 
 Security and robustness hardening from a full audit of the proxy and pruning
